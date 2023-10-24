@@ -9,3 +9,4 @@ A user can follow other users, including artists.
 A user can check who they follow and who follows them.
 A user can split up their playlists into new playlists according to artist or genre.
 A user can sign-in and sign-out from their account.
+
