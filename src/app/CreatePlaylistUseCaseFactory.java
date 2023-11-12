@@ -9,6 +9,7 @@ import interface_adapter.homepage.HomepageViewModel;
 import use_case.create_playlist.CreatePlaylistInputBoundary;
 import use_case.create_playlist.CreatePlaylistInteractor;
 import use_case.create_playlist.CreatePlaylistOutputBoundary;
+import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 import view.CreatePlaylistView;
 import view.HomepageView;
 
@@ -19,10 +20,10 @@ public class CreatePlaylistUseCaseFactory {
     public static CreatePlaylistView create(ViewManagerModel viewManagerModel,
                                             HomepageViewModel homepageViewModel,
                                             CreatePlaylistViewModel createPlaylistViewModel,
-                                            FileDataAccessObject fileDataAccessObject) {
+                                            CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) {
 
         try {
-            CreatePlaylistController createPlaylistController = createCreatePlaylistUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel, fileDataAccessObject);
+            CreatePlaylistController createPlaylistController = createCreatePlaylistUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel, createPlaylistDataAccessObject);
             return new CreatePlaylistView(createPlaylistViewModel, createPlaylistController);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Could not open user data file.");
@@ -34,17 +35,12 @@ public class CreatePlaylistUseCaseFactory {
             ViewManagerModel viewManagerModel,
             CreatePlaylistViewModel createPlaylistViewModel,
             HomepageViewModel homepageViewModel,
-            FileDataAccessObject fileDataAccessObject) throws IOException {
+            CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) throws IOException {
 
         // Notice how we pass this method's parameters to the Presenter.
         CreatePlaylistOutputBoundary createPlaylistOutputBoundary = new CreatePlaylistPresenter(createPlaylistViewModel, homepageViewModel, viewManagerModel);
-        // TODO: Factory for something.
-        UserFactory userFactory = new CommonUserFactory();
-        CreatePlaylistInputBoundary createPlaylistInputBoundary = new CreatePlaylistInteractor(
-                userDataAccessObject, createPlaylistOutptBoundary);
-        // user DAO doesn't seem right.
-
-        return new CreatePlaylistController(CreatePlaylistInteractor);
+        // TODO: Incomplete method. Missing factory and DAO.
+        CreatePlaylistInputBoundary createPlaylistInteractor = new CreatePlaylistInteractor(createPlaylistDataAccessObject, createPlaylistOutputBoundary);
+        return new CreatePlaylistController(createPlaylistInteractor);
     }
-
 }

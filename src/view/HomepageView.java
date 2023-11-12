@@ -21,9 +21,9 @@ import java.beans.PropertyChangeListener;
 public class HomepageView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "homepage";
     private final HomepageViewModel homepageViewModel;
-    private final HomepageController homepageController;
+//    private final HomepageController homepageController;
     private final CreatePlaylistViewModel createPlaylistViewModel;
-    private final CreatePlaylistController createPlaylistController;
+//    private final CreatePlaylistController createPlaylistController;
     private final JButton createPlaylist;
     // TODO: I added the view manager model, not sure if it works!
     private ViewManagerModel viewManagerModel;
@@ -33,13 +33,11 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
 //    private final JButton deletePlaylist;
 //    private final JTextField searchInputField = new JTextField(15);
 
-    public  HomepageView(HomepageViewModel homepageViewModel, HomepageController homepageController,
-                         CreatePlaylistController createPlaylistController, CreatePlaylistViewModel createPlaylistViewModel,
-                         ViewManagerModel viewManagerModel){
-        this.createPlaylistController = createPlaylistController;
+    public  HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel, ViewManagerModel viewManagerModel){
+//        this.createPlaylistController = createPlaylistController;
         this.createPlaylistViewModel = createPlaylistViewModel;
         this.homepageViewModel = homepageViewModel;
-        this.homepageController = homepageController;
+//        this.homepageController = homepageController;
         this.viewManagerModel = viewManagerModel;
         homepageViewModel.addPropertyChangeListener(this);
 
@@ -65,6 +63,7 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
                         if (evt.getSource().equals(createPlaylist)){
                             // Doesn't pass in any parameter. Switch view to CreatePlaylistView.
                             viewManagerModel.setActiveView(createPlaylistViewModel.getViewName());
+                            viewManagerModel.firePropertyChanged();
 //                            HomepageState currentState = homepageViewModel.getHomepageState();
 //                            homepageController.executeCP();
                             // TODO: the state should be similar to an existing playlist. They should be able to add

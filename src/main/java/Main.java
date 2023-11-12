@@ -12,10 +12,11 @@ import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
-        // TODO: No API call!
+        // TODO: API call commented out for only view transition.
 //        APIDataAccessObject spot = new APIDataAccessObject();
 //        //System.out.println(spot.getData("11vYnWjFxgXBgw2aC6Rb8"));
 //        System.out.println(spot.getMe());
+
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -29,7 +30,7 @@ public class Main {
         ViewManagerModel viewManagerModel = new ViewManagerModel();
         new ViewManager(views, cardLayout, viewManagerModel);
 
-        // The data for the views, such as username and password, are in the ViewModels.
+        // The data for the views, such as playlists and songs, are in the ViewModels.
         // This information will be changed by a presenter object that is reporting the
         // results from the use case. The ViewModels are observable, and will
         // be observed by the Views.
