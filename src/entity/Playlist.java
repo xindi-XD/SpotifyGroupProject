@@ -1,53 +1,52 @@
 package entity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-public class SinglePlaylist {
+public class Playlist {
     private String name;
     private String id;
-    private HashMap<Song, String> songs;
+    private ArrayList<Song> songs;
     private boolean privacy; // true when is private, default false.
 
-    public SinglePlaylist(String name, String id) {
+    public Playlist(String name, String id) {
         this.name = name;
         this.id = id;
-        this.songs = new HashMap<>();
+        this.songs = new ArrayList<>();
         this.privacy = false;
     }
 
-    public void createPlaylist(String name, HashMap<Song, String> songs, boolean privacy) {
+    public void createPlaylist(String name, ArrayList<Song> songs, boolean privacy) {
         this.name = name;
         this.songs = songs;
         this.privacy = privacy;
     }
 
     public boolean setSong(Song song) {  // this method is to add a song to the playlist.
-        if (!songs.containsKey(song) || !songs.containsValue(song.getName())) {
-            songs.put(song, song.getName());
+        if (!songs.contains(song)) {
+            songs.add(song);
             return true;
         }
         return false;
     }
 
     public void removeSong(Song song) { // remove the song.
-        if (songs.containsKey(song) || songs.containsValue(song.getName())) {
-            songs.remove(song);
-        }
+        songs.remove(song);
     }
 
     public ArrayList<Song> getSong(String name) {  // get all the songs with the same name when user searches for a song.
         ArrayList<Song> songList = new ArrayList<>();
-        Map<Song, String> songsMap = songs;
-        if (songs.containsValue(name)) {
-            for (Map.Entry<Song, String> entry: songsMap.entrySet()) {
-                Song song = entry.getKey();
-                String songName = entry.getValue();
-                if (name.equals(songName)) {
-                    songList.add(song);
-                }
+        if (songs.isEmpty()) {
+            System.out.println("No result for an empty playlist.");
+        }
+
+        for (Song song: songs) {
+            if (song.getName().equals(name)) {
+                songList.add(song);
             }
+        }
+
+        if (songList.isEmpty()) {
+            System.out.println("Didn't find the song");
         }
         return songList;
     }
