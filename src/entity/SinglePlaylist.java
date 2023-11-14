@@ -1,19 +1,18 @@
 package entity;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Playlist {
+public class SinglePlaylist {
     private String name;
+    private String id;
     private HashMap<Song, String> songs;
     private boolean privacy; // true when is private, default false.
 
-    public Playlist(String name) {
+    public SinglePlaylist(String name, String id) {
         this.name = name;
+        this.id = id;
         this.songs = new HashMap<>();
         this.privacy = false;
     }
@@ -53,6 +52,10 @@ public class Playlist {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public int getLength() {
