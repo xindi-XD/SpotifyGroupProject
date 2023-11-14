@@ -1,11 +1,15 @@
+package data_access;
+
+import entity.Playlist;
 import okhttp3.*;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 //should I move this to SongOrganizer.java ?
-public class SpotifyDB {
+public class APIDataAccessObject {
     private static final String API_URL = "https://api.spotify.com/v1";
     private static final String API_TOKEN = System.getenv("API_TOKEN");
 
@@ -14,6 +18,7 @@ public class SpotifyDB {
     }
 
     public String createPlaylist(String userid) {
+        //TODO: possibly an option to save this new playlist to an internal file?
         //creates a playlist under this userid
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("application/json");
@@ -52,5 +57,10 @@ public class SpotifyDB {
         catch (IOException | JSONException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public ArrayList<Playlist> getPlaylists() {
+        //TODO: Implement me (grab user's current playlists from the API)
+        return null;
     }
 }
