@@ -3,10 +3,10 @@ package entity;
 public class Song {
     private String name;
     private String artist;
-    private int id;
+    private String id;
     private String genre;
 
-    public Song(String name, String artist, int id, String genre) {
+    public Song(String name, String artist, String id, String genre) {
         this.name = name;
         this.artist = artist;
         this.id = id;
@@ -21,7 +21,7 @@ public class Song {
         return artist;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
