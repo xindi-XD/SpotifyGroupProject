@@ -17,6 +17,12 @@ public class SinglePlaylist {
         this.privacy = false;
     }
 
+    public void createPlaylist(String name, HashMap<Song, String> songs, boolean privacy) {
+        this.name = name;
+        this.songs = songs;
+        this.privacy = privacy;
+    }
+
     public boolean setSong(Song song) {  // this method is to add a song to the playlist.
         if (!songs.containsKey(song) || !songs.containsValue(song.getName())) {
             songs.put(song, song.getName());
