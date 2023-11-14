@@ -1,17 +1,14 @@
 package entity;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
-import java.util.EmptyStackException;
 
-public class SinglePlaylist {
+public class Playlist {
     private String name;
     private String id;
     private ArrayList<Song> songs;
     private boolean privacy; // true when is private, default false.
 
-    public SinglePlaylist(String name, String id) {
+    public Playlist(String name, String id) {
         this.name = name;
         this.id = id;
         this.songs = new ArrayList<>();
