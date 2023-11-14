@@ -1,3 +1,5 @@
+package data_access;
+
 import okhttp3.*;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -5,7 +7,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 //should I move this to SongOrganizer.java ?
-public class SpotifyDB {
+public class APIDataAccessObject {
     private static final String API_URL = "https://api.spotify.com/v1";
     private static final String API_TOKEN = System.getenv("API_TOKEN");
 

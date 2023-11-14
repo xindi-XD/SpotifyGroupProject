@@ -1,6 +1,7 @@
 package view;
 
 // imports from CACoding
+import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistController;
 import interface_adapter.create_playlist.CreatePlaylistState;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
@@ -20,22 +21,24 @@ import java.beans.PropertyChangeListener;
 public class HomepageView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "homepage";
     private final HomepageViewModel homepageViewModel;
-    private final HomepageController homepageController;
+//    private final HomepageController homepageController;
     private final CreatePlaylistViewModel createPlaylistViewModel;
-    private final CreatePlaylistController createPlaylistController;
+//    private final CreatePlaylistController createPlaylistController;
     private final JButton createPlaylist;
+    // TODO: I added the view manager model, not sure if it works!
+    private ViewManagerModel viewManagerModel;
 
     // TODO: delete and search, to be implemented
 //    private final JButton showPlaylists;
 //    private final JButton deletePlaylist;
 //    private final JTextField searchInputField = new JTextField(15);
 
-    public  HomepageView(HomepageViewModel homepageViewModel, HomepageController homepageController,
-                         CreatePlaylistController createPlaylistController, CreatePlaylistViewModel createPlaylistViewModel){
-        this.createPlaylistController = createPlaylistController;
+    public  HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel, ViewManagerModel viewManagerModel){
+//        this.createPlaylistController = createPlaylistController;
         this.createPlaylistViewModel = createPlaylistViewModel;
         this.homepageViewModel = homepageViewModel;
-        this.homepageController = homepageController;
+//        this.homepageController = homepageController;
+        this.viewManagerModel = viewManagerModel;
         homepageViewModel.addPropertyChangeListener(this);
 
         JLabel title = new JLabel(HomepageViewModel.TITLE_LABEL);
@@ -51,9 +54,6 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
 
 //        showPlaylists = new JButton(HomepageViewModel.SHOWPLAYLISTS_BUTTON_LABEL);
 //        buttons.add(showPlaylists);
-//
-//        LabelTextPanel searchInfo = new LabelTextPanel(
-//                new JLabel(HomepageViewModel.SEARCH_LABEL), searchInputField);
 
         createPlaylist.addActionListener(
                 // This creates an anonymous subclass of ActionListener and instantiates it.
@@ -61,10 +61,11 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
                     @Override
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(createPlaylist)){
-                            // Doesn't pass in any parameter. Switch view to NewPlaylistView.
-                            // TODO: NewPlaylistView not implemented.
-                            createPlaylistController.execute();
-                            CreatePlaylistState currentState = homepageViewModel.getCreatePlaylistState();
+                            // Doesn't pass in any parameter. Switch view to CreatePlaylistView.
+                            viewManagerModel.setActiveView(createPlaylistViewModel.getViewName());
+                            viewManagerModel.firePropertyChanged();
+//                            HomepageState currentState = homepageViewModel.getHomepageState();
+//                            homepageController.executeCP();
                             // TODO: the state should be similar to an existing playlist. They should be able to add
                             //  or delete songs, set and change names. The only difference is that the new playlist
                             //  should be stored in the permenant database. Might call state methods here.
