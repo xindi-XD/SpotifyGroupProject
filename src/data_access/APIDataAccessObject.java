@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 //should I move this to SongOrganizer.java ?
 public class APIDataAccessObject {
@@ -16,6 +17,7 @@ public class APIDataAccessObject {
     }
 
     public String createPlaylist(String userid) {
+        //TODO: possibly an option to save this new playlist to an internal file?
         //creates a playlist under this userid
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("application/json");
@@ -55,4 +57,5 @@ public class APIDataAccessObject {
             throw new RuntimeException(e);
         }
     }
+
 }

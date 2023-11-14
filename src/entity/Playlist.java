@@ -15,6 +15,12 @@ public class Playlist {
         this.privacy = false;
     }
 
+    public void createPlaylist(String name, ArrayList<Song> songs, boolean privacy) {
+        this.name = name;
+        this.songs = songs;
+        this.privacy = privacy;
+    }
+
     public boolean setSong(Song song) {  // this method is to add a song to the playlist.
         if (!songs.contains(song)) {
             songs.add(song);
