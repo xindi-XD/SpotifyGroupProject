@@ -7,14 +7,40 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
 
 //should I move this to SongOrganizer.java ?
 public class APIDataAccessObject {
     private static final String API_URL = "https://api.spotify.com/v1";
-    private static final String API_TOKEN = System.getenv("API_TOKEN");
+    private static final String CLIENT_ID = System.getenv("CLIENT_ID");
+    private static final String CLIENT_SECRET = System.getenv("CLIENT_SECRET");
 
     public static String getApiToken() {
-        return API_TOKEN;
+        //this SHOULD return an authorization token but IT'S NOT WORKING
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("grant-type", "client-credentials");
+        RequestBody body = RequestBody.create(requestBody.toString(), mediaType);
+        Request request = new Request.Builder()
+                .url("https://accounts.spotify.com/api/token")
+                .method("POST", body)
+                .addHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString((CLIENT_ID + ":" + CLIENT_SECRET).getBytes()))
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println(response);
+            if (response.code() == 200) {
+                JSONObject responseBody = new JSONObject(response.body().string());
+                return responseBody.getString("access_token");
+            }
+            else {
+                throw new RuntimeException("Response not successful");
+            }
+        }
+        catch (IOException | JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String createPlaylist(String userid) {
@@ -28,7 +54,7 @@ public class APIDataAccessObject {
         Request request = new Request.Builder()
                 .url(String.format("https://api.spotify.com/v1/users/%s/playlists", userid))
                 .method("PUT", body)
-                .addHeader("Authorization", API_TOKEN)
+                .addHeader("Authorization", getApiToken())
                 .addHeader("Content-Type", "application/json")
                 .build();
         try {
@@ -46,7 +72,7 @@ public class APIDataAccessObject {
                 .build();
         Request request = new Request.Builder()
                 .url("https://api.spotify.com/v1/me")
-                .addHeader("Authorization", "Bearer " + API_TOKEN)
+                .addHeader("Authorization", "Bearer " + getApiToken())
                 .build();
         try {
             Response response = client.newCall(request).execute();
