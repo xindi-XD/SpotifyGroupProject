@@ -7,18 +7,19 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class CreatePlaylistViewModel extends ViewModel {
-    public static final String NEWPLAYLIST_BUTTON_LABEL = "Create New Playlist";
-    public static final String TITLE_LABEL = "Create Playlist View";
+    public static final String TITLE_LABEL = "Create New Playlist View";
+    public static final String PLAYLISTNAME_LABEL = "Enter name for new playlist";
+    public static final String DESCRIPTION_LABEL = "Describe the new playlist";
+    public static final String TOHOME_BUTTON_LABEL = "Back to homepage";
     private CreatePlaylistState state = new CreatePlaylistState();
     public CreatePlaylistViewModel(){
-        super("create playlist"); // TODO So it can't be super class of anything? Not sure how super works.
+        super("create playlist");
     }
 
     public void setState(CreatePlaylistState state) {this.state = state;}
 
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
 
-//  Methods firePropertyChanged, addPropertyChangeListener are inherited from HomepageViewModel.
     public CreatePlaylistState getCreatePlaylistState() {return state;}
 
     @Override
