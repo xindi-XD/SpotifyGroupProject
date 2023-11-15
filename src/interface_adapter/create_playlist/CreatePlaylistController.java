@@ -2,7 +2,6 @@ package interface_adapter.create_playlist;
 
 import use_case.create_playlist.CreatePlaylistInputBoundary;
 import use_case.create_playlist.CreatePlaylistInputData;
-import use_case.create_playlist.CreatePlaylistInteractor;
 
 public class CreatePlaylistController {
     final CreatePlaylistInputBoundary createPlaylistInteractor;
@@ -10,8 +9,8 @@ public class CreatePlaylistController {
         this.createPlaylistInteractor = createPlaylistUseCaseInteractor;
     }
 
-    public void execute(){
-        CreatePlaylistInputData createPlaylistInputData = new CreatePlaylistInputData();
+    public void execute(String name){
+        CreatePlaylistInputData createPlaylistInputData = new CreatePlaylistInputData(name);
         createPlaylistInteractor.execute(createPlaylistInputData);
     }
 }

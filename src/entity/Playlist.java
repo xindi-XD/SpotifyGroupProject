@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Playlist {
     private String name;
-    private String id;
+    final private String id;
     private ArrayList<Song> songs;
     private boolean privacy; // true when is private, default false.
 
