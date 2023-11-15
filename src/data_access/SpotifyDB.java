@@ -1,6 +1,5 @@
 package data_access;
 
-import entity.Playlist;
 import okhttp3.*;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -85,8 +84,4 @@ public class APIDataAccessObject {
         }
     }
 
-    public ArrayList<Playlist> getPlaylists() {
-        //TODO: Implement me (grab user's current playlists from the API)
-        return null;
-    }
 }

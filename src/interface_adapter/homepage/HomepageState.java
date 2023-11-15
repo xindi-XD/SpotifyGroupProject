@@ -1,9 +1,5 @@
 package interface_adapter.homepage;
 
-import entity.Playlist;
-
-import java.util.ArrayList;
-
 public class HomepageState {
     private String homepageError = null;
 
