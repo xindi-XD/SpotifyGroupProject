@@ -1,4 +1,6 @@
 package interface_adapter.create_playlist;
 
-public class CreatePlaylistPresenter {
+import use_case.create_playlist.CreatePlaylistOutputBoundary;
+
+public class CreatePlaylistPresenter implements CreatePlaylistOutputBoundary {
 }

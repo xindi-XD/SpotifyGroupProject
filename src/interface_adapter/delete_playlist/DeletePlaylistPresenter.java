@@ -1,4 +1,6 @@
 package interface_adapter.delete_playlist;
 
-public class DeletePlaylistPresenter {
+import use_case.delete_playlist.DeletePlaylistOutputBoundary;
+
+public class DeletePlaylistPresenter implements DeletePlaylistOutputBoundary {
 }
