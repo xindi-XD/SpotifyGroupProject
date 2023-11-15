@@ -10,17 +10,13 @@ import java.util.Base64;
 
 //should I move this to SongOrganizer.java ?
 public class APIDataAccessObject {
-    private static final String API_URL = "https://api.spotify.com/v1";
     private static final String CLIENT_ID = System.getenv("CLIENT_ID");
     private static final String CLIENT_SECRET = System.getenv("CLIENT_SECRET");
 
     public static String getApiToken() {
-        //this SHOULD return an authorization token but IT'S NOT WORKING
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        JSONObject requestBody = new JSONObject();
-        requestBody.put("grant-type", "client-credentials");
-        RequestBody body = RequestBody.create(requestBody.toString(), mediaType);
+        RequestBody body = RequestBody.create("grant_type=client_credentials", mediaType);
         Request request = new Request.Builder()
                 .url("https://accounts.spotify.com/api/token")
                 .method("POST", body)
