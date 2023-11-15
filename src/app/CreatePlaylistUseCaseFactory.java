@@ -24,7 +24,7 @@ public class CreatePlaylistUseCaseFactory {
 
         try {
             CreatePlaylistController createPlaylistController = createCreatePlaylistUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel, createPlaylistDataAccessObject);
-            return new CreatePlaylistView(createPlaylistViewModel, createPlaylistController);
+            return new CreatePlaylistView(createPlaylistViewModel, createPlaylistController, homepageViewModel);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Could not open user data file.");
         }
