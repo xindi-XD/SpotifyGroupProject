@@ -1,6 +1,5 @@
 package app;
 
-import data_access.FileDataAccessObject;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistController;
 import interface_adapter.create_playlist.CreatePlaylistPresenter;
@@ -11,7 +10,6 @@ import use_case.create_playlist.CreatePlaylistInteractor;
 import use_case.create_playlist.CreatePlaylistOutputBoundary;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 import view.CreatePlaylistView;
-import view.HomepageView;
 
 import javax.swing.*;
 import java.io.IOException;
