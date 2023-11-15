@@ -1,10 +1,10 @@
 package entity;
 
 public class Song {
-    private String name;
-    private String artist;
-    private String id;
-    private String genre;
+    final private String name;
+    final private String artist;
+    final private String id;
+    final private String genre;
 
     public Song(String name, String artist, String id, String genre) {
         this.name = name;
