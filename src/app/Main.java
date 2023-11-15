@@ -1,13 +1,11 @@
 package app;
 
-import data_access.FileDataAccessObject;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import view.CreatePlaylistView;
 import view.HomepageView;
 import view.ViewManager;
-import app.*;
 
 import javax.swing.*;
 import java.awt.*;

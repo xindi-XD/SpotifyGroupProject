@@ -1,4 +1,7 @@
 package interface_adapter.delete_playlist;
 
-public class DeletePlaylistViewModel {
+import interface_adapter.ViewModel;
+import interface_adapter.homepage.HomepageViewModel;
+
+public class DeletePlaylistViewModel extends ViewModel {
 }
