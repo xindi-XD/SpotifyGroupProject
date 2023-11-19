@@ -20,30 +20,36 @@ import java.beans.PropertyChangeListener;
 public class CreatePlaylistView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "create playlist";
     private final CreatePlaylistViewModel createPlaylistViewModel;
-    private final CreatePlaylistController createPlaylistController;
+    private final HomepageViewModel homepageViewModel;
+    // JTextField(columns) determines bracket length.
     final JTextField playlistNameInputField = new JTextField(15);
     final JTextField descriptionInputField = new JTextField(15);
-    // TODO: Adjust display columns (field width) if description is too long.
     private final JLabel playlistNameError = new JLabel(); // TODO: Captures repeated playlist name created by the same account. Not implemented.
-    final JButton backToHome;
-    private ViewManagerModel viewManagerModel;
+    private final JButton backToHome;
+    private final ViewManagerModel viewManagerModel;
 
-    public CreatePlaylistView(CreatePlaylistViewModel createPlaylistViewModel, CreatePlaylistController createPlaylistController,
-                              HomepageViewModel homepageViewModel){
-
+    public CreatePlaylistView(CreatePlaylistViewModel createPlaylistViewModel,
+                              HomepageViewModel homepageViewModel, ViewManagerModel viewManagerModel){
+        // Initialize view models.
+        this.homepageViewModel = homepageViewModel;
         this.createPlaylistViewModel = createPlaylistViewModel;
-        this.createPlaylistViewModel.addPropertyChangeListener(this);
-        this.createPlaylistController = createPlaylistController;
+        this.viewManagerModel = viewManagerModel;
+        // Initialize controllers.
+        // Make this view listen to changes made in view models.
+        createPlaylistViewModel.addPropertyChangeListener(this);
+        // TODO: Should create playlist view listen to homepage view model?
+//        homepageViewModel.addPropertyChangeListener(this);
 
         JLabel title = new JLabel(CreatePlaylistViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         LabelTextPanel playlistNameInfo = new LabelTextPanel(
-                new JLabel(CreatePlaylistViewModel.PLAYLISTNAME_LABEL), playlistNameInputField);
+                new JLabel(CreatePlaylistViewModel.PLAYLIST_NAME_LABEL), playlistNameInputField);
         LabelTextPanel descriptionInfo = new LabelTextPanel(
                 new JLabel(CreatePlaylistViewModel.DESCRIPTION_LABEL), playlistNameInputField);
+
         JPanel buttons = new JPanel();
-        backToHome = new JButton(createPlaylistViewModel.TOHOME_BUTTON_LABEL);
+        backToHome = new JButton(createPlaylistViewModel.TO_HOME_BUTTON_LABEL);
         buttons.add(backToHome);
 //        this.createPlaylist = createPlaylist;
 
@@ -52,13 +58,13 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
                     @Override
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(backToHome)){
-                            // Doesn't pass in any parameter. Switch view to CreatePlaylistView.
+                            // Doesn't pass in any parameter. Switch view to HomepageView.
                             viewManagerModel.setActiveView(homepageViewModel.getViewName());
                             viewManagerModel.firePropertyChanged();
                         }
                     }
                 }
-        ); //TODO: to be implemented, framework shown below.
+        );
 
         playlistNameInputField.addKeyListener(
                 new KeyListener() {
@@ -98,6 +104,11 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
 
                     }
                 });
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+        this.add(title);
+        this.add(buttons);
+
     }
 
     // TODO: actionPerformed and propertyChange unchecked.

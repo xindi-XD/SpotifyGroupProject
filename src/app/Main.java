@@ -49,7 +49,7 @@ public class Main {
         HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, fileDataAccessObject);
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel,
-                createPlaylistViewModel, fileDataAccessObject);
+                createPlaylistViewModel);
         views.add(createPlaylistView, createPlaylistView.viewName);
 
         viewManagerModel.setActiveView(homepageView.viewName);
@@ -57,6 +57,5 @@ public class Main {
 
         application.pack();
         application.setVisible(true);
-
     }
 }

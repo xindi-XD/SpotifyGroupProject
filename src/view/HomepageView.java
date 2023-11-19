@@ -21,24 +21,26 @@ import java.beans.PropertyChangeListener;
 public class HomepageView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "homepage";
     private final HomepageViewModel homepageViewModel;
-//    private final HomepageController homepageController;
+    // Homepage does not have a controller. It doesn't have any other use case apart from switching views.
     private final CreatePlaylistViewModel createPlaylistViewModel;
 //    private final CreatePlaylistController createPlaylistController;
     private final JButton createPlaylist;
     // TODO: I added the view manager model, not sure if it works!
-    private ViewManagerModel viewManagerModel;
+    private final ViewManagerModel viewManagerModel;
 
     // TODO: delete and search, to be implemented
 //    private final JButton showPlaylists;
 //    private final JButton deletePlaylist;
 //    private final JTextField searchInputField = new JTextField(15);
 
-    public  HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel, ViewManagerModel viewManagerModel){
+    public HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel, ViewManagerModel viewManagerModel){
 //        this.createPlaylistController = createPlaylistController;
+        // Initialize view models.
         this.createPlaylistViewModel = createPlaylistViewModel;
         this.homepageViewModel = homepageViewModel;
-//        this.homepageController = homepageController;
         this.viewManagerModel = viewManagerModel;
+        // Initialize controllers (if any).
+        // Make this view listen to changes made in view models.
         homepageViewModel.addPropertyChangeListener(this);
 
         JLabel title = new JLabel(HomepageViewModel.TITLE_LABEL);
@@ -73,26 +75,6 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
                     }
                 }
         );
-
-        // TODO: search to be implemented.
-//        searchInputField.addKeyListener(
-//                new KeyListener() {
-//                    @Override
-//                    public void keyTyped(KeyEvent e) {
-//                        SearchState currentState = searchViewModel.getSearchState();
-//                        String text = searchInputField.getText() + e.getKeyChar();
-//                        currentState.setSearch(text);
-//                        searchViewModel.setState(currentState);
-//                    }
-//
-//                    @Override
-//                    public void keyPressed(KeyEvent e) {
-//                    }
-//
-//                    @Override
-//                    public void keyReleased(KeyEvent e) {
-//                    }
-//                });
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         this.add(title);
