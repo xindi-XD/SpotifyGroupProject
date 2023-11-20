@@ -21,10 +21,12 @@ public class CreatePlaylistUseCaseFactory {
     private CreatePlaylistUseCaseFactory(){}
     public static CreatePlaylistView create(ViewManagerModel viewManagerModel,
                                             HomepageViewModel homepageViewModel,
-                                            CreatePlaylistViewModel createPlaylistViewModel) {
+                                            CreatePlaylistViewModel createPlaylistViewModel, CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) {
 
 //        try {
-            return new CreatePlaylistView(createPlaylistViewModel, homepageViewModel, viewManagerModel);
+        CreatePlaylistController createPlaylistController = createCreatePlaylistUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel, createPlaylistDataAccessObject);
+        return new CreatePlaylistView(createPlaylistViewModel, createPlaylistController,
+                homepageViewModel, viewManagerModel);
 //        } catch (IOException e) {
 //            JOptionPane.showMessageDialog(null, "Could not open user data file.");
 //        }
@@ -34,8 +36,8 @@ public class CreatePlaylistUseCaseFactory {
     private static CreatePlaylistController createCreatePlaylistUseCase(
             ViewManagerModel viewManagerModel,
             CreatePlaylistViewModel createPlaylistViewModel,
-            HomepageViewModel homepageViewModel,
-            CreatePlaylistDataAccessInterface createPlaylistDataAccessObject){
+            HomepageViewModel homepageViewModel, CreatePlaylistDataAccessInterface createPlaylistDataAccessObject){
+
         // Notice how we pass this method's parameters to the Presenter.
         CreatePlaylistOutputBoundary createPlaylistOutputBoundary = new CreatePlaylistPresenter(createPlaylistViewModel, homepageViewModel, viewManagerModel);
         // TODO: Incomplete method. Missing factory and DAO.

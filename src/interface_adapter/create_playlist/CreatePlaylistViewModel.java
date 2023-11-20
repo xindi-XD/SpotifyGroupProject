@@ -10,6 +10,7 @@ public class CreatePlaylistViewModel extends ViewModel {
     public static final String PLAYLIST_NAME_LABEL = "Enter name for new playlist";
     public static final String DESCRIPTION_LABEL = "Describe the new playlist";
     public static final String TO_HOME_BUTTON_LABEL = "Back to homepage";
+    public static final String CREATE_PLAYLIST_BUTTON_LABEL = "Create playlist";
 
     private CreatePlaylistState state = new CreatePlaylistState();
     public CreatePlaylistViewModel(){

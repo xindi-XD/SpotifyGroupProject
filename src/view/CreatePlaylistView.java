@@ -22,23 +22,25 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
     private final CreatePlaylistViewModel createPlaylistViewModel;
     private final HomepageViewModel homepageViewModel;
     // JTextField(columns) determines bracket length.
+    private final CreatePlaylistController createPlaylistController;
     final JTextField playlistNameInputField = new JTextField(15);
     final JTextField descriptionInputField = new JTextField(15);
     private final JLabel playlistNameError = new JLabel(); // TODO: Captures repeated playlist name created by the same account. Not implemented.
     private final JButton backToHome;
+    private final JButton makePlaylist;
     private final ViewManagerModel viewManagerModel;
 
-    public CreatePlaylistView(CreatePlaylistViewModel createPlaylistViewModel,
+    public CreatePlaylistView(CreatePlaylistViewModel createPlaylistViewModel, CreatePlaylistController createPlaylistController,
                               HomepageViewModel homepageViewModel, ViewManagerModel viewManagerModel){
         // Initialize view models.
         this.homepageViewModel = homepageViewModel;
         this.createPlaylistViewModel = createPlaylistViewModel;
         this.viewManagerModel = viewManagerModel;
+        this.createPlaylistController = createPlaylistController;
         // Initialize controllers.
         // Make this view listen to changes made in view models.
         createPlaylistViewModel.addPropertyChangeListener(this);
         // TODO: Should create playlist view listen to homepage view model?
-//        homepageViewModel.addPropertyChangeListener(this);
 
         JLabel title = new JLabel(CreatePlaylistViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -46,11 +48,13 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
         LabelTextPanel playlistNameInfo = new LabelTextPanel(
                 new JLabel(CreatePlaylistViewModel.PLAYLIST_NAME_LABEL), playlistNameInputField);
         LabelTextPanel descriptionInfo = new LabelTextPanel(
-                new JLabel(CreatePlaylistViewModel.DESCRIPTION_LABEL), playlistNameInputField);
+                new JLabel(CreatePlaylistViewModel.DESCRIPTION_LABEL), descriptionInputField);
 
         JPanel buttons = new JPanel();
         backToHome = new JButton(createPlaylistViewModel.TO_HOME_BUTTON_LABEL);
+        makePlaylist = new JButton(createPlaylistViewModel.CREATE_PLAYLIST_BUTTON_LABEL);
         buttons.add(backToHome);
+        buttons.add(makePlaylist);
 //        this.createPlaylist = createPlaylist;
 
         backToHome.addActionListener(
@@ -61,6 +65,25 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
                             // Doesn't pass in any parameter. Switch view to HomepageView.
                             viewManagerModel.setActiveView(homepageViewModel.getViewName());
                             viewManagerModel.firePropertyChanged();
+                        }
+                    }
+                }
+        );
+
+        makePlaylist.addActionListener(
+                new ActionListener(){
+                    @Override
+                    public void actionPerformed(ActionEvent evt){
+                        if (evt.getSource().equals(makePlaylist)){
+                            createPlaylistController.execute("Playlist name retrieved from keyboard");
+                            CreatePlaylistState state = createPlaylistViewModel.getCreatePlaylistState();
+                            if (state.getNullError() != null){
+                                JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getNullError());
+                            }
+                            else if (state.getRepeatError() != null){
+                                JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getRepeatError());
+                            }
+
                         }
                     }
                 }
@@ -107,6 +130,8 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         this.add(title);
+        this.add(playlistNameInfo);
+        this.add(descriptionInfo);
         this.add(buttons);
 
     }
