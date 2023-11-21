@@ -37,17 +37,14 @@ public class Main {
         // TODO: more VMs to be added.
         HomepageViewModel homepageViewModel = new HomepageViewModel();
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
-        // TODO: DAO not correctly named, nor initialized, remove "= null" when initialized.
-        FileDataAccessObject fileDataAccessObject = null;
-        // TODO: DAO not implemented.
 //        try {
 //            fileDataAccessObject = new FileDataAccessObject("./users.csv", new CommonUserFactory());
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
-        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, fileDataAccessObject);
+        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel);
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel,
-                createPlaylistViewModel, fileDataAccessObject);
+                createPlaylistViewModel);
         views.add(createPlaylistView, createPlaylistView.viewName);
 
         viewManagerModel.setActiveView(homepageView.viewName);

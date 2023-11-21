@@ -17,11 +17,10 @@ import java.io.IOException;
 public class CreatePlaylistUseCaseFactory {
     public static CreatePlaylistView create(ViewManagerModel viewManagerModel,
                                             HomepageViewModel homepageViewModel,
-                                            CreatePlaylistViewModel createPlaylistViewModel,
-                                            CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) {
+                                            CreatePlaylistViewModel createPlaylistViewModel) {
 
         try {
-            CreatePlaylistController createPlaylistController = createCreatePlaylistUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel, createPlaylistDataAccessObject);
+            CreatePlaylistController createPlaylistController = createCreatePlaylistUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel);
             return new CreatePlaylistView(createPlaylistViewModel, createPlaylistController, homepageViewModel);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Could not open user data file.");
@@ -32,13 +31,12 @@ public class CreatePlaylistUseCaseFactory {
     private static CreatePlaylistController createCreatePlaylistUseCase(
             ViewManagerModel viewManagerModel,
             CreatePlaylistViewModel createPlaylistViewModel,
-            HomepageViewModel homepageViewModel,
-            CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) throws IOException {
+            HomepageViewModel homepageViewModel) throws IOException {
 
         // Notice how we pass this method's parameters to the Presenter.
         CreatePlaylistOutputBoundary createPlaylistOutputBoundary = new CreatePlaylistPresenter(createPlaylistViewModel, homepageViewModel, viewManagerModel);
         // TODO: Incomplete method. Missing factory and DAO.
-        CreatePlaylistInputBoundary createPlaylistInteractor = new CreatePlaylistInteractor(createPlaylistDataAccessObject, createPlaylistOutputBoundary);
+        CreatePlaylistInputBoundary createPlaylistInteractor = new CreatePlaylistInteractor(createPlaylistOutputBoundary);
         return new CreatePlaylistController(createPlaylistInteractor);
     }
 }
