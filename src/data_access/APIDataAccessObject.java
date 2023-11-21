@@ -72,8 +72,13 @@ public class APIDataAccessObject {
         try {
             Response response = client.newCall(request).execute();
             System.out.println(response);
-            JSONObject responseBody = new JSONObject(response.body().string());
-            return responseBody.getString("display_name");
+            if (response.code() == 200) {
+                JSONObject responseBody = new JSONObject(response.body().string());
+                return responseBody.getString("display_name");
+            }
+            else {
+                throw new RuntimeException("Response not successful");
+            }
         }
         catch (IOException | JSONException e) {
             throw new RuntimeException(e);
