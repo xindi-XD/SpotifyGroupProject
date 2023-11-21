@@ -20,7 +20,7 @@ public class CreatePlaylistPresenter implements CreatePlaylistOutputBoundary {
         this.viewManagerModel = viewManagerModel;
     }
     @Override
-    public void prepareSuccessView() {
+    public void prepareSuccessView(String name) {
         // Discarded the Output data run time from CACoding.
         // TODO: change PlaylistState and change property of PlaylistViewModel to add the new playlist to queue.
         viewManagerModel.setActiveView(homepageViewModel.getViewName());
