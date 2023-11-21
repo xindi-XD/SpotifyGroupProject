@@ -3,6 +3,7 @@ package data_access;
 import okhttp3.*;
 import org.json.JSONException;
 import org.json.JSONObject;
+import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class APIDataAccessObject {
         }
     }
 
-    public String createPlaylist(String userid) {
+    public String createPlaylist(String playListName) {
         //TODO: possibly an option to save this new playlist to an internal file?
         //creates a playlist under this userid
         OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -47,7 +48,7 @@ public class APIDataAccessObject {
         requestBody.put("A PlayList", false); // false means it's a private playlist.
         RequestBody body = RequestBody.create(requestBody.toString(), mediaType);
         Request request = new Request.Builder()
-                .url(String.format("https://api.spotify.com/v1/users/%s/playlists", userid))
+                .url(String.format("https://api.spotify.com/v1/users/%s/playlists", playListName))
                 .method("PUT", body)
                 .addHeader("Authorization", getApiToken())
                 .addHeader("Content-Type", "application/json")

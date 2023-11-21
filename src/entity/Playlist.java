@@ -4,23 +4,14 @@ import java.util.ArrayList;
 
 public class Playlist {
     private String name;
-    final private String id;
     private ArrayList<Song> songs;
     private boolean privacy; // true when is private, default false.
 
-    public Playlist(String name, String id) {
+    public Playlist(String name) {
         this.name = name;
-        this.id = id;
         this.songs = new ArrayList<>();
         this.privacy = false;
     }
-
-    public void createPlaylist(String name, ArrayList<Song> songs, boolean privacy) {
-        this.name = name;
-        this.songs = songs;
-        this.privacy = privacy;
-    }
-
     public boolean setSong(Song song) {  // this method is to add a song to the playlist.
         if (!songs.contains(song)) {
             songs.add(song);
@@ -57,10 +48,6 @@ public class Playlist {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getId() {
-        return id;
     }
 
     public int getLength() {
