@@ -8,10 +8,10 @@ import view.HomepageView;
 public class HomepageUseCaseFactory {
     private HomepageUseCaseFactory(){}
 
-    public static HomepageView create(ViewManagerModel viewManagerModel, HomepageViewModel homepageViewModel,
-                                      CreatePlaylistViewModel createPlaylistViewModel, FileDataAccessObject fileDataAccessObject){
-
-        //            HomepageController homepageController = createHomepageUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel, fileDataAccessObject);
+    public static HomepageView create(ViewManagerModel viewManagerModel,
+                                      HomepageViewModel homepageViewModel,
+                                      CreatePlaylistViewModel createPlaylistViewModel,
+                                      FileDataAccessObject fileDataAccessObject){
         return new HomepageView(homepageViewModel, createPlaylistViewModel, viewManagerModel);
     }
 

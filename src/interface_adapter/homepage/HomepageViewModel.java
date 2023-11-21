@@ -1,7 +1,6 @@
 package interface_adapter.homepage;
 
 import interface_adapter.ViewModel;
-import interface_adapter.create_playlist.CreatePlaylistState;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -16,8 +15,6 @@ public class HomepageViewModel extends ViewModel {
 
     private HomepageState state = new HomepageState();
 
-    /**
-     * I'm not sure what super means. Is this the head view model for the view? */
     public HomepageViewModel(){
         super("homepage");
     }
@@ -27,7 +24,6 @@ public class HomepageViewModel extends ViewModel {
     public void firePropertyChanged() {
         support.firePropertyChange("state", null, this.state);
     }
-
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
@@ -43,8 +39,4 @@ public class HomepageViewModel extends ViewModel {
     public HomepageState getHomepageState() {
         return state;
     }
-
-//    public CreatePlaylistState getCreatePlaylistState() {
-//        return null;
-//    }
 }

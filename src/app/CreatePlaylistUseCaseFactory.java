@@ -15,25 +15,26 @@ import javax.swing.*;
 import java.io.IOException;
 
 public class CreatePlaylistUseCaseFactory {
+
+    private CreatePlaylistUseCaseFactory(){}
     public static CreatePlaylistView create(ViewManagerModel viewManagerModel,
                                             HomepageViewModel homepageViewModel,
-                                            CreatePlaylistViewModel createPlaylistViewModel,
-                                            CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) {
+                                            CreatePlaylistViewModel createPlaylistViewModel, CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) {
 
-        try {
-            CreatePlaylistController createPlaylistController = createCreatePlaylistUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel, createPlaylistDataAccessObject);
-            return new CreatePlaylistView(createPlaylistViewModel, createPlaylistController, homepageViewModel);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Could not open user data file.");
-        }
-        return null;
+//        try {
+        CreatePlaylistController createPlaylistController = createCreatePlaylistUseCase(viewManagerModel, createPlaylistViewModel, homepageViewModel, createPlaylistDataAccessObject);
+        return new CreatePlaylistView(createPlaylistViewModel, createPlaylistController,
+                homepageViewModel, viewManagerModel);
+//        } catch (IOException e) {
+//            JOptionPane.showMessageDialog(null, "Could not open user data file.");
+//        }
+//        return null;
     }
 
     private static CreatePlaylistController createCreatePlaylistUseCase(
             ViewManagerModel viewManagerModel,
             CreatePlaylistViewModel createPlaylistViewModel,
-            HomepageViewModel homepageViewModel,
-            CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) throws IOException {
+            HomepageViewModel homepageViewModel, CreatePlaylistDataAccessInterface createPlaylistDataAccessObject){
 
         // Notice how we pass this method's parameters to the Presenter.
         CreatePlaylistOutputBoundary createPlaylistOutputBoundary = new CreatePlaylistPresenter(createPlaylistViewModel, homepageViewModel, viewManagerModel);
