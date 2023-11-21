@@ -1,14 +1,16 @@
 package data_access;
 
+import entity.Song;
 import okhttp3.*;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
 
-//should I move this to SongOrganizer.java ?
 public class APIDataAccessObject {
     private static final String CLIENT_ID = System.getenv("CLIENT_ID");
     private static final String CLIENT_SECRET = System.getenv("CLIENT_SECRET");
@@ -38,35 +40,11 @@ public class APIDataAccessObject {
         }
     }
 
-    public String createPlaylist(String userid) {
-        //TODO: possibly an option to save this new playlist to an internal file?
-        //creates a playlist under this userid
-        OkHttpClient client = new OkHttpClient().newBuilder().build();
-        MediaType mediaType = MediaType.parse("application/json");
-        JSONObject requestBody = new JSONObject();
-        requestBody.put("A PlayList", false); // false means it's a private playlist.
-        RequestBody body = RequestBody.create(requestBody.toString(), mediaType);
-        Request request = new Request.Builder()
-                .url(String.format("https://api.spotify.com/v1/users/%s/playlists", userid))
-                .method("PUT", body)
-                .addHeader("Authorization", getApiToken())
-                .addHeader("Content-Type", "application/json")
-                .build();
-        try {
-            Response response = client.newCall(request).execute();
-            System.out.println(response);
-            JSONObject responseBody = new JSONObject(response.body().string());
-            return responseBody.getString("name");
-        } catch (IOException | JSONException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String getMe() {
+    public ArrayList<Song> searchTrack(String query) {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         Request request = new Request.Builder()
-                .url("https://api.spotify.com/v1/me")
+                .url("https://api.spotify.com/v1/search?q=%track:" + query)
                 .addHeader("Authorization", "Bearer " + getApiToken())
                 .build();
         try {
@@ -74,7 +52,8 @@ public class APIDataAccessObject {
             System.out.println(response);
             if (response.code() == 200) {
                 JSONObject responseBody = new JSONObject(response.body().string());
-                return responseBody.getString("display_name");
+                JSONArray results = responseBody.getJSONArray("items");
+
             }
             else {
                 throw new RuntimeException("Response not successful");
