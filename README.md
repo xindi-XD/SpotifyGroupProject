@@ -2,21 +2,20 @@
 This programs connects to a user's Spotify account to create, delete and modify playlists.
 Playlists can be named and renamed.
 
-1. A user can make their playlists public or private. // API call found.
+Updated on Nov 20th, 2023.
 
-2. A user can search up songs, artists or genres. // API call found.
+1. A user can search up songs, artists or genres. // API call found.
 
-3. A user can save and unsave songs or albums. // API call found.
+2. A user can save and unsave songs or albums to the local repository. // API call found.
 
-4. A user can view the songs they've saved.  // Xindi did not find an API call for "saved songs", but "liked songs" might be possible.
+3. A user can view the songs they've saved.  // Xindi did not find an API call for "saved songs", but "liked songs" might be possible.
 
-5. A user can split up their playlists into new playlists according to artist or genre. // API call found.
+4. A user can split up their playlists into new playlists according to artist or genre. // API call found.
 
-6. A user can follow other users, including artists. // API call found. Difficult.
+5. A user can create/delete playlists.
 
-7. A user can check who they follow and who follows them. // Consider changing it into "check which artists they've followed". Easier to implement.
-
-8. A user can sign-in and sign-out from their account. // Can discard.
+6. A user can search up an artist and get the followers they have. // Backup 1.
+7. A user can sign-in and sign-out from their account. // Backup 2.
 
 ### Views
 Homepage view
