@@ -6,10 +6,10 @@ import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 
 public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {
 
-    private final JSONObject jsonfile;
+    private final JSONObject jsonFile;
 
     public FilePlaylistDataAccessObject(String jsonPath) {
-        this.jsonfile = new JSONObject(jsonPath);
+        jsonFile = new JSONObject(jsonPath);
     }
 
     @Override

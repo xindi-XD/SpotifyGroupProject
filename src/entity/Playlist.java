@@ -4,13 +4,11 @@ import java.util.ArrayList;
 
 public class Playlist {
     private String name;
-    private ArrayList<Song> songs;
-    private boolean privacy; // true when is private, default false.
+    private final ArrayList<Song> songs;
 
     public Playlist(String name) {
         this.name = name;
         this.songs = new ArrayList<>();
-        this.privacy = false;
     }
     public boolean setSong(Song song) {  // this method is to add a song to the playlist.
         if (!songs.contains(song)) {
@@ -52,13 +50,5 @@ public class Playlist {
 
     public int getLength() {
         return songs.size();
-    }
-
-    public boolean getPrivacy() {
-        return privacy;
-    }
-
-    public void setPrivacy() {
-        this.privacy = !privacy;
     }
 }
