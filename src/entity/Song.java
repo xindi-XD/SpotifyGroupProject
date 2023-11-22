@@ -1,23 +1,23 @@
 package entity;
 
+import org.json.JSONObject;
+
 public class Song {
     final private String name;
-    final private String artist;
+    final private String[] artist;
     final private String id;
-    final private String genre;
 
-    public Song(String name, String artist, String id, String genre) {
+    public Song(String name, String[] artist, String id) {
         this.name = name;
-        this.artist = artist;
         this.id = id;
-        this.genre = genre;
+        this.artist = artist;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getArtist() {
+    public String[] getArtist() {
         return artist;
     }
 
@@ -25,7 +25,4 @@ public class Song {
         return id;
     }
 
-    public String getGenre() {
-        return genre;
-    }
 }
