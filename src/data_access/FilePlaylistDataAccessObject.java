@@ -13,7 +13,7 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
     }
 
     @Override
-    public void createPlaylist(Playlist playlist) {
+    public void save(Playlist playlist) {
 
     }
 }
