@@ -1,5 +1,6 @@
 package app;
 
+import data_access.FilePlaylistDataAccessObject;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
@@ -38,7 +39,7 @@ public class Main {
         HomepageViewModel homepageViewModel = new HomepageViewModel();
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
         // TODO: DAO not correctly named, nor initialized, remove "= null" when initialized.
-        FileDataAccessObject playlistDataAccessObject = null;
+        FilePlaylistDataAccessObject playlistDataAccessObject = null;
         // TODO: DAO not implemented.
 //        try {
 //            fileDataAccessObject = new FileDataAccessObject("./users.csv", new CommonUserFactory());

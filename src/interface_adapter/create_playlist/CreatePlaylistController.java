@@ -9,6 +9,7 @@ public class CreatePlaylistController {
         this.createPlaylistInteractor = createPlaylistUseCaseInteractor;
     }
 
+
     public void execute(String name){
         CreatePlaylistInputData createPlaylistInputData = new CreatePlaylistInputData(name);
         createPlaylistInteractor.execute(createPlaylistInputData);
