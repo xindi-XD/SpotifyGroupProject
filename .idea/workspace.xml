@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a6aff8e-86d2-49c6-8364-ff7fe29e342c" name="Changes" comment="Commit: A version without DAO, but this is old view.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_11_14__20_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_11_14__20_14__Changes_.xml" afterDir="false" />
+    <list default="true" id="3a6aff8e-86d2-49c6-8364-ff7fe29e342c" name="Changes" comment="Removed private feature for Playlist.java">
+      <change afterPath="$PROJECT_DIR$/src/entity/CommonPlaylist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInteractor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -77,11 +80,11 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Auth" type="Application" factoryName="Application">
       <envs>
         <env name="API_TOKEN" value="BQCaX8FgpQuWZW6TVio3FwyUP0xvi-d8do3hjqyk0ydcu2OXYxTW-ZATMX-dFklrJSoTkr1N_obVGPPBXe7R73goiYKSrSTUUbgwY6-gM6IHQOXaIvvYSJT5G7ZkRmKR5CEUXcOt7n7BVlzbvoE6uUmf0V07TWEZ3-uiOUFwcrKBQI2YXVATNY2uKbzEk17BDYrYWspg7fN6bKFo1hWCT1EnSAhwNSfq2k7P_RWP7zk8V_qYkZeeKhxrfo_EOA_OEWIe_IrrxBGBZSVgDbTAzyxcQRJLdIs " />
@@ -92,6 +95,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Main" />
+      <module name="Spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -122,7 +143,7 @@
       <workItem from="1700614051278" duration="18000" />
       <workItem from="1700614086270" duration="44000" />
       <workItem from="1700614138402" duration="6000" />
-      <workItem from="1700614377832" duration="300000" />
+      <workItem from="1700614377832" duration="3006000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -204,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700527344769</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Removed private feature for Playlist.java">
+      <option name="closed" value="true" />
+      <created>1700614772938</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700614772938</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +260,8 @@
     <MESSAGE value="Progress: successful switch between HomepageView and CreatePlaylistView.&#10;Next step: implement more details in these views." />
     <MESSAGE value="Progress: wrote text fields for CreatePlaylistView, and kept FileDataAccessObject for entity purposes. Last time we had a discussion about whether we should have a base to track our local data. I still think it's necessary, as it is easier to debug from your local storage. Also, we are using APIDataAccessObject for a different purpose now.&#10;&#10;(Note: for anyone approving this request, I think you can respond to/argue against my comments. Then you can turn your response to the TA for that &quot;pull request comment&quot; score.&#10; &#10;Next step: construct the fileDAO." />
     <MESSAGE value="Commit: A version without DAO, but this is old view." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: A version without DAO, but this is old view." />
+    <MESSAGE value="Removed private feature for Playlist.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed private feature for Playlist.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
