@@ -1,7 +1,7 @@
 package use_case.create_playlist;
 
-import entity.Playlist;
+import entity.CommonPlaylist;
 
 public interface CreatePlaylistDataAccessInterface {
-    void save(Playlist playlist);
+    void save(CommonPlaylist playlist);
 }
