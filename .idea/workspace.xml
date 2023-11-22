@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a6aff8e-86d2-49c6-8364-ff7fe29e342c" name="Changes" comment="Commit: A version without DAO, but this is old view.">
+    <list default="true" id="3a6aff8e-86d2-49c6-8364-ff7fe29e342c" name="Changes" comment="Commit: Adjusted names for the old DAO to David's new FilePlaylistDAO. Now the program is runnable.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search_song/SearchSongViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search_song/SearchSongViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spotify.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spotify.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/homepage/HomepageViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/homepage/HomepageViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomepageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/CreatePlaylistUseCaseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/CreatePlaylistUseCaseFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/HomepageUseCaseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/HomepageUseCaseFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FileDataAccessObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data_access/InMemoryDataAccessObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Playlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Playlist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistPresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistPresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistDataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistDataAccessInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInteractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistOutputBoundary.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +41,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="xindi-noDAO-1120" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,12 +89,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;View-Xindi-1108&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
@@ -115,7 +137,9 @@
       <workItem from="1700419578999" duration="1933000" />
       <workItem from="1700423727589" duration="5392000" />
       <workItem from="1700526023835" duration="2618000" />
-      <workItem from="1700578848737" duration="1037000" />
+      <workItem from="1700578848737" duration="1762000" />
+      <workItem from="1700612015973" duration="3568000" />
+      <workItem from="1700615622334" duration="4891000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -197,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700527344769</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Commit: Adjusted names for the old DAO to David's new FilePlaylistDAO. Now the program is runnable.">
+      <option name="closed" value="true" />
+      <created>1700579935222</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700579935222</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +256,8 @@
     <MESSAGE value="Progress: successful switch between HomepageView and CreatePlaylistView.&#10;Next step: implement more details in these views." />
     <MESSAGE value="Progress: wrote text fields for CreatePlaylistView, and kept FileDataAccessObject for entity purposes. Last time we had a discussion about whether we should have a base to track our local data. I still think it's necessary, as it is easier to debug from your local storage. Also, we are using APIDataAccessObject for a different purpose now.&#10;&#10;(Note: for anyone approving this request, I think you can respond to/argue against my comments. Then you can turn your response to the TA for that &quot;pull request comment&quot; score.&#10; &#10;Next step: construct the fileDAO." />
     <MESSAGE value="Commit: A version without DAO, but this is old view." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: A version without DAO, but this is old view." />
+    <MESSAGE value="Commit: Adjusted names for the old DAO to David's new FilePlaylistDAO. Now the program is runnable." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: Adjusted names for the old DAO to David's new FilePlaylistDAO. Now the program is runnable." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -233,11 +266,6 @@
           <url>file://$PROJECT_DIR$/src/view/ViewManager.java</url>
           <line>24</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/app/Main.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

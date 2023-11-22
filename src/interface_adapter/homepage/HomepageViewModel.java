@@ -7,11 +7,12 @@ import java.beans.PropertyChangeSupport;
 
 public class HomepageViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Homepage View";
+    public static final String SEARCH_INFO_LABEL = "Search by name";
+    public static final String SEARCH_TYPE_LABEL = "Select search type";
     public static final String CREATEPLAYLIST_BUTTON_LABEL = "Create Playlist";
     // TODO: show, delete and search to be implemented.
     public static final String SHOWPLAYLISTS_BUTTON_LABEL = "Show Playlists";
     public static final String DELETEPLAYLIST_BUTTON_LABEL = "Delete Playlist";
-    public static final String SEARCH_LABEL = "Search for song/artist";
 
     private HomepageState state = new HomepageState();
 

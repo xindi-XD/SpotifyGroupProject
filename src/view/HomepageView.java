@@ -24,9 +24,11 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
     // Homepage does not have a controller. It doesn't have any other use case apart from switching views.
     private final CreatePlaylistViewModel createPlaylistViewModel;
 //    private final CreatePlaylistController createPlaylistController;
+    final JTextField searchInputField = new JTextField(15);
     private final JButton createPlaylist;
-    // TODO: I added the view manager model, not sure if it works!
+    private final JButton showPlaylists;
     private final ViewManagerModel viewManagerModel;
+    String[] types = {"Track", "Artist"};
 
     // TODO: delete and search, to be implemented
 //    private final JButton showPlaylists;
@@ -45,17 +47,24 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
 
         JLabel title = new JLabel(HomepageViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        LabelTextPanel searchInfo = new LabelTextPanel(
+                new JLabel(HomepageViewModel.SEARCH_INFO_LABEL), searchInputField);
+        JLabel searchType = new JLabel(HomepageViewModel.SEARCH_TYPE_LABEL);
+        JComboBox<String> searchTypeDropdown = new JComboBox<String>(types);
+        searchTypeDropdown.setMaximumSize( searchTypeDropdown.getPreferredSize() );
+        JPanel type = new JPanel();
+        type.add(searchType);
+        type.add(searchTypeDropdown);
         JPanel buttons = new JPanel();
-
         createPlaylist = new JButton(HomepageViewModel.CREATEPLAYLIST_BUTTON_LABEL);
         buttons.add(createPlaylist);
+        showPlaylists = new JButton(HomepageViewModel.SHOWPLAYLISTS_BUTTON_LABEL);
+        buttons.add(showPlaylists);
+
 
         // TODO: delete and search, to be implemented
 //        deletePlaylist = new JButton(HomepageViewModel.DELETEPLAYLIST_BUTTON_LABEL);
 //        buttons.add(deletePlaylist);
-
-//        showPlaylists = new JButton(HomepageViewModel.SHOWPLAYLISTS_BUTTON_LABEL);
-//        buttons.add(showPlaylists);
 
         createPlaylist.addActionListener(
                 // This creates an anonymous subclass of ActionListener and instantiates it.
@@ -76,11 +85,10 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
                 }
         );
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
         this.add(title);
+        this.add(searchInfo);
+        this.add(type);
         this.add(buttons);
-        // TODO: search to be implemented.
-//        this.add(searchInfo);
     }
 
     /**
