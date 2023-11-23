@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a6aff8e-86d2-49c6-8364-ff7fe29e342c" name="Changes" comment="Removed private feature for Playlist.java">
-      <change afterPath="$PROJECT_DIR$/src/entity/CommonPlaylist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInteractor.java" afterDir="false" />
+    <list default="true" id="3a6aff8e-86d2-49c6-8364-ff7fe29e342c" name="Changes" comment="Created Factory files for playlist and some other adjustments to compatible with those files.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +63,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "local",
     "node.js.detected.package.eslint": "true",
@@ -143,7 +137,7 @@
       <workItem from="1700614051278" duration="18000" />
       <workItem from="1700614086270" duration="44000" />
       <workItem from="1700614138402" duration="6000" />
-      <workItem from="1700614377832" duration="3006000" />
+      <workItem from="1700614377832" duration="3590000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -233,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700614772938</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Created Factory files for playlist and some other adjustments to compatible with those files.">
+      <option name="closed" value="true" />
+      <created>1700617944291</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700617944291</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +263,8 @@
     <MESSAGE value="Progress: wrote text fields for CreatePlaylistView, and kept FileDataAccessObject for entity purposes. Last time we had a discussion about whether we should have a base to track our local data. I still think it's necessary, as it is easier to debug from your local storage. Also, we are using APIDataAccessObject for a different purpose now.&#10;&#10;(Note: for anyone approving this request, I think you can respond to/argue against my comments. Then you can turn your response to the TA for that &quot;pull request comment&quot; score.&#10; &#10;Next step: construct the fileDAO." />
     <MESSAGE value="Commit: A version without DAO, but this is old view." />
     <MESSAGE value="Removed private feature for Playlist.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed private feature for Playlist.java" />
+    <MESSAGE value="Created Factory files for playlist and some other adjustments to compatible with those files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Factory files for playlist and some other adjustments to compatible with those files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
