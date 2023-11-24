@@ -19,7 +19,7 @@ public class Main {
 //        APIDataAccessObject spot = new APIDataAccessObject();
 //        //System.out.println(spot.getData("11vYnWjFxgXBgw2aC6Rb8"));
 //        System.out.println(spot.getMe());
-
+/*
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,5 +57,6 @@ public class Main {
 
         application.pack();
         application.setVisible(true);
+    }*/
     }
 }
