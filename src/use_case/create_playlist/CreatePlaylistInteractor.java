@@ -1,7 +1,7 @@
 package use_case.create_playlist;
 
 
-import java.util.Set;
+import entity.CommonPlaylist;
 
 public class CreatePlaylistInteractor implements CreatePlaylistInputBoundary{
     final CreatePlaylistDataAccessInterface createPlaylistDataAccessObject;
@@ -14,6 +14,10 @@ public class CreatePlaylistInteractor implements CreatePlaylistInputBoundary{
     }
     @Override
     public void execute(CreatePlaylistInputData createPlaylistInputData) {
-        createPlaylistPresenter.prepareSuccessView();
+        String playlistName = createPlaylistInputData.getName();
+        CommonPlaylist newPlaylist = new CommonPlaylist(playlistName);
+        createPlaylistDataAccessObject.save(newPlaylist);
+
+//        createPlaylistPresenter.prepareSuccessView();
     }
 }
