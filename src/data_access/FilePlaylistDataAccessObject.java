@@ -34,5 +34,8 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
         this.save();
     }
 
-    private void save() {}
+    private void save() {
+
+    }
+
 }
