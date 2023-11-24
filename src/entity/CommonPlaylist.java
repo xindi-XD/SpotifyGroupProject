@@ -13,8 +13,8 @@ public class CommonPlaylist implements Playlist{
         this.name = name;
     }
     public boolean addSong(Song song) {  // this method is to add a song to the playlist.
-        if (!songs.contains(song)) {
-            songs.add(song);
+        if (!songs.containsKey(song.getName()) && !songs.containsValue(song)) {
+            songs.put(song.getName(), song);
             return true;
         }
         return false;
@@ -31,7 +31,7 @@ public class CommonPlaylist implements Playlist{
             System.out.println("No result for an empty playlist.");
         }
 
-        for (Song song: songs) {
+        for (Song song: songs.values()) {
             if (song.getName().equals(name)) {
                 songList.add(song);
             }

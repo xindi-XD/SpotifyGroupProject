@@ -4,208 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a6aff8e-86d2-49c6-8364-ff7fe29e342c" name="Changes" comment="Commit: A version without DAO, but this is old view.">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SpotifyGroupProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_11_14,_20_14_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_11_14__20_14__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search_song/SearchSongViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search_song/SearchSongViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spotify.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spotify.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;xindi-XD&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="d236bd65-be3c-4920-a008-2d0dfe5074f5" />
-        <option name="url" value="https://github.com/xindi-XD/SpotifyGroupProject.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="2XBW83ovKSbYS1GtrMSJunJGcG6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2YaqrVqq0Lf8NgFrhieWzRqOI3q" />
   <component name="ProjectViewState">
-    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;View-Xindi-1108&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="Auth" type="Application" factoryName="Application">
-      <envs>
-        <env name="API_TOKEN" value="BQCaX8FgpQuWZW6TVio3FwyUP0xvi-d8do3hjqyk0ydcu2OXYxTW-ZATMX-dFklrJSoTkr1N_obVGPPBXe7R73goiYKSrSTUUbgwY6-gM6IHQOXaIvvYSJT5G7ZkRmKR5CEUXcOt7n7BVlzbvoE6uUmf0V07TWEZ3-uiOUFwcrKBQI2YXVATNY2uKbzEk17BDYrYWspg7fN6bKFo1hWCT1EnSAhwNSfq2k7P_RWP7zk8V_qYkZeeKhxrfo_EOA_OEWIe_IrrxBGBZSVgDbTAzyxcQRJLdIs " />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Spotify" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3a6aff8e-86d2-49c6-8364-ff7fe29e342c" name="Changes" comment="" />
-      <created>1698102791263</created>
+      <changelist id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="" />
+      <created>1700774240108</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1698102791263</updated>
-      <workItem from="1698102793495" duration="2052000" />
-      <workItem from="1698106494173" duration="9718000" />
-      <workItem from="1698459986168" duration="7050000" />
-      <workItem from="1698708005510" duration="4854000" />
-      <workItem from="1699469734515" duration="20189000" />
-      <workItem from="1699654162193" duration="779000" />
-      <workItem from="1699749694606" duration="8341000" />
-      <workItem from="1699921379032" duration="4448000" />
-      <workItem from="1700007183593" duration="6477000" />
-      <workItem from="1700327663628" duration="6334000" />
-      <workItem from="1700335726899" duration="3938000" />
-      <workItem from="1700339992368" duration="328000" />
-      <workItem from="1700419578999" duration="1933000" />
-      <workItem from="1700423727589" duration="5392000" />
-      <workItem from="1700526023835" duration="2618000" />
-      <workItem from="1700578848737" duration="1037000" />
+      <updated>1700774240108</updated>
+      <workItem from="1700774242076" duration="868000" />
     </task>
-    <task id="LOCAL-00001" summary="commit">
-      <option name="closed" value="true" />
-      <created>1698106738481</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1698106738481</updated>
-    </task>
-    <task id="LOCAL-00002" summary="commit">
-      <option name="closed" value="true" />
-      <created>1698107561158</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1698107561158</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Instantiated empty folders and empty classes for create_playlist, homepage, and delete_playlist.">
-      <option name="closed" value="true" />
-      <created>1698118919534</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1698118919534</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Wrote basic structure for HomepageView (errors mean unimplemented).&#10;Added additional abstract class ViewModel, PlaylistCreationFailed, and ViewManagerModel under the interface_adapter folder.&#10;Wrote parts of HomepageViewModel and CreatePlaylistViewModel.">
-      <option name="closed" value="true" />
-      <created>1698467202751</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1698467202751</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Homepage view and CreatePlaylist view switch by button click. &#10;In progress, current problem: design suitable method call in main; incomplete factory design.">
-      <option name="closed" value="true" />
-      <created>1699654308789</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1699654308789</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Deleted attributes to create HomepageView. Now HomepageView can only act as a page layout, and it does not have its own controller.&#10;&#10;Successful pop-up HomepageView.&#10;Unsuccessful transition from HomepageView to CreatePlaylistView.">
-      <option name="closed" value="true" />
-      <created>1699757927495</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1699757927495</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Progress: Built methods for buttons and input fields for CreatePlaylist.&#10;Issue: Unsuccessful display of CreatePlaylistView when the code runs. This is my next focus.">
-      <option name="closed" value="true" />
-      <created>1700018910757</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1700018910757</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Progress: successful switch between HomepageView and CreatePlaylistView.&#10;Next step: implement more details in these views.">
-      <option name="closed" value="true" />
-      <created>1700423775449</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1700423775449</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Progress: wrote text fields for CreatePlaylistView, and kept FileDataAccessObject for entity purposes. Last time we had a discussion about whether we should have a base to track our local data. I still think it's necessary, as it is easier to debug from your local storage. Also, we are using APIDataAccessObject for a different purpose now.&#10;&#10;(Note: for anyone approving this request, I think you can respond to/argue against my comments. Then you can turn your response to the TA for that &quot;pull request comment&quot; score.&#10; &#10;Next step: construct the fileDAO.">
-      <option name="closed" value="true" />
-      <created>1700461428393</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1700461428393</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Commit: A version without DAO, but this is old view.">
-      <option name="closed" value="true" />
-      <created>1700527344769</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700527344769</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Removed private feature for Playlist.java">
-      <option name="closed" value="true" />
-      <created>1700614772938</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1700614772938</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,34 +74,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit" />
-    <MESSAGE value="Instantiated empty folders and empty classes for create_playlist, homepage, and delete_playlist." />
-    <MESSAGE value="Wrote basic structure for HomepageView (errors mean unimplemented).&#10;Added additional abstract class ViewModel, PlaylistCreationFailed, and ViewManagerModel under the interface_adapter folder.&#10;Wrote parts of HomepageViewModel and CreatePlaylistViewModel." />
-    <MESSAGE value="Homepage view and CreatePlaylist view switch by button click. &#10;In progress, current problem: design suitable method call in main; incomplete factory design." />
-    <MESSAGE value="Deleted attributes to create HomepageView. Now HomepageView can only act as a page layout, and it does not have its own controller.&#10;&#10;Successful pop-up HomepageView.&#10;Unsuccessful transition from HomepageView to CreatePlaylistView." />
-    <MESSAGE value="Progress: Built methods for buttons and input fields for CreatePlaylist.&#10;Issue: Unsuccessful display of CreatePlaylistView when the code runs. This is my next focus." />
-    <MESSAGE value="Progress: successful switch between HomepageView and CreatePlaylistView.&#10;Next step: implement more details in these views." />
-    <MESSAGE value="Progress: wrote text fields for CreatePlaylistView, and kept FileDataAccessObject for entity purposes. Last time we had a discussion about whether we should have a base to track our local data. I still think it's necessary, as it is easier to debug from your local storage. Also, we are using APIDataAccessObject for a different purpose now.&#10;&#10;(Note: for anyone approving this request, I think you can respond to/argue against my comments. Then you can turn your response to the TA for that &quot;pull request comment&quot; score.&#10; &#10;Next step: construct the fileDAO." />
-    <MESSAGE value="Commit: A version without DAO, but this is old view." />
-    <MESSAGE value="Removed private feature for Playlist.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed private feature for Playlist.java" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/view/ViewManager.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/app/Main.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
