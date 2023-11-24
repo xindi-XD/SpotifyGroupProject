@@ -1,24 +1,22 @@
 package app;
 
-import data_access.FilePlaylistDataAccessObject;
-import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import view.CreatePlaylistView;
 import view.HomepageView;
 import view.ViewManager;
-
+import data_access.APIDataAccessObject;
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+/*
         // TODO: API call commented out for only view transition.
-//        APIDataAccessObject spot = new APIDataAccessObject();
-//        //System.out.println(spot.getData("11vYnWjFxgXBgw2aC6Rb8"));
-//        System.out.println(spot.getMe());
+        APIDataAccessObject spot = new APIDataAccessObject();
+        System.out.println(APIDataAccessObject.getApiToken());
+        System.out.println(spot.getMe());
 
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -41,7 +39,7 @@ public class Main {
         HomepageViewModel homepageViewModel = new HomepageViewModel();
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
         // TODO: DAO not correctly named, nor initialized, remove "= null" when initialized.
-        FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
+        FileDataAccessObject playlistDataAccessObject = null;
         // TODO: DAO not implemented.
 //        try {
 //            fileDataAccessObject = new FileDataAccessObject("./users.csv", new CommonUserFactory());
@@ -56,6 +54,6 @@ public class Main {
         viewManagerModel.firePropertyChanged();
 
         application.pack();
-        application.setVisible(true);
+        application.setVisible(true);*/
     }
 }

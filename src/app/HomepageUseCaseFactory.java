@@ -8,7 +8,7 @@ import view.HomepageView;
 
 public class HomepageUseCaseFactory {
     private HomepageUseCaseFactory(){}
-
+/*
     public static HomepageView create(ViewManagerModel viewManagerModel,
                                       HomepageViewModel homepageViewModel,
                                       CreatePlaylistViewModel createPlaylistViewModel,
@@ -27,5 +27,5 @@ public class HomepageUseCaseFactory {
 //        HomepageOutputBoundary homepageOutputBoundary = new HomepagePresenter();
 //        // TODO: Incomplete method. Missing factory and DAO.
 //        CreatePlaylistInputBoundary createPlaylistInteractor = new CreatePlaylistInteractor(createPlaylistDataAccessObject, createPlaylistOutputBoundary);
-//        return new HomepageController(homepageInteractor);
+//        return new HomepageController(homepageInteractor);*/
 }
