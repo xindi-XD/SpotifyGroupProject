@@ -15,8 +15,9 @@ public class Playlist {
         this.privacy = false;
     }
 
-    public void createPlaylist(String name, ArrayList<Song> songs, boolean privacy) {
+    public Playlist(String name, String id, ArrayList<Song> songs, boolean privacy) {
         this.name = name;
+        this.id = id;
         this.songs = songs;
         this.privacy = privacy;
     }
