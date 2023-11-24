@@ -1,6 +1,6 @@
 package data_access;
 
-import 3entity.CommonPlaylist;
+import entity.CommonPlaylist;
 import entity.CommonPlaylistFactory;
 import entity.PlaylistFactory;
 import org.json.JSONObject;

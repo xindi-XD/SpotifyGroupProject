@@ -6,8 +6,8 @@ public interface Song {
     boolean likeSong(CommonSong song);
     boolean unlikeSong(CommonSong song);
     String getName();
-    String getGenre();
-    String getArtist();
+
+    String[] getArtist();
 
     String getID();
 }

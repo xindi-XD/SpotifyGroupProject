@@ -1,17 +1,17 @@
 package entity;
 
+import java.util.ArrayList;
+
 public class CommonSong implements Song {
     final private String name;
-    final private String artist;
+    final private String[] artist;
     final private String id;
 
-    final private String genre;
 
-    public CommonSong(String name, String artist, String id, String genre) {
+    public CommonSong(String name, String[] artist, String id) {
         this.name = name;
         this.id = id;
         this.artist = artist;
-        this.genre = genre;
     }
 
     @Override
@@ -28,10 +28,8 @@ public class CommonSong implements Song {
         return name;
     }
 
-    @Override
-    public String getGenre() {return genre; }
 
-    public String getArtist() {
+    public String[] getArtist() {
         return artist;
     }
 

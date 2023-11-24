@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Base64;
 
@@ -62,6 +63,7 @@ public class APIDataAccessObject {
                     for (int j = 0; j < artistObjects.length(); j++) {
                         artists.add(artistObjects.getJSONObject(j).getString("name"));
                     }
+
                     CommonSong song = new CommonSong(track.getString("name"), artists.toArray(new String[0]), track.getString("id"));
                     songs.add(song);
                 }
