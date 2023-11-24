@@ -6,16 +6,17 @@ import interface_adapter.homepage.HomepageViewModel;
 import view.CreatePlaylistView;
 import view.HomepageView;
 import view.ViewManager;
-
+import data_access.APIDataAccessObject;
 import javax.swing.*;
 import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
+/*
         // TODO: API call commented out for only view transition.
-//        APIDataAccessObject spot = new APIDataAccessObject();
-//        //System.out.println(spot.getData("11vYnWjFxgXBgw2aC6Rb8"));
-//        System.out.println(spot.getMe());
+        APIDataAccessObject spot = new APIDataAccessObject();
+        System.out.println(APIDataAccessObject.getApiToken());
+        System.out.println(spot.getMe());
 
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -53,6 +54,6 @@ public class Main {
         viewManagerModel.firePropertyChanged();
 
         application.pack();
-        application.setVisible(true);
+        application.setVisible(true);*/
     }
 }
