@@ -1,6 +1,6 @@
 package data_access;
 
-import entity.CommonPlaylist;
+import 3entity.CommonPlaylist;
 import entity.CommonPlaylistFactory;
 import entity.PlaylistFactory;
 import org.json.JSONObject;
@@ -34,5 +34,8 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
         this.save();
     }
 
-    private void save() {}
+    private void save() {
+
+    }
+
 }
