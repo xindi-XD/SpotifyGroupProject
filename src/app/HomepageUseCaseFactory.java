@@ -8,6 +8,7 @@ import view.HomepageView;
 
 public class HomepageUseCaseFactory {
     private HomepageUseCaseFactory(){}
+
 /*
     public static HomepageView create(ViewManagerModel viewManagerModel,
                                       HomepageViewModel homepageViewModel,
