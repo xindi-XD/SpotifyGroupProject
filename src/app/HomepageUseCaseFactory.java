@@ -1,9 +1,18 @@
 package app;
 
 import data_access.FilePlaylistDataAccessObject;
+import entity.CommonPlaylist;
+import entity.CommonPlaylistFactory;
+import entity.Playlist;
+import entity.PlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
+import interface_adapter.search.SearchController;
+import interface_adapter.search.SearchPresenter;
+import use_case.search.SearchInputBoundary;
+import use_case.search.SearchInteractor;
+import use_case.search.SearchOutPutBoundary;
 import view.HomepageView;
 
 public class HomepageUseCaseFactory {
@@ -13,19 +22,24 @@ public class HomepageUseCaseFactory {
                                       HomepageViewModel homepageViewModel,
                                       CreatePlaylistViewModel createPlaylistViewModel,
                                       FilePlaylistDataAccessObject fileDataAccessObject){
-        return new HomepageView(homepageViewModel, createPlaylistViewModel, viewManagerModel);
+        SearchController searchController = createSearchUseCase(viewManagerModel, homepageViewModel, fileDataAccessObject);
+        //TODO: Try() not implemented. searchViewModel not implemented.
+        return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel);
     }
 
-//    private static HomepageController createHomepageUseCase(
-//            ViewManagerModel viewManagerModel,
-//            CreatePlaylistViewModel createPlaylistViewModel,
-//            HomepageViewModel homepageViewModel,
-//            CreatePlaylistDataAccessInterface createPlaylistDataAccessObject) throws IOException {
-//
-//        // Notice how we pass this method's parameters to the Presenter.
-//        // TODO: Homepage Presenter not implemented.
-//        HomepageOutputBoundary homepageOutputBoundary = new HomepagePresenter();
-//        // TODO: Incomplete method. Missing factory and DAO.
-//        CreatePlaylistInputBoundary createPlaylistInteractor = new CreatePlaylistInteractor(createPlaylistDataAccessObject, createPlaylistOutputBoundary);
-//        return new HomepageController(homepageInteractor);
+    private static SearchController createSearchUseCase(
+            ViewManagerModel viewManagerModel,
+            HomepageViewModel homepageViewModel,
+            FilePlaylistDataAccessObject filePlaylistDataAccessObject) throws IOException {
+
+        // Notice how we pass this method's parameters to the Presenter.
+        // TODO: Homepage Presenter not implemented.
+        SearchOutPutBoundary searchOutPutBoundary = new SearchPresenter(viewManagerModel, homepageViewModel);
+        PlaylistFactory playistFactory = new CommonPlaylistFactory();
+        SongFactory songFactory = new CommonSongFactory();
+
+        // TODO: Incomplete method. Missing factory and DAO.
+        SearchInputBoundary searchInteractor = new SearchInteractor(filePlaylistDataAccessObject, searchOutPutBoundary);
+        return new SearchController(searchInteractor);
+    }
 }

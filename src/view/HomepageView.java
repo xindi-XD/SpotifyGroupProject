@@ -9,6 +9,9 @@ import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.homepage.HomepageController;
 import interface_adapter.homepage.HomepageState;
 import interface_adapter.homepage.HomepageViewModel;
+import interface_adapter.search.SearchController;
+import interface_adapter.search.SearchState;
+import interface_adapter.search.SearchViewModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,6 +27,7 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
     // Homepage does not have a controller. It doesn't have any other use case apart from switching views.
     private final CreatePlaylistViewModel createPlaylistViewModel;
 //    private final CreatePlaylistController createPlaylistController;
+    private final SearchController searchController;
     final JTextField searchInputField = new JTextField(15);
     private final JButton createPlaylist;
     private final JButton showPlaylists;
@@ -36,12 +40,14 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
 //    private final JButton deletePlaylist;
 //    private final JTextField searchInputField = new JTextField(15);
 
-    public HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel, ViewManagerModel viewManagerModel){
+    public HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel,
+                        SearchController searchController, ViewManagerModel viewManagerModel){
 //        this.createPlaylistController = createPlaylistController;
         // Initialize view models.
         this.createPlaylistViewModel = createPlaylistViewModel;
         this.homepageViewModel = homepageViewModel;
         this.viewManagerModel = viewManagerModel;
+        this.searchController = searchController;
         // Initialize controllers (if any).
         // Make this view listen to changes made in view models.
         homepageViewModel.addPropertyChangeListener(this);

@@ -5,6 +5,7 @@ import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
+import interface_adapter.search.SearchController;
 import view.CreatePlaylistView;
 import view.HomepageView;
 import view.ViewManager;

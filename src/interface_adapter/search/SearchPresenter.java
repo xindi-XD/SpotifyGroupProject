@@ -1,6 +1,6 @@
 package interface_adapter.search;
 
-import use_case.search_song.SearchSongOutPutBoundary;
+import use_case.search.SearchOutPutBoundary;
 
-public class SearchPresenter implements SearchSongOutPutBoundary {
+public class SearchPresenter implements SearchOutPutBoundary {
 }
