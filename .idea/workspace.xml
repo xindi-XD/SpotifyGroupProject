@@ -4,42 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: Implemented method structures for use case/Search, and interface adapter/Search.">
-      <change afterPath="$PROJECT_DIR$/src/use_case/search/SearchAPIDataAccessInterface.java" afterDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: Made a naive implementation of search interactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playlists.json" beforeDir="false" afterPath="$PROJECT_DIR$/playlists.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/homepage/HomepageState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/homepage/HomepageState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchAPIDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchAPIDataAccessInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchPlaylistDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchPlaylistDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/HomepageUseCaseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/HomepageUseCaseFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonPlaylist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonPlaylist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Playlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Playlist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Song.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongPresenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongInputBoundary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongInputData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongInteractor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongOutPutBoundary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongOutPutData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchPlaylistDataAccessInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SearchResultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700948279596</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit: Made a naive implementation of search interactor">
+      <option name="closed" value="true" />
+      <created>1700954896082</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700954896082</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,14 +188,15 @@
     <MESSAGE value="Commit: continue implementing search use case." />
     <MESSAGE value="Commit" />
     <MESSAGE value="Commit: Implemented method structures for use case/Search, and interface adapter/Search." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: Implemented method structures for use case/Search, and interface adapter/Search." />
+    <MESSAGE value="Commit: Made a naive implementation of search interactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: Made a naive implementation of search interactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java</url>
-          <line>40</line>
+          <line>42</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

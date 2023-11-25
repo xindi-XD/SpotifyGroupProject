@@ -1,15 +1,11 @@
 package data_access;
 
 import entity.CommonPlaylist;
-import entity.CommonPlaylistFactory;
 import entity.Playlist;
 import entity.PlaylistFactory;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
-import use_case.search.SearchPlaylistDataAccessInterface;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;

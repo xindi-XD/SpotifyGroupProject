@@ -1,5 +1,6 @@
 package app;
 
+import data_access.APIDataAccessObject;
 import data_access.FilePlaylistDataAccessObject;
 import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
@@ -43,11 +44,12 @@ public class Main {
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
         SearchViewModel searchViewModel = new SearchViewModel();
         FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
+        APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
 //        try {
 //            fileDataAccessObject = new FileDataAccessObject("./users.csv", new CommonUserFactory());
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
-        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, searchViewModel, playlistDataAccessObject);
+        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, searchViewModel, apiDataAccessObject);
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
         views.add(createPlaylistView, createPlaylistView.viewName);

@@ -1,20 +1,18 @@
 package use_case.search;
 
-import data_access.APIDataAccessObject;
-import data_access.FilePlaylistDataAccessObject;
 import org.json.JSONArray;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class SearchInteractor implements SearchInputBoundary {
-    final SearchPlaylistDataAccessInterface searchPlaylistDataAccessObject;
+    final SearchAPIDataAccessInterface searchPlaylistDataAccessObject;
     //TODO: song and playlist are not distinguished.
     final SearchOutputBoundary searchPresenter;
 
-    public SearchInteractor(SearchPlaylistDataAccessInterface searchPlaylistDataAccessInterface,
+    public SearchInteractor(SearchAPIDataAccessInterface searchAPIDataAccessInterface,
                             SearchOutputBoundary searchOutputBoundary) {
-        this.searchPlaylistDataAccessObject = searchPlaylistDataAccessInterface;
+        this.searchPlaylistDataAccessObject = searchAPIDataAccessInterface;
         this.searchPresenter = searchOutputBoundary;
     }
 
