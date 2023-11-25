@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: changed use case search_song to search, as well as its subclasses. Added search button on HomepageView. Implementing search use case.">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: continue implementing search use case.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/homepage/HomepageState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/homepage/HomepageState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search_song/SearchSongInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search_song/SearchSongInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search_song/SearchSongInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search_song/SearchSongOutPutBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchOutPutBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search_song/SearchSongOutPutData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchOutPutData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomepageView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700774240108</updated>
       <workItem from="1700774242076" duration="2286000" />
-      <workItem from="1700942130847" duration="3011000" />
+      <workItem from="1700942130847" duration="3194000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -105,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700943408023</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Commit: continue implementing search use case.">
+      <option name="closed" value="true" />
+      <created>1700945183594</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700945183594</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +124,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
     <MESSAGE value="Commit: changed use case search_song to search, as well as its subclasses. Added search button on HomepageView. Implementing search use case." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: changed use case search_song to search, as well as its subclasses. Added search button on HomepageView. Implementing search use case." />
+    <MESSAGE value="Commit: continue implementing search use case." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: continue implementing search use case." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

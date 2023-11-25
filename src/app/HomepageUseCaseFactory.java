@@ -33,12 +33,10 @@ public class HomepageUseCaseFactory {
             FilePlaylistDataAccessObject filePlaylistDataAccessObject) throws IOException {
 
         // Notice how we pass this method's parameters to the Presenter.
-        // TODO: Homepage Presenter not implemented.
-        SearchOutPutBoundary searchOutPutBoundary = new SearchPresenter(viewManagerModel, homepageViewModel);
+        SearchOutPutBoundary searchOutPutBoundary = new SearchPresenter(viewManagerModel, homepageViewModel, searchViewModel);
         PlaylistFactory playistFactory = new CommonPlaylistFactory();
-        SongFactory songFactory = new CommonSongFactory();
+//        SongFactory songFactory = new CommonSongFactory(); TODO: CommonSongFactory not found.
 
-        // TODO: Incomplete method. Missing factory and DAO.
         SearchInputBoundary searchInteractor = new SearchInteractor(filePlaylistDataAccessObject, searchOutPutBoundary);
         return new SearchController(searchInteractor);
     }
