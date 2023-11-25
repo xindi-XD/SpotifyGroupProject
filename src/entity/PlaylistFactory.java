@@ -1,5 +1,5 @@
 package entity;
 
 public interface PlaylistFactory {
-    CommonPlaylist create(String name);
+    Playlist create(String name);
 }

@@ -2,10 +2,12 @@ package data_access;
 
 import entity.CommonPlaylist;
 import entity.CommonPlaylistFactory;
+import entity.Playlist;
 import entity.PlaylistFactory;
 import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,6 +17,8 @@ import java.util.Map;
 public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {
 
     private final JSONObject jsonFile;
+
+    private final FileWriter file;
     private final Map<String, CommonPlaylist> playlists = new HashMap<>();
     private PlaylistFactory playlistFactory;
 
@@ -22,10 +26,13 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
         this.playlistFactory = playlistFactory;
 
         jsonFile = new JSONObject();
-        jsonFile.put("LadyGaGa", new CommonPlaylistFactory());
-        FileWriter file = new FileWriter(jsonPath);
-        file.write(jsonFile.toString());
-        file.close();
+        file = new FileWriter(jsonPath);
+        if (jsonFile.isEmpty()) {
+            Playlist likedSongs = playlistFactory.create("Liked Songs");
+            jsonFile.put(likedSongs.getName(), likedSongs);
+            file.write(jsonFile.toString());
+            save();
+        }
     }
 
     @Override
@@ -34,5 +41,17 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
         this.save();
     }
 
-    private void save() {}
+    private void save() {
+        try {
+            for (CommonPlaylist commonPlaylist : playlists.values()) {
+                jsonFile.put(commonPlaylist.getName(), commonPlaylist);
+            }
+
+            file.write(jsonFile.toString());
+            file.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

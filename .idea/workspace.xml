@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed bug.">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="To be able to create a json file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Playlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Playlist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistDataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistDataAccessInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInteractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700774240108</updated>
-      <workItem from="1700774242076" duration="2286000" />
+      <workItem from="1700774242076" duration="8526000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -82,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700864357187</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="To be able to create a json file.">
+      <option name="closed" value="true" />
+      <created>1700865918056</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700865918056</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug." />
+    <MESSAGE value="To be able to create a json file." />
+    <option name="LAST_COMMIT_MESSAGE" value="To be able to create a json file." />
   </component>
 </project>
