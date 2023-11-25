@@ -6,6 +6,7 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchController;
+import interface_adapter.search.SearchViewModel;
 import view.CreatePlaylistView;
 import view.HomepageView;
 import view.ViewManager;
@@ -20,7 +21,6 @@ public class Main {
 //        APIDataAccessObject spot = new APIDataAccessObject();
 //        //System.out.println(spot.getData("11vYnWjFxgXBgw2aC6Rb8"));
 //        System.out.println(spot.getMe());
-/*
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,14 +41,13 @@ public class Main {
         // TODO: more VMs to be added.
         HomepageViewModel homepageViewModel = new HomepageViewModel();
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
-        // TODO: DAO not correctly named, nor initialized, remove "= null" when initialized.
+        SearchViewModel searchViewModel = new SearchViewModel();
         FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
-        // TODO: DAO not implemented.
 //        try {
 //            fileDataAccessObject = new FileDataAccessObject("./users.csv", new CommonUserFactory());
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
-        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
+        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, searchViewModel, playlistDataAccessObject);
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
         views.add(createPlaylistView, createPlaylistView.viewName);
@@ -58,6 +57,5 @@ public class Main {
 
         application.pack();
         application.setVisible(true);
-    }*/
     }
 }

@@ -6,8 +6,8 @@ import java.beans.PropertyChangeListener;
 
 //eva writing this one
 public class SearchViewModel extends ViewModel {
-    public SearchViewModel(String viewName) {
-        super(viewName);
+    public SearchViewModel() {
+        super("search results");
     }
 
     @Override
