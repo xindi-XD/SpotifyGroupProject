@@ -38,7 +38,7 @@ public class HomepageUseCaseFactory {
             ViewManagerModel viewManagerModel,
             HomepageViewModel homepageViewModel,
             SearchViewModel searchViewModel,
-            FilePlaylistDataAccessObject filePlaylistDataAccessObject) throws IOException {
+            SearchPlaylistDataAccessInterface filePlaylistDataAccessObject) throws IOException {
 
         // Notice how we pass this method's parameters to the Presenter.
         SearchOutputBoundary searchOutPutBoundary = new SearchPresenter(viewManagerModel, homepageViewModel, searchViewModel);

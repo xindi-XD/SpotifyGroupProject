@@ -14,7 +14,7 @@ public class HomepageState {
 
     public String getHomepageError() {return this.homepageError;}
     public String getQuery(){return this.query;}
-    public Object getQueryType() {return this.queryType;}
+    public String getQueryType() {return this.queryType;}
 
     public void setHomepageError(String error) {this.homepageError = error;}
     public void setQuery(String query) {this.query = query;}

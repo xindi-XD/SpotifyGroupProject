@@ -4,6 +4,7 @@ import entity.CommonPlaylist;
 import entity.CommonPlaylistFactory;
 import entity.Playlist;
 import entity.PlaylistFactory;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 import use_case.search.SearchPlaylistDataAccessInterface;
@@ -15,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // Todo: needs to figure out how to store data into a json file.
-public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface, SearchPlaylistDataAccessInterface {
+public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {
 
     private final JSONObject jsonFile;
 
@@ -55,4 +56,5 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
             throw new RuntimeException(e);
         }
     }
+
 }
