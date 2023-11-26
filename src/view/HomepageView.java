@@ -119,6 +119,7 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(search)){
                             HomepageState currentState = homepageViewModel.getHomepageState();
+                            currentState.setQueryType(searchTypeDropdown.getSelectedItem().toString());
                             searchController.execute(
                                     currentState.getQuery(),
                                     currentState.getQueryType()
