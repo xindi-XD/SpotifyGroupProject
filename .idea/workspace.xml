@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed merge conflict">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playlists.json" beforeDir="false" afterPath="$PROJECT_DIR$/playlists.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonSongFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonSongFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +19,11 @@
     <option name="NEW_BASE" value="origin/authexpress" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="xindi-search-use-case-1125" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -86,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700774240108</updated>
       <workItem from="1700774242076" duration="2286000" />
+      <workItem from="1701030006636" duration="338000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -103,7 +101,31 @@
       <option name="project" value="LOCAL" />
       <updated>1700995290680</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701030013821</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701030013821</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701030079933</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701030079933</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701030134448</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701030134448</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
     <MESSAGE value="Fixed merge conflict" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge conflict" />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
