@@ -1,5 +1,7 @@
 package entity;
 
 public interface PlaylistFactory {
-    Playlist create(String name);
+    static Playlist create(String name) {
+        return null;
+    }
 }

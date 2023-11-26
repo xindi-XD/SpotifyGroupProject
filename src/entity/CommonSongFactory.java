@@ -11,22 +11,10 @@ public class CommonSongFactory implements SongFactory {
         return new CommonSong(name, artist, id);
     }
 
-    public static Song create(JSONObject object) {
+    public static CommonSong create(JSONObject object) {
         return new CommonSong(object.getString("name"),
                 parseArtists(object.getJSONArray("artists")).toArray(new String[0]),
                 object.getString("id"));
-    }
-
-    public static ArrayList<Song> createSongList(JSONArray results) {
-        ArrayList<Song> songs = new ArrayList<>();
-        for (int i = 0; i < results.length(); i++) {
-            JSONObject track = results.getJSONObject(i);
-            JSONArray artistObjects = track.getJSONArray("artists");
-            ArrayList<String> artists = parseArtists(artistObjects);
-            Song song = create(track.getString("name"), artists.toArray(new String[0]), track.getString("id"));
-            songs.add(song);
-        }
-        return songs;
     }
 
     public static ArrayList<String> parseArtists(JSONArray artistJSON) {

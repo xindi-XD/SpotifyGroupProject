@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search UCI and interface adapter roughly implemented.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed merge conflict">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/SongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/SongFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/authexpress" />
+    <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/authexpress" />
@@ -89,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700864357187</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed merge conflict">
+      <option name="closed" value="true" />
+      <created>1700995290680</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700995290680</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug." />
+    <MESSAGE value="Fixed merge conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge conflict" />
   </component>
 </project>
