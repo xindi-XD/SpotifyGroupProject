@@ -4,37 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search UCI and interface adapter roughly implemented. Exception found when running API call searchTrack.">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed merge conflict">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="origin/main" />
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/authexpress" />
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -45,20 +36,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "getTrack",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Main" />
@@ -76,9 +69,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -91,8 +81,6 @@
       <option name="presentableId" value="Default" />
       <updated>1700774240108</updated>
       <workItem from="1700774242076" duration="2286000" />
-      <workItem from="1700942130847" duration="3194000" />
-      <workItem from="1701009759165" duration="1167000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -102,63 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700864357187</updated>
     </task>
-    <task id="LOCAL-00002" summary="Commit: changed use case search_song to search, as well as its subclasses. Added search button on HomepageView. Implementing search use case.">
+    <task id="LOCAL-00002" summary="Fixed merge conflict">
       <option name="closed" value="true" />
-      <created>1700943408023</created>
+      <created>1700995290680</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1700943408023</updated>
+      <updated>1700995290680</updated>
     </task>
-    <task id="LOCAL-00003" summary="Commit: continue implementing search use case.">
-      <option name="closed" value="true" />
-      <created>1700945183594</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1700945183594</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Commit">
-      <option name="closed" value="true" />
-      <created>1700945754606</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1700945754606</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Commit: Implemented method structures for use case/Search, and interface adapter/Search.">
-      <option name="closed" value="true" />
-      <created>1700948279596</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1700948279596</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Commit: Made a naive implementation of search interactor">
-      <option name="closed" value="true" />
-      <created>1700954896082</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1700954896082</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Commit: search UCI and interface adapter roughly implemented.">
-      <option name="closed" value="true" />
-      <created>1700956475805</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1700956475805</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Commit: search UCI and interface adapter roughly implemented. Exception found when running API call searchTrack.">
-      <option name="closed" value="true" />
-      <created>1700957518350</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1700957518350</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,29 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
-    <MESSAGE value="Commit: changed use case search_song to search, as well as its subclasses. Added search button on HomepageView. Implementing search use case." />
-    <MESSAGE value="Commit: continue implementing search use case." />
-    <MESSAGE value="Commit" />
-    <MESSAGE value="Commit: Implemented method structures for use case/Search, and interface adapter/Search." />
-    <MESSAGE value="Commit: Made a naive implementation of search interactor" />
-    <MESSAGE value="Commit: search UCI and interface adapter roughly implemented." />
-    <MESSAGE value="Commit: search UCI and interface adapter roughly implemented. Exception found when running API call searchTrack." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: search UCI and interface adapter roughly implemented. Exception found when running API call searchTrack." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed merge conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge conflict" />
   </component>
 </project>

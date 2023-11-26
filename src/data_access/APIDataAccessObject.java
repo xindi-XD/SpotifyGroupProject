@@ -13,7 +13,7 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
     private static final String CLIENT_ID = System.getenv("CLIENT_ID");
     private static final String CLIENT_SECRET = System.getenv("CLIENT_SECRET");
 
-    public static String getClientCredentials() {
+    private static String getClientCredentials() {
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
         RequestBody body = RequestBody.create("grant_type=client_credentials", mediaType);
@@ -42,8 +42,11 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
     public JSONArray searchTrack(String query) {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
+        MediaType mediaType = MediaType.parse("text/plain");
+        RequestBody body = RequestBody.create(mediaType, "");
         Request request = new Request.Builder()
                 .url("https://api.spotify.com/v1/search?q=" + query)
+                .method("GET", body)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
         try {
@@ -65,8 +68,11 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
     public JSONArray searchPlaylist(String query) {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
+        MediaType mediaType = MediaType.parse("text/plain");
+        RequestBody body = RequestBody.create(mediaType, "");
         Request request = new Request.Builder()
                 .url("https://api.spotify.com/v1/search?q=" + query)
+                .method("GET", body)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
         try {
@@ -85,4 +91,27 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
         }
     }
 
+    public JSONObject getTrack(String id) {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        MediaType mediaType = MediaType.parse("text/plain");
+        RequestBody body = RequestBody.create(mediaType, "");
+        Request request = new Request.Builder()
+                .url("https://api.spotify.com/v1/tracks/" + id)
+                .method("GET", body)
+                .addHeader("Authorization", "Bearer " + getClientCredentials())
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println(response);
+            if (response.code() == 200) {
+                return new JSONObject(response.body().string());
+            } else {
+                throw new RuntimeException("Response not successful");
+            }
+        }
+        catch (IOException | JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
