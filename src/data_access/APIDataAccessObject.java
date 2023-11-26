@@ -4,12 +4,12 @@ import okhttp3.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import use_case.create_playlist.CreatePlaylistDataAccessInterface;
+import use_case.search.SearchAPIDataAccessInterface;
 
 import java.io.IOException;
 import java.util.Base64;
 
-public class APIDataAccessObject {
+public class APIDataAccessObject implements SearchAPIDataAccessInterface {
     private static final String CLIENT_ID = System.getenv("CLIENT_ID");
     private static final String CLIENT_SECRET = System.getenv("CLIENT_SECRET");
 
