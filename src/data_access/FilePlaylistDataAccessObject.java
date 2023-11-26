@@ -1,13 +1,11 @@
 package data_access;
 
 import entity.CommonPlaylist;
-import entity.CommonPlaylistFactory;
 import entity.Playlist;
 import entity.PlaylistFactory;
 import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -54,4 +52,5 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
             throw new RuntimeException(e);
         }
     }
+
 }
