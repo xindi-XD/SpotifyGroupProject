@@ -85,4 +85,18 @@ public class APIDataAccessObject {
         }
     }
 
+    public JSONObject getTrack(String id) {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        Request request = new Request.Builder()
+                .url("https://api.spotify.com/v1/tracks/" + id)
+                .addHeader("Authorization", "Bearer " + getClientCredentials())
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println(response);
+            if (response.code() == 200) {
+
+            }
+    }
 }

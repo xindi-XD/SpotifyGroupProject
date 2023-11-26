@@ -5,78 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed bug.">
-      <change afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/CommonPlaylist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/app/CreatePlaylistUseCaseFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/app/DeletePlaylistUseCaseFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/app/HomepageUseCaseFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entity/Playlist.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entity/Song.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/PlaylistCreationFailed.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/ViewManagerModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/ViewModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistPresenter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistViewModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistPresenter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistViewModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepagePresenter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageViewModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistDataAccessInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInputBoundary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInputData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInteractor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistOutputBoundary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistOutputData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistDataAccessInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputBoundary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInteractor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputBoundary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongInputBoundary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongInputData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongInteractor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongOutPutBoundary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/use_case/search_song/SearchSongOutPutData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/LabelTextPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/PlaylistView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/ViewManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SpotifyGroupProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/create_playlist/CreatePlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/create_playlist/CreatePlaylistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/create_playlist/CreatePlaylistPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/create_playlist/CreatePlaylistPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/homepage/HomepageViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/homepage/HomepageViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomepageView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +21,11 @@
     <option name="NEW_BASE" value="origin/authexpress" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="getTrack" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -104,22 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging authexpress",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Main" />
@@ -137,6 +73,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -149,6 +87,8 @@
       <option name="presentableId" value="Default" />
       <updated>1700774240108</updated>
       <workItem from="1700774242076" duration="2286000" />
+      <workItem from="1700870359549" duration="610000" />
+      <workItem from="1700886495865" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -158,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700864357187</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed bug.">
+      <option name="closed" value="true" />
+      <created>1700869747135</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700869747135</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
