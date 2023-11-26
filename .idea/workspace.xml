@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search UCI and interface adapter roughly implemented.">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search UCI and interface adapter roughly implemented. Exception found when running API call searchTrack.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playlists.json" beforeDir="false" afterPath="$PROJECT_DIR$/playlists.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomepageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/HomepageUseCaseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/HomepageUseCaseFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/homepage/HomepageState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SearchResultView.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,19 +73,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="SpotifyProject" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="SpotifyProject" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -115,6 +92,7 @@
       <updated>1700774240108</updated>
       <workItem from="1700774242076" duration="2286000" />
       <workItem from="1700942130847" duration="3194000" />
+      <workItem from="1701009759165" duration="1167000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -172,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700956475805</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Commit: search UCI and interface adapter roughly implemented. Exception found when running API call searchTrack.">
+      <option name="closed" value="true" />
+      <created>1700957518350</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700957518350</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +183,8 @@
     <MESSAGE value="Commit: Implemented method structures for use case/Search, and interface adapter/Search." />
     <MESSAGE value="Commit: Made a naive implementation of search interactor" />
     <MESSAGE value="Commit: search UCI and interface adapter roughly implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: search UCI and interface adapter roughly implemented." />
+    <MESSAGE value="Commit: search UCI and interface adapter roughly implemented. Exception found when running API call searchTrack." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: search UCI and interface adapter roughly implemented. Exception found when running API call searchTrack." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
