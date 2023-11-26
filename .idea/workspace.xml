@@ -52,7 +52,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Main" />
-      <module name="Spotify" />
+      <module name="SpotifyProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="app.*" />
