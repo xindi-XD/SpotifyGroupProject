@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 public class CommonPlaylistFactory implements PlaylistFactory{
 
-    public static Playlist create(String name) {
+    public Playlist create(String name) {
         return new CommonPlaylist(name);
     }
 
