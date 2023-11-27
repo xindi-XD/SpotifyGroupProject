@@ -46,7 +46,7 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
         RequestBody body = RequestBody.create(mediaType, "");
         Request request = new Request.Builder()
                 .url("https://api.spotify.com/v1/search?q=" + query)
-                .method("GET", body)
+                .method("GET", null)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
         try {
