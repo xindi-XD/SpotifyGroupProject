@@ -51,6 +51,10 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 .method("GET", null)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
+        return getObjects(type, client, request);
+    }
+
+    private JSONArray getObjects(String type, OkHttpClient client, Request request) {
         try {
             Response response = client.newCall(request).execute();
             System.out.println(response);
@@ -78,23 +82,7 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 .method("GET", null)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
-        try {
-            Response response = client.newCall(request).execute();
-            System.out.println(response);
-            if (response.code() == 200) {
-                JSONObject responseBody = new JSONObject(response.body().string());
-                return responseBody.getJSONObject(type + "s").getJSONArray("items");
-            }
-            else {
-                System.out.println("Error response code: " + response.code());
-                System.out.println("Error response body: " + response.body().string());
-
-                throw new RuntimeException("Response not successful. See console for details.");
-            }
-        }
-        catch (IOException | JSONException e) {
-            throw new RuntimeException(e);
-        }
+        return getObjects(type, client, request);
     }
 
     public JSONObject getTrack(String id) {
