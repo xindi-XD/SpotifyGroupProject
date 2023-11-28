@@ -54,6 +54,17 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
         return getObjects(type, client, request);
     }
 
+    public JSONArray search(String query, String type, int limit) {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        Request request = new Request.Builder()
+                .url("https://api.spotify.com/v1/search?q=" + query + "&type=" + type + "&limit=" + limit)
+                .method("GET", null)
+                .addHeader("Authorization", "Bearer " + getClientCredentials())
+                .build();
+        return getObjects(type, client, request);
+    }
+
     private JSONArray getObjects(String type, OkHttpClient client, Request request) {
         try {
             Response response = client.newCall(request).execute();
@@ -72,17 +83,6 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
         catch (IOException | JSONException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public JSONArray search(String query, String type, int limit) {
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
-        Request request = new Request.Builder()
-                .url("https://api.spotify.com/v1/search?q=" + query + "&type=" + type + "&limit=" + limit)
-                .method("GET", null)
-                .addHeader("Authorization", "Bearer " + getClientCredentials())
-                .build();
-        return getObjects(type, client, request);
     }
 
     public JSONObject getTrack(String id) {
