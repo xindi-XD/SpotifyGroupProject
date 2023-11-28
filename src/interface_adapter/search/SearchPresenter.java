@@ -32,7 +32,7 @@ public class SearchPresenter implements SearchOutputBoundary {
         response.setCreationTime(responseTime.format(DateTimeFormatter.ofPattern("hh:mm:ss")));
 
         SearchState searchState = searchViewModel.getState();
-        searchState.setResult(response.getSong());
+        searchState.setResult(response.getSongs());
         this.searchViewModel.setState(searchState);
         searchViewModel.firePropertyChanged();
 

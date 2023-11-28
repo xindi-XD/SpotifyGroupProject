@@ -1,8 +1,13 @@
 package use_case.search;
 
+import entity.CommonPlaylistFactory;
+import entity.CommonSong;
+import entity.CommonSongFactory;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class SearchInteractor implements SearchInputBoundary {
@@ -27,9 +32,15 @@ public class SearchInteractor implements SearchInputBoundary {
                 //Input: query name.
                 //Output: an array of 10 song objects, or a JSONarray.
                 String query = searchInputData.getQuery();
-                JSONArray result = searchAPIDataAccessObject.searchTrack(query);
+                JSONArray results = searchAPIDataAccessObject.searchTrack(query);
+                ArrayList<CommonSong> songs = new ArrayList<>();
                 // TODO: Output data incomplete.
-                SearchOutputData searchOutputData = new SearchOutputData(result.get(1), now.toString(), false);
+                for (int i = 0; i< results.length(); i++){
+                    JSONObject result = (JSONObject) results.get(i);
+                    CommonSong song = CommonSongFactory.create(result);
+                    songs.add(song);
+                }
+                SearchOutputData searchOutputData = new SearchOutputData(songs, now.toString(), false);
                 searchPresenter.prepareSuccessView(searchOutputData);
             }
         }
