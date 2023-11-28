@@ -35,7 +35,6 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 System.out.println("Error response code: " + response.code());
                 System.out.println("Error response body: " + response.body().string());
 
-                // Throw a more informative exception
                 throw new RuntimeException("Response not successful. See console for details.");
             }
         }
@@ -52,6 +51,21 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 .method("GET", null)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
+        return getObjects(type, client, request);
+    }
+
+    public JSONArray search(String query, String type, int limit) {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        Request request = new Request.Builder()
+                .url("https://api.spotify.com/v1/search?q=" + query + "&type=" + type + "&limit=" + limit)
+                .method("GET", null)
+                .addHeader("Authorization", "Bearer " + getClientCredentials())
+                .build();
+        return getObjects(type, client, request);
+    }
+
+    private JSONArray getObjects(String type, OkHttpClient client, Request request) {
         try {
             Response response = client.newCall(request).execute();
             System.out.println(response);
@@ -63,7 +77,6 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 System.out.println("Error response code: " + response.code());
                 System.out.println("Error response body: " + response.body().string());
 
-                // Throw a more informative exception
                 throw new RuntimeException("Response not successful. See console for details.");
             }
         }
@@ -89,7 +102,6 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 System.out.println("Error response code: " + response.code());
                 System.out.println("Error response body: " + response.body().string());
 
-                // Throw a more informative exception
                 throw new RuntimeException("Response not successful. See console for details.");
             }
         }
@@ -97,4 +109,5 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
             throw new RuntimeException(e);
         }
     }
+
 }

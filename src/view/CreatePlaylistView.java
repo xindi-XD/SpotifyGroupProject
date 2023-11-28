@@ -75,7 +75,8 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
                     @Override
                     public void actionPerformed(ActionEvent evt){
                         if (evt.getSource().equals(makePlaylist)){
-                            createPlaylistController.execute("Playlist name retrieved from keyboard");
+                            CreatePlaylistState currentState = createPlaylistViewModel.getCreatePlaylistState();
+                            createPlaylistController.execute(currentState.getPlaylistName());
                             CreatePlaylistState state = createPlaylistViewModel.getCreatePlaylistState();
                             if (state.getNullError() != null){
                                 JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getNullError());
