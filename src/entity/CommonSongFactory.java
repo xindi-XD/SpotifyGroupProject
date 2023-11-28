@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class CommonSongFactory implements SongFactory {
 
-    public static CommonSong create(String name, String[] artist, String id) {
+    public CommonSong create(String name, String[] artist, String id) {
         return new CommonSong(name, artist, id);
     }
 
-    public static CommonSong create(JSONObject object) {
+    public CommonSong create(JSONObject object) {
         return new CommonSong(object.getString("name"),
                 parseArtists(object.getJSONArray("artists")).toArray(new String[0]),
                 object.getString("id"));
