@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed merge conflict">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playlists.json" beforeDir="false" afterPath="$PROJECT_DIR$/playlists.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonPlaylistFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PlaylistFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/SongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/SongFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "get-fix",
+    "git-widget-placeholder": "security-issue",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,10 +56,6 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
-        <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
-      </envs>
       <option name="MAIN_CLASS_NAME" value="app.Main" />
       <module name="SpotifyProject" />
       <extension name="coverage">
@@ -163,17 +148,7 @@
     <MESSAGE value="Fixed bug." />
     <MESSAGE value="Fixed merge conflict" />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed bad request error from API calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bad request error from API calls" />
   </component>
 </project>
