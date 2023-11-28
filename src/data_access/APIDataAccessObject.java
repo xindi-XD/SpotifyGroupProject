@@ -35,7 +35,6 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 System.out.println("Error response code: " + response.code());
                 System.out.println("Error response body: " + response.body().string());
 
-                // Throw a more informative exception
                 throw new RuntimeException("Response not successful. See console for details.");
             }
         }
@@ -63,7 +62,6 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 System.out.println("Error response code: " + response.code());
                 System.out.println("Error response body: " + response.body().string());
 
-                // Throw a more informative exception
                 throw new RuntimeException("Response not successful. See console for details.");
             }
         }
@@ -89,7 +87,6 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 System.out.println("Error response code: " + response.code());
                 System.out.println("Error response body: " + response.body().string());
 
-                // Throw a more informative exception
                 throw new RuntimeException("Response not successful. See console for details.");
             }
         }
@@ -97,4 +94,5 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
             throw new RuntimeException(e);
         }
     }
+
 }
