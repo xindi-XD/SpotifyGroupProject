@@ -25,7 +25,7 @@ public class CommonPlaylist implements Playlist{
         return true;
     }
 
-    public ArrayList<CommonSong> getSong(String name) {  // get all the songs with the same name when user searches for a song.
+    public ArrayList<CommonSong> getSong() {  // get all the songs with the same name when user searches for a song.
         ArrayList<CommonSong> songList = new ArrayList<>();
         if (songs.isEmpty()) {
             System.out.println("No result for an empty playlist.");

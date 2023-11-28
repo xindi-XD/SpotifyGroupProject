@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed merge conflict">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20,_7_20 p_m__[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20__7_20p_m___Changes_1.xml" beforeDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Json file works.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playlists.json" beforeDir="false" afterPath="$PROJECT_DIR$/playlists.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/CreatePlaylistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatePlaylistView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongPresenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +89,7 @@
       <updated>1700774240108</updated>
       <workItem from="1700774242076" duration="2286000" />
       <workItem from="1701030006636" duration="338000" />
-      <workItem from="1701130954919" duration="3169000" />
+      <workItem from="1701130954919" duration="4106000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -138,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701030134448</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Json file works.">
+      <option name="closed" value="true" />
+      <created>1701134344992</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701134344992</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +160,8 @@
     <MESSAGE value="Fixed bug." />
     <MESSAGE value="Fixed merge conflict" />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Json file works." />
+    <option name="LAST_COMMIT_MESSAGE" value="Json file works." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
