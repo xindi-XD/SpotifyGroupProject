@@ -44,12 +44,11 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
         }
     }
 
-    //TODO: complete search method
-    public JSONArray searchTrack(String query) {
+    public JSONArray search(String query, String type) {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         Request request = new Request.Builder()
-                .url("https://api.spotify.com/v1/search?q=" + query + "&type=track")
+                .url("https://api.spotify.com/v1/search?q=" + query + "&type=" + type)
                 .method("GET", null)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
@@ -58,35 +57,7 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
             System.out.println(response);
             if (response.code() == 200) {
                 JSONObject responseBody = new JSONObject(response.body().string());
-                return responseBody.getJSONObject("tracks").getJSONArray("items");
-            }
-            else {
-                System.out.println("Error response code: " + response.code());
-                System.out.println("Error response body: " + response.body().string());
-
-                // Throw a more informative exception
-                throw new RuntimeException("Response not successful. See console for details.");
-            }
-        }
-        catch (IOException | JSONException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public JSONArray searchPlaylist(String query) {
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
-        Request request = new Request.Builder()
-                .url("https://api.spotify.com/v1/search?q=" + query + "&type=playlist")
-                .method("GET", null)
-                .addHeader("Authorization", "Bearer " + getClientCredentials())
-                .build();
-        try {
-            Response response = client.newCall(request).execute();
-            System.out.println(response);
-            if (response.code() == 200) {
-                JSONObject responseBody = new JSONObject(response.body().string());
-                return responseBody.getJSONObject("playlists").getJSONArray("items");
+                return responseBody.getJSONObject(type + "s").getJSONArray("items");
             }
             else {
                 System.out.println("Error response code: " + response.code());
