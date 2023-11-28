@@ -70,6 +70,33 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
         }
     }
 
+    public JSONArray search(String query, String type, int limit) {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        Request request = new Request.Builder()
+                .url("https://api.spotify.com/v1/search?q=" + query + "&type=" + type + "&limit=" + limit)
+                .method("GET", null)
+                .addHeader("Authorization", "Bearer " + getClientCredentials())
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println(response);
+            if (response.code() == 200) {
+                JSONObject responseBody = new JSONObject(response.body().string());
+                return responseBody.getJSONObject(type + "s").getJSONArray("items");
+            }
+            else {
+                System.out.println("Error response code: " + response.code());
+                System.out.println("Error response body: " + response.body().string());
+
+                throw new RuntimeException("Response not successful. See console for details.");
+            }
+        }
+        catch (IOException | JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public JSONObject getTrack(String id) {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
