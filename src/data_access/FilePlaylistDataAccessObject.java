@@ -26,7 +26,7 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
         jsonFile = new JSONObject();
         file = new FileWriter(jsonPath);
         if (jsonFile.isEmpty()) {
-            Playlist likedSongs = PlaylistFactory.create("Liked Songs");
+            Playlist likedSongs = playlistFactory.create("Liked Songs");
             jsonFile.put(likedSongs.getName(), likedSongs);
             file.write(jsonFile.toString());
             save();

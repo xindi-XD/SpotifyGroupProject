@@ -21,16 +21,22 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 .url("https://accounts.spotify.com/api/token")
                 .method("POST", body)
                 .addHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString((CLIENT_ID + ":" + CLIENT_SECRET).getBytes()))
+                .addHeader("Content-Type", "application/x-www-form-urlencoded")
                 .build();
         try {
             Response response = client.newCall(request).execute();
             System.out.println(response);
             if (response.code() == 200) {
                 JSONObject responseBody = new JSONObject(response.body().string());
+                System.out.println(responseBody.getInt("expires_in"));
                 return responseBody.getString("access_token");
             }
             else {
-                throw new RuntimeException("Response not successful");
+                System.out.println("Error response code: " + response.code());
+                System.out.println("Error response body: " + response.body().string());
+
+                // Throw a more informative exception
+                throw new RuntimeException("Response not successful. See console for details.");
             }
         }
         catch (IOException | JSONException e) {
@@ -43,7 +49,8 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         Request request = new Request.Builder()
-                .url("https://api.spotify.com/v1/search?q=" + query)
+                .url("https://api.spotify.com/v1/search?q=" + query + "&type=track")
+                .method("GET", null)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
         try {
@@ -54,7 +61,11 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 return responseBody.getJSONObject("tracks").getJSONArray("items");
             }
             else {
-                throw new RuntimeException("Response not successful");
+                System.out.println("Error response code: " + response.code());
+                System.out.println("Error response body: " + response.body().string());
+
+                // Throw a more informative exception
+                throw new RuntimeException("Response not successful. See console for details.");
             }
         }
         catch (IOException | JSONException e) {
@@ -66,7 +77,8 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         Request request = new Request.Builder()
-                .url("https://api.spotify.com/v1/search?q=" + query)
+                .url("https://api.spotify.com/v1/search?q=" + query + "&type=playlist")
+                .method("GET", null)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
         try {
@@ -77,7 +89,11 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 return responseBody.getJSONObject("playlists").getJSONArray("items");
             }
             else {
-                throw new RuntimeException("Response not successful");
+                System.out.println("Error response code: " + response.code());
+                System.out.println("Error response body: " + response.body().string());
+
+                // Throw a more informative exception
+                throw new RuntimeException("Response not successful. See console for details.");
             }
         }
         catch (IOException | JSONException e) {
@@ -90,6 +106,7 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
                 .build();
         Request request = new Request.Builder()
                 .url("https://api.spotify.com/v1/tracks/" + id)
+                .method("GET", null)
                 .addHeader("Authorization", "Bearer " + getClientCredentials())
                 .build();
         try {
@@ -98,7 +115,11 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
             if (response.code() == 200) {
                 return new JSONObject(response.body().string());
             } else {
-                throw new RuntimeException("Response not successful");
+                System.out.println("Error response code: " + response.code());
+                System.out.println("Error response body: " + response.body().string());
+
+                // Throw a more informative exception
+                throw new RuntimeException("Response not successful. See console for details.");
             }
         }
         catch (IOException | JSONException e) {

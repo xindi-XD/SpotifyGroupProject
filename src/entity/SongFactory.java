@@ -6,7 +6,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public interface SongFactory {
-    static CommonSong create(String name, String[] artist, String id) {
-        return null;
-    }
+
+    CommonSong create(String name, String[] artist, String id);
 }
