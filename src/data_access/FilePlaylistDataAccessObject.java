@@ -1,6 +1,7 @@
 package data_access;
 
 import entity.CommonPlaylist;
+import entity.CommonPlaylistFactory;
 import entity.Playlist;
 import entity.PlaylistFactory;
 import org.json.JSONObject;
@@ -14,23 +15,15 @@ import java.util.Map;
 // Todo: needs to figure out how to store data into a json file.
 public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {
 
-    private final JSONObject jsonFile;
+    private JSONObject jsonFile;
 
-    private final FileWriter file;
+    private final String jsonPath;
     private final Map<String, CommonPlaylist> playlists = new HashMap<>();
     private PlaylistFactory playlistFactory;
 
     public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) throws IOException {
         this.playlistFactory = playlistFactory;
-
-        jsonFile = new JSONObject();
-        file = new FileWriter(jsonPath);
-        if (jsonFile.isEmpty()) {
-            Playlist likedSongs = playlistFactory.create("Liked Songs");
-            jsonFile.put(likedSongs.getName(), likedSongs);
-            file.write(jsonFile.toString());
-            save();
-        }
+        this.jsonPath = jsonPath;
     }
 
     @Override
@@ -41,10 +34,14 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
 
     private void save() {
         try {
+            jsonFile = new JSONObject();
+            FileWriter file = new FileWriter(jsonPath);
             for (CommonPlaylist commonPlaylist : playlists.values()) {
                 jsonFile.put(commonPlaylist.getName(), commonPlaylist);
             }
 
+//            jsonFile.put("dc", new CommonPlaylistFactory());
+//            jsonFile.put("cd", new CommonPlaylistFactory());
             file.write(jsonFile.toString());
             file.close();
 
