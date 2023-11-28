@@ -1,7 +1,9 @@
 package use_case.create_playlist;
 
-import entity.CommonPlaylist;
+import entity.Playlist;
+
+import java.io.IOException;
 
 public interface CreatePlaylistDataAccessInterface {
-    void save(CommonPlaylist playlist);
+    void save(Playlist playlist);
 }

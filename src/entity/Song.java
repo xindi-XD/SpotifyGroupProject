@@ -1,28 +1,13 @@
 package entity;
 
-import org.json.JSONObject;
+import java.util.ArrayList;
 
-public class Song {
-    final private String name;
-    final private String[] artist;
-    final private String id;
+public interface Song {
+    boolean likeSong(CommonSong song);
+    boolean unlikeSong(CommonSong song);
+    String getName();
 
-    public Song(String name, String[] artist, String id) {
-        this.name = name;
-        this.id = id;
-        this.artist = artist;
-    }
+    String[] getArtist();
 
-    public String getName() {
-        return name;
-    }
-
-    public String[] getArtist() {
-        return artist;
-    }
-
-    public String getId() {
-        return id;
-    }
-
+    String getID();
 }

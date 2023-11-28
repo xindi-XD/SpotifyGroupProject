@@ -9,6 +9,7 @@ public class HomepageViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Homepage View";
     public static final String SEARCH_INFO_LABEL = "Search by name";
     public static final String SEARCH_TYPE_LABEL = "Select search type";
+    public static final String SEARCH_BUTTON_LABEL = "Search";
     public static final String CREATEPLAYLIST_BUTTON_LABEL = "Create Playlist";
     // TODO: show, delete and search to be implemented.
     public static final String SHOWPLAYLISTS_BUTTON_LABEL = "Show Playlists";

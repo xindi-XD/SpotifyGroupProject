@@ -1,23 +1,27 @@
 package app;
 
+import data_access.APIDataAccessObject;
 import data_access.FilePlaylistDataAccessObject;
+import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
+import interface_adapter.search.SearchController;
+import interface_adapter.search.SearchViewModel;
 import view.CreatePlaylistView;
 import view.HomepageView;
 import view.ViewManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO: API call commented out for only view transition.
 //        APIDataAccessObject spot = new APIDataAccessObject();
 //        //System.out.println(spot.getData("11vYnWjFxgXBgw2aC6Rb8"));
 //        System.out.println(spot.getMe());
-
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,14 +42,14 @@ public class Main {
         // TODO: more VMs to be added.
         HomepageViewModel homepageViewModel = new HomepageViewModel();
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
-        // TODO: DAO not correctly named, nor initialized, remove "= null" when initialized.
-        FilePlaylistDataAccessObject playlistDataAccessObject = null;
-        // TODO: DAO not implemented.
+        SearchViewModel searchViewModel = new SearchViewModel();
+        FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
+        APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
 //        try {
 //            fileDataAccessObject = new FileDataAccessObject("./users.csv", new CommonUserFactory());
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
-        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
+        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, searchViewModel, apiDataAccessObject);
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
         views.add(createPlaylistView, createPlaylistView.viewName);
