@@ -1,5 +1,7 @@
 package app;
 
+import entity.CommonPlaylistFactory;
+import entity.PlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistController;
 import interface_adapter.create_playlist.CreatePlaylistPresenter;
@@ -39,7 +41,8 @@ public class CreatePlaylistUseCaseFactory {
         // Notice how we pass this method's parameters to the Presenter.
         CreatePlaylistOutputBoundary createPlaylistOutputBoundary = new CreatePlaylistPresenter(createPlaylistViewModel, homepageViewModel, viewManagerModel);
         // TODO: Incomplete method. Missing factory and DAO.
-        CreatePlaylistInputBoundary createPlaylistInteractor = new CreatePlaylistInteractor(createPlaylistDataAccessObject, createPlaylistOutputBoundary);
+        PlaylistFactory playlistFactory = new CommonPlaylistFactory();
+        CreatePlaylistInputBoundary createPlaylistInteractor = new CreatePlaylistInteractor(createPlaylistDataAccessObject, createPlaylistOutputBoundary, playlistFactory);
         return new CreatePlaylistController(createPlaylistInteractor);
     }
 }
