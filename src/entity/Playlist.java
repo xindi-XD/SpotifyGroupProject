@@ -8,5 +8,7 @@ public interface Playlist {
     ArrayList<CommonSong> getSong();
     String getName();
     boolean setName(String name);
+    String getDescription();
+    boolean setDescription(String description);
     int getLength();
 }
