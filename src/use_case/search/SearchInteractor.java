@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class SearchInteractor implements SearchInputBoundary {
     final SearchAPIDataAccessInterface searchAPIDataAccessObject;
-    //TODO: song and playlist are not distinguished.
+    //TODO: song and artist are not distinguished.
     final SearchOutputBoundary searchPresenter;
 
     public SearchInteractor(SearchAPIDataAccessInterface searchAPIDataAccessInterface,
