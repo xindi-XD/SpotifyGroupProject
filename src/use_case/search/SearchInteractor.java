@@ -30,11 +30,10 @@ public class SearchInteractor implements SearchInputBoundary {
             LocalDateTime now = LocalDateTime.now();
             if (Objects.equals(searchInputData.getQueryType(), "Track")){
                 //Input: query name.
-                //Output: an array of 10 song objects, or a JSONarray.
                 String query = searchInputData.getQuery();
                 JSONArray results = searchAPIDataAccessObject.searchTrack(query);
                 ArrayList<CommonSong> songs = new ArrayList<>();
-                // TODO: Output data incomplete.
+                // Output: passes an array of Song objects to output data.
                 for (int i = 0; i< results.length(); i++){
                     JSONObject result = (JSONObject) results.get(i);
                     CommonSong song = CommonSongFactory.create(result);
