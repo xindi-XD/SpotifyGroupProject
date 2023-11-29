@@ -9,11 +9,12 @@ import java.util.ArrayList;
 //eva writing this one
 public class SearchViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Search Results View";
-    public static String SONG1_LABEL = "";
-    public static String SONG2_LABEL = "";
-    public static String SONG3_LABEL = "";
-    public static String SONG4_LABEL = "";
-    public static String SONG5_LABEL = "";
+    public static String SONG1_LABEL;
+    public static String SONG2_LABEL;
+    public static String SONG3_LABEL;
+    public static String SONG4_LABEL;
+    public static String SONG5_LABEL;
+    public static String ADD_BUTTON_LABEL = "Add";
     private SearchState state = new SearchState();
 
     public SearchViewModel() {
