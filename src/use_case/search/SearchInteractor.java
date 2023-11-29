@@ -33,8 +33,6 @@ public class SearchInteractor implements SearchInputBoundary {
                 String query = searchInputData.getQuery();
                 JSONArray results = searchAPIDataAccessObject.search(query, "track");
                 // TODO: Output data incomplete.
-                SearchOutputData searchOutputData = new SearchOutputData(result.get(1), now.toString(), false);
-                JSONArray results = searchAPIDataAccessObject.searchTrack(query);
                 ArrayList<CommonSong> songs = new ArrayList<>();
                 // Output: passes an array of Song objects to output data.
                 for (int i = 0; i< results.length(); i++){
