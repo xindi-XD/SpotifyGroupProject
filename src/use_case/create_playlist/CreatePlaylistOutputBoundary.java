@@ -1,7 +1,7 @@
 package use_case.create_playlist;
 
 public interface CreatePlaylistOutputBoundary {
-    void prepareSuccessView(String name);
+    void prepareSuccessView(CreatePlaylistOutputData name);
 
 //    void prepareFailView(String error);
 }

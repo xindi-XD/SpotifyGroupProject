@@ -4,6 +4,7 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.homepage.HomepageState;
 import interface_adapter.homepage.HomepageViewModel;
 import use_case.create_playlist.CreatePlaylistOutputBoundary;
+import use_case.create_playlist.CreatePlaylistOutputData;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -20,7 +21,7 @@ public class CreatePlaylistPresenter implements CreatePlaylistOutputBoundary {
         this.viewManagerModel = viewManagerModel;
     }
     @Override
-    public void prepareSuccessView(String name) {
+    public void prepareSuccessView(CreatePlaylistOutputData name) {
         // Discarded the Output data run time from CACoding.
         // TODO: change PlaylistState and change property of PlaylistViewModel to add the new playlist to queue.
         viewManagerModel.setActiveView(homepageViewModel.getViewName());
