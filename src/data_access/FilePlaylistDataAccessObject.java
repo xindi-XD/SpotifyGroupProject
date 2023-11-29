@@ -18,7 +18,7 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
     private JSONObject jsonFile;
 
     private final String jsonPath;
-    private final Map<String, CommonPlaylist> playlists = new HashMap<>();
+    private final Map<String, Playlist> playlists = new HashMap<>();
     private PlaylistFactory playlistFactory;
 
     public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) throws IOException {
@@ -27,7 +27,7 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
     }
 
     @Override
-    public void save(CommonPlaylist playlist) {
+    public void save(Playlist playlist) {
         playlists.put(playlist.getName(), playlist);
         this.save();
     }
@@ -36,12 +36,9 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
         try {
             jsonFile = new JSONObject();
             FileWriter file = new FileWriter(jsonPath);
-            for (CommonPlaylist commonPlaylist : playlists.values()) {
-                jsonFile.put(commonPlaylist.getName(), commonPlaylist);
+            for (Playlist playlist : playlists.values()) {
+                jsonFile.put(playlist.getName(), playlist);
             }
-
-//            jsonFile.put("dc", new CommonPlaylistFactory());
-//            jsonFile.put("cd", new CommonPlaylistFactory());
             file.write(jsonFile.toString());
             file.close();
 

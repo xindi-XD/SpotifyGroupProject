@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed merge conflict">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Json file works.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +94,7 @@
       <updated>1700774240108</updated>
       <workItem from="1700774242076" duration="2286000" />
       <workItem from="1701030006636" duration="338000" />
-      <workItem from="1701129982465" duration="1970000" />
+      <workItem from="1701130954919" duration="4106000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -132,23 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701030134448</updated>
     </task>
-    <task id="LOCAL-00006" summary="Security issue fix">
+    <task id="LOCAL-00006" summary="Json file works.">
       <option name="closed" value="true" />
-      <created>1701132819183</created>
+      <created>1701134344992</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1701132819183</updated>
+      <updated>1701134344992</updated>
     </task>
-    <task id="LOCAL-00007" summary="Fixed merge conflict">
-      <option name="closed" value="true" />
-      <created>1701136040956</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1701136040956</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,8 +163,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
-    <MESSAGE value="Commit" />
     <MESSAGE value="Fixed merge conflict" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge conflict" />
+    <MESSAGE value="Commit" />
+    <MESSAGE value="Json file works." />
+    <option name="LAST_COMMIT_MESSAGE" value="Json file works." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
