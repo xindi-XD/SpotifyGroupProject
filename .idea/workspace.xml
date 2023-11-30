@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="CreatePlaylist use case now has pop up.">
-      <change afterPath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" afterDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Started deleteplaylist usecase.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/PlaylistFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_playlist/CreatePlaylistInputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreatePlaylistView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/delete_playlist/DeletePlaylistOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +127,7 @@
       <workItem from="1701030006636" duration="338000" />
       <workItem from="1701130954919" duration="4106000" />
       <workItem from="1701237368922" duration="540000" />
-      <workItem from="1701304885120" duration="2256000" />
+      <workItem from="1701304885120" duration="4862000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -191,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701236524670</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Started deleteplaylist usecase.">
+      <option name="closed" value="true" />
+      <created>1701310496018</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701310496018</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +225,8 @@
     <MESSAGE value="Fixed merge conflict" />
     <MESSAGE value="Commit to merge" />
     <MESSAGE value="CreatePlaylist use case now has pop up." />
-    <option name="LAST_COMMIT_MESSAGE" value="CreatePlaylist use case now has pop up." />
+    <MESSAGE value="Started deleteplaylist usecase." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started deleteplaylist usecase." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

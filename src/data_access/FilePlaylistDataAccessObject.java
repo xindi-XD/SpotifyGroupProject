@@ -4,13 +4,15 @@ import entity.Playlist;
 import entity.PlaylistFactory;
 import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
+import use_case.delete_playlist.DeletePlaylistDataAccessInterface;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
-public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {
+public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface, DeletePlaylistDataAccessInterface {
 
     private final String jsonPath;
     private final Map<String, Playlist> playlists = new HashMap<>();
@@ -42,4 +44,13 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
         }
     }
 
+    public void delete(String playlistName) {
+        try {
+            playlists.remove(playlistName);
+        } catch (NoSuchElementException e) {
+            throw new NoSuchElementException(e);
+        }
+
+        this.save();
+    }
 }

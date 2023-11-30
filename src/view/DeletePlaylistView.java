@@ -28,7 +28,7 @@ public class DeletePlaylistView extends JPanel implements ActionListener, Proper
         this.homepageViewModel = homepageViewModel;
         this.deletePlaylistViewModel = deletePlaylistViewModel;
         this.viewManagerModel = viewManagerModel;
-        this.deletePlaylistViewModel = deletePlaylistViewModel;
+        this.deletePlaylistController = deletePlaylistController;
 
         deletePlaylistViewModel.addPropertyChangeListener(this);
 
