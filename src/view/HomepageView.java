@@ -26,7 +26,6 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
     private final HomepageViewModel homepageViewModel;
     // Homepage does not have a controller. It doesn't have any other use case apart from switching views.
     private final CreatePlaylistViewModel createPlaylistViewModel;
-//    private final CreatePlaylistController createPlaylistController;
     private final SearchController searchController;
     final JTextField searchInputField = new JTextField(15);
     private final JButton createPlaylist;
