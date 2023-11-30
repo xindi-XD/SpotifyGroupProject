@@ -10,6 +10,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="origin/main" />
   </component>
@@ -19,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="security-issue" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +61,7 @@
   }
 }</component>
   <component name="RunManager">
+
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
@@ -71,8 +79,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestAPI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpotifyProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestAPI" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <envs>
+        <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
+        <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.TestAPI" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -158,20 +185,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
-    <MESSAGE value="Fixed merge conflict" />
     <MESSAGE value="Commit" />
     <MESSAGE value="Json file works." />
-    <MESSAGE value="Commit: A version without DAO, but this is old view." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: A version without DAO, but this is old view." />
+    <MESSAGE value="Fixed merge conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge conflict" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.AssertionError" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
