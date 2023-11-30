@@ -8,6 +8,7 @@ import use_case.search.SearchAPIDataAccessInterface;
 
 import java.io.IOException;
 import java.util.Base64;
+import java.util.HashMap;
 
 public class APIDataAccessObject implements SearchAPIDataAccessInterface {
     private static final String CLIENT_ID = System.getenv("CLIENT_ID");
@@ -98,6 +99,38 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface {
             System.out.println(response);
             if (response.code() == 200) {
                 return new JSONObject(response.body().string());
+            } else {
+                System.out.println("Error response code: " + response.code());
+                System.out.println("Error response body: " + response.body().string());
+
+                throw new RuntimeException("Response not successful. See console for details.");
+            }
+        }
+        catch (IOException | JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public HashMap<String, Float> getTrackFeatures(String id) {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        Request request = new Request.Builder()
+                .url("https://api.spotify.com/v1/audio-features/" + id)
+                .method("GET", null)
+                .addHeader("Authorization", "Bearer " + getClientCredentials())
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println(response);
+            if (response.code() == 200) {
+                JSONObject results = new JSONObject(response.body().string());
+                HashMap<String, Float> features = new HashMap<>();
+                String[] featureNames = {"acousticness", "danceability", "energy", "instrumentalness", "liveness",
+                        "loudness", "speechiness", "valence"};
+                for (String feature : featureNames) {
+                    features.put(feature, results.getFloat(feature));
+                }
+                return features;
             } else {
                 System.out.println("Error response code: " + response.code());
                 System.out.println("Error response body: " + response.body().string());

@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 public interface SongFactory {
 
-    CommonSong create(String name, String[] artist, String id);
+    CommonSong create(String name, String[] artist, String[] genres, String id);
 }
