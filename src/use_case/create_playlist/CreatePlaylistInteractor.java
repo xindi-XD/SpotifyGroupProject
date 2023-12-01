@@ -20,11 +20,13 @@ public class CreatePlaylistInteractor implements CreatePlaylistInputBoundary{
     @Override
     public void execute(CreatePlaylistInputData createPlaylistInputData) {
         String playlistName = createPlaylistInputData.getName();
-        Playlist newPlaylist = playlistFactory.create(playlistName);
+        String playlistDes = createPlaylistInputData.getDescription();
+        Playlist newPlaylist = playlistFactory.create(playlistName, playlistDes);
         createPlaylistDataAccessObject.save(newPlaylist);
 
         String newPlaylistName = newPlaylist.getName();
-        CreatePlaylistOutputData createPlaylistOutputData = new CreatePlaylistOutputData(newPlaylistName);
+        String newPlaylistDes = newPlaylist.getDescription();
+        CreatePlaylistOutputData createPlaylistOutputData = new CreatePlaylistOutputData(newPlaylistName, newPlaylistDes);
         createPlaylistPresenter.prepareSuccessView(createPlaylistOutputData);
     }
 }
