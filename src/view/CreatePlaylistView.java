@@ -24,7 +24,7 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
     // JTextField(columns) determines bracket length.
     private final CreatePlaylistController createPlaylistController;
     final JTextField playlistNameInputField = new JTextField(15);
-    final JTextField descriptionInputField = new JTextField(15);
+    final JTextField descriptionInputField = new git pull origin mainJTextField(15);
     private final JLabel playlistNameError = new JLabel(); // TODO: Captures repeated playlist name created by the same account. Not implemented.
     private final JButton backToHome;
     private final JButton makePlaylist;
