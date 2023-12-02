@@ -1,25 +1,22 @@
 package data_access;
 
-import entity.CommonPlaylist;
-import entity.CommonPlaylistFactory;
 import entity.Playlist;
 import entity.PlaylistFactory;
 import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
+import use_case.delete_playlist.DeletePlaylistDataAccessInterface;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
-// Todo: needs to figure out how to store data into a json file.
-public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {
-
-    private JSONObject jsonFile;
+public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface, DeletePlaylistDataAccessInterface {
 
     private final String jsonPath;
     private final Map<String, Playlist> playlists = new HashMap<>();
-    private PlaylistFactory playlistFactory;
+    private final PlaylistFactory playlistFactory;
 
     public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) throws IOException {
         this.playlistFactory = playlistFactory;
@@ -34,7 +31,7 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
 
     private void save() {
         try {
-            jsonFile = new JSONObject();
+            JSONObject jsonFile = new JSONObject();
             FileWriter file = new FileWriter(jsonPath);
             for (Playlist playlist : playlists.values()) {
                 jsonFile.put(playlist.getName(), playlist);
@@ -47,4 +44,13 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
         }
     }
 
+    public void delete(String playlistName) {
+        try {
+            playlists.remove(playlistName);
+        } catch (NoSuchElementException e) {
+            throw new NoSuchElementException(e);
+        }
+
+        this.save();
+    }
 }

@@ -7,10 +7,13 @@ import java.util.Map;
 // Todo: changed the type of songs to Map, need to modify some codes so the codes are compatible.
 public class CommonPlaylist implements Playlist{
     private String name;
+
+    private String description;
     private final Map<String, CommonSong> songs = new HashMap<>();
 
-    public CommonPlaylist(String name) {
+    public CommonPlaylist(String name, String description) {
         this.name = name;
+        this.description = description;
     }
     public boolean addSong(CommonSong song) {  // this method is to add a song to the playlist.
         if (!songs.containsKey(song.getName()) && !songs.containsValue(song)) {
@@ -49,6 +52,15 @@ public class CommonPlaylist implements Playlist{
 
     public boolean setName(String name) {
         this.name = name;
+        return true;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean setDescription(String description) {
+        this.description = description;
         return true;
     }
 
