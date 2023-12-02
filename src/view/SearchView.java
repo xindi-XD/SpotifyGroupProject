@@ -51,17 +51,34 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     //this is where the user can choose to add a song resulting from a search to a
     //playlist or see information about it
     private void setResults() {
-        for (int i = 0; i < SearchViewModel.SONG_LABELS.size(); i++){
-            oneResult(SearchViewModel.SONG_LABELS.get(i));
+        ArrayList<String> songLabels = SearchViewModel.SONG_LABELS;
+        ArrayList<String> artistLabels = SearchViewModel.ARTIST_LABELS;
+        if (!songLabels.isEmpty()){
+            for (int i = 0; i < SearchViewModel.SONG_LABELS.size(); i++){
+                oneSongResult(SearchViewModel.SONG_LABELS.get(i));
+            }
+        }
+        else if (!artistLabels.isEmpty()){
+            for (int i = 0; i < SearchViewModel.ARTIST_LABELS.size(); i++){
+                oneArtistResult(SearchViewModel.ARTIST_LABELS.get(i));
+            }
         }
     }
 
-    private void oneResult(String songName){
+    private void oneSongResult(String songName){
         JLabel songLabel = new JLabel(songName);
         JButton add = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
         JPanel resultLine = new JPanel();
         resultLine.add(songLabel);
         resultLine.add(add);
+        this.add(resultLine);
+    }
+    private void oneArtistResult(String artistName){
+        JLabel artistLabel = new JLabel(artistName);
+        JButton like = new JButton(SearchViewModel.LIKE_ARTIST_BUTTON_LABEL);
+        JPanel resultLine = new JPanel();
+        resultLine.add(artistLabel);
+        resultLine.add(like);
         this.add(resultLine);
     }
 
