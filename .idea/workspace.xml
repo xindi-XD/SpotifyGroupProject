@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Finished interface, interactor, and data-acess for deleteplaylsit.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistPresenter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistPresenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputBoundary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputBoundary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputData.class" afterDir="false" />
-    </list>
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: A version without DAO, but this is old view." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,11 +56,12 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
+
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
@@ -113,10 +100,13 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestAPI" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="" />
@@ -127,12 +117,6 @@
       <workItem from="1700774242076" duration="2286000" />
       <workItem from="1701030006636" duration="338000" />
       <workItem from="1701130954919" duration="4106000" />
-      <workItem from="1701237368922" duration="540000" />
-      <workItem from="1701304885120" duration="4982000" />
-      <workItem from="1701314085908" duration="214000" />
-      <workItem from="1701314471507" duration="335000" />
-      <workItem from="1701314816449" duration="422000" />
-      <workItem from="1701315247500" duration="395000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -182,39 +166,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701134344992</updated>
     </task>
-    <task id="LOCAL-00007" summary="Commit to merge">
-      <option name="closed" value="true" />
-      <created>1701232377580</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1701232377580</updated>
-    </task>
-    <task id="LOCAL-00008" summary="CreatePlaylist use case now has pop up.">
-      <option name="closed" value="true" />
-      <created>1701236524670</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1701236524670</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Started deleteplaylist usecase.">
-      <option name="closed" value="true" />
-      <created>1701310496018</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1701310496018</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Finished interface, interactor, and data-acess for deleteplaylsit.">
-      <option name="closed" value="true" />
-      <created>1701312785863</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1701312785863</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,11 +188,7 @@
     <MESSAGE value="Commit" />
     <MESSAGE value="Json file works." />
     <MESSAGE value="Fixed merge conflict" />
-    <MESSAGE value="Commit to merge" />
-    <MESSAGE value="CreatePlaylist use case now has pop up." />
-    <MESSAGE value="Started deleteplaylist usecase." />
-    <MESSAGE value="Finished interface, interactor, and data-acess for deleteplaylsit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished interface, interactor, and data-acess for deleteplaylsit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge conflict" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -251,9 +199,5 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

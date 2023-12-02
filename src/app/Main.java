@@ -6,10 +6,10 @@ import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
-import interface_adapter.search.SearchController;
 import interface_adapter.search.SearchViewModel;
 import view.CreatePlaylistView;
 import view.HomepageView;
+import view.SearchView;
 import view.ViewManager;
 
 import javax.swing.*;
@@ -53,6 +53,8 @@ public class Main {
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
         views.add(createPlaylistView, createPlaylistView.viewName);
+        SearchView searchView = new SearchView(searchViewModel);
+        views.add(searchView, searchView.viewName);
 
         viewManagerModel.setActiveView(homepageView.viewName);
         viewManagerModel.firePropertyChanged();
