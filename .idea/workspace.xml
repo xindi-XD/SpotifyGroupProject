@@ -65,7 +65,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
