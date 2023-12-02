@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Started deleteplaylist usecase.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/HomepageUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomepageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputBoundary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputBoundary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/delete_playlist/DeletePlaylistOutputData.class" afterDir="false" />
-    </list>
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: A version without DAO, but this is old view." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,13 +19,6 @@
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="origin/main" />
-  </component>
-  <component name="Git.Pull.Settings">
-    <option name="OPTIONS">
-      <set>
-        <option value="REBASE" />
-      </set>
-    </option>
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/authexpress" />
@@ -83,14 +60,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
+
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
         <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="app.Main" />
-      <module name="Spotify" />
+      <module name="SpotifyProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="app.*" />
@@ -121,8 +99,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestAPI" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -137,8 +117,6 @@
       <workItem from="1700774242076" duration="2286000" />
       <workItem from="1701030006636" duration="338000" />
       <workItem from="1701130954919" duration="4106000" />
-      <workItem from="1701237368922" duration="540000" />
-      <workItem from="1701304885120" duration="4862000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -188,31 +166,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701134344992</updated>
     </task>
-    <task id="LOCAL-00007" summary="Commit to merge">
-      <option name="closed" value="true" />
-      <created>1701232377580</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1701232377580</updated>
-    </task>
-    <task id="LOCAL-00008" summary="CreatePlaylist use case now has pop up.">
-      <option name="closed" value="true" />
-      <created>1701236524670</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1701236524670</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Started deleteplaylist usecase.">
-      <option name="closed" value="true" />
-      <created>1701310496018</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1701310496018</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,10 +188,7 @@
     <MESSAGE value="Commit" />
     <MESSAGE value="Json file works." />
     <MESSAGE value="Fixed merge conflict" />
-    <MESSAGE value="Commit to merge" />
-    <MESSAGE value="CreatePlaylist use case now has pop up." />
-    <MESSAGE value="Started deleteplaylist usecase." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started deleteplaylist usecase." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge conflict" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
