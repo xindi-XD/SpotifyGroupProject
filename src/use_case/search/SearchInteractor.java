@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class SearchInteractor implements SearchInputBoundary {
     final SearchAPIDataAccessInterface searchAPIDataAccessObject;
-    //TODO: song and playlist are not distinguished.
+    //TODO: song and artist are not distinguished.
     final SearchOutputBoundary searchPresenter;
 
     public SearchInteractor(SearchAPIDataAccessInterface searchAPIDataAccessInterface,
@@ -30,7 +30,6 @@ public class SearchInteractor implements SearchInputBoundary {
             LocalDateTime now = LocalDateTime.now();
             if (Objects.equals(searchInputData.getQueryType(), "Track")){
                 //Input: query name.
-                //Output: an array of 10 song objects, or a JSONarray.
                 String query = searchInputData.getQuery();
                 JSONArray results = searchAPIDataAccessObject.search(query, "track");
                 ArrayList<CommonSong> songs = new ArrayList<>();
