@@ -1,5 +1,7 @@
 package use_case.search;
 
+import entity.CommonArtist;
+import entity.CommonArtistFactory;
 import entity.CommonPlaylistFactory;
 import entity.CommonSong;
 import entity.CommonSongFactory;
@@ -36,24 +38,14 @@ public class SearchInteractor implements SearchInputBoundary {
             // Output: a JSONObject.
             // TODO: Parse the JSONObject into an arraylist of songs or artists.
             if (queryType.equals("track")) {
-                ArrayList<CommonSong> songs = new ArrayList<>();
-                for (int i = 0; i < results.length(); i++) {
-                    JSONObject result = (JSONObject) results.get(i);
-                    CommonSong song = CommonSongFactory.create(result);
-                    songs.add(song);
-                }
+                ArrayList<CommonSong> songs = resultCompiler.compileResult(results);
                 SearchOutputData searchOutputData = new SearchOutputData(songs, now.toString(), false);
-                searchPresenter.prepareSuccessView(searchOutputData);
+                searchPresenter.prepareSuccessSongView(searchOutputData);
             }
             else if (queryType.equals("artist")){
-                ArrayList<CommonArtist> artists = new ArrayList<>();
-                for (int i = 0; i < results.length(); i++) {
-                    JSONObject result = (JSONObject) results.get(i);
-                    CommonArtist artist = CommonArtistFactory.create(result);
-                    artists.add(artist);
-                }
+                ArrayList<CommonArtist> artists = resultCompiler.compileResult(results);
                 SearchOutputData searchOutputData = new SearchOutputData(artists, now.toString(), false);
-                searchPresenter.prepareSuccessView(searchOutputData);
+                searchPresenter.prepareSuccessArtistView(searchOutputData);
 
             }
         }

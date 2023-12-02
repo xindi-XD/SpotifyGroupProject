@@ -23,6 +23,12 @@ public class SearchViewModel extends ViewModel {
             this.SONG_LABELS.add(i, songLabels.get(i));
         }
     }
+    public void setFiveArtistLabels(ArrayList<String> artistLabels) {
+        for (int i = 0; i < 5; i++){
+            this.ARTIST_LABELS.add(i, artistLabels.get(i));
+        }
+    }
+
 
     @Override
     public void firePropertyChanged() {
