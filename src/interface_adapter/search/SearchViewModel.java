@@ -9,23 +9,17 @@ import java.util.ArrayList;
 //eva writing this one
 public class SearchViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Search Results View";
-    public static String SONG1_LABEL;
-    public static String SONG2_LABEL;
-    public static String SONG3_LABEL;
-    public static String SONG4_LABEL;
-    public static String SONG5_LABEL;
+    public static ArrayList<String> SONG_LABELS;
     public static String ADD_BUTTON_LABEL = "Add";
     private SearchState state = new SearchState();
 
     public SearchViewModel() {
         super("search results");
     }
-    public void setSongLabels(ArrayList<String> songLabels){
-        this.SONG1_LABEL = songLabels.get(0);
-        this.SONG2_LABEL = songLabels.get(1);
-        this.SONG3_LABEL = songLabels.get(2);
-        this.SONG4_LABEL = songLabels.get(3);
-        this.SONG5_LABEL = songLabels.get(4);
+    public void setFiveSongLabels(ArrayList<String> songLabels){
+        for (int i = 0; i < 5; i++){
+            this.SONG_LABELS.add(i, songLabels.get(i));
+        }
     }
 
     @Override

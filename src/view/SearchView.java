@@ -15,10 +15,6 @@ import java.util.ArrayList;
 public class SearchView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "search results";
     private final JButton add1;
-//    private final JButton addSong2;
-//    private final JButton addSong3;
-//    private final JButton addSong4;
-//    private final JButton addSong5;
     private final SearchViewModel searchViewModel;
     public SearchView(SearchViewModel searchViewModel){
         this.searchViewModel = searchViewModel;
@@ -55,11 +51,18 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     //this is where the user can choose to add a song resulting from a search to a
     //playlist or see information about it
     private void setResults() {
-        JLabel song1 = new JLabel(SearchViewModel.SONG1_LABEL);
-        JPanel resultLine1 = new JPanel();
-        resultLine1.add(song1);
-        resultLine1.add(add1);
-        this.add(resultLine1);
+        for (int i = 0; i < SearchViewModel.SONG_LABELS.size(); i++){
+            oneResult(SearchViewModel.SONG_LABELS.get(i));
+        }
+    }
+
+    private void oneResult(String songName){
+        JLabel songLabel = new JLabel(songName);
+        JButton add = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
+        JPanel resultLine = new JPanel();
+        resultLine.add(songLabel);
+        resultLine.add(add);
+        this.add(resultLine);
     }
 
 }

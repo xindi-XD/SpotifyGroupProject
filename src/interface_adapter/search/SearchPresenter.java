@@ -35,7 +35,7 @@ public class SearchPresenter implements SearchOutputBoundary {
         searchState.setResult(songs.getSongs());
         this.searchViewModel.setState(searchState);
         // searchState has a list of song objects. It also has a method getSongNames() return an ArrayList<String> of song names.
-        this.searchViewModel.setSongLabels(searchState.getSongNames());
+        this.searchViewModel.setFiveSongLabels(searchState.getSongNames());
         searchViewModel.firePropertyChanged();
 
         viewManagerModel.setActiveView(searchViewModel.getViewName());
