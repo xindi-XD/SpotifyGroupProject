@@ -8,10 +8,7 @@ import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchViewModel;
-import view.CreatePlaylistView;
-import view.HomepageView;
-import view.SearchView;
-import view.ViewManager;
+import view.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,6 +52,8 @@ public class Main {
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
         views.add(createPlaylistView, createPlaylistView.viewName);
+        DeletePlaylistView deletePlaylistView = DeletePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, deletePlaylistViewModel, playlistDataAccessObject);
+        views.add(deletePlaylistView, deletePlaylistView.viewName);
         SearchView searchView = new SearchView(searchViewModel);
         views.add(searchView, searchView.viewName);
 

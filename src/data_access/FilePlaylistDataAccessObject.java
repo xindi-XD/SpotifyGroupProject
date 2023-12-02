@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 import use_case.delete_playlist.DeletePlaylistDataAccessInterface;
 
+import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -46,7 +47,11 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
 
     public void delete(String playlistName) {
         try {
-            playlists.remove(playlistName);
+            int dialogResult = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to say good by to " + playlistName + "?");
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                playlists.remove(playlistName);
+            }
         } catch (NoSuchElementException e) {
             throw new NoSuchElementException(e);
         }

@@ -2,6 +2,7 @@ package view;
 
 import interface_adapter.ViewManagerModel;
 import interface_adapter.delete_playlist.DeletePlaylistController;
+import interface_adapter.delete_playlist.DeletePlaylistState;
 import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 
@@ -9,6 +10,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -43,14 +46,72 @@ public class DeletePlaylistView extends JPanel implements ActionListener, Proper
         deletePlaylist = new JButton(deletePlaylistViewModel.DELETE_PLAYLIST_BUTTON_LABEL);
         buttons.add(backToHome);
         buttons.add(deletePlaylist);
+
+        backToHome.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(backToHome)){
+                            viewManagerModel.setActiveView(homepageViewModel.getViewName());
+                            viewManagerModel.firePropertyChanged();
+                        }
+                    }
+                }
+        );
+
+        deletePlaylist.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(deletePlaylist)){
+                            DeletePlaylistState currentState = deletePlaylistViewModel.getDeletePlaylistState();
+                            deletePlaylistController.execute(currentState.getPlaylistName());
+                            DeletePlaylistState state = deletePlaylistViewModel.getDeletePlaylistState();
+                            if (state.getNullError() != null){
+                                JOptionPane.showMessageDialog(DeletePlaylistView.this, state.getNullError());
+                            }
+                            else if (state.getRepeatError() != null) {
+                                JOptionPane.showMessageDialog(DeletePlaylistView.this, state.getRepeatError());
+                            }
+                        }
+                    }
+                }
+        );
+
+        playlistNameInputField.addKeyListener(
+                new KeyListener() {
+                    @Override
+                    public void keyTyped(KeyEvent e) {
+                        DeletePlaylistState currentState = deletePlaylistViewModel.getDeletePlaylistState();
+                        String text = playlistNameInputField.getText() + e.getKeyChar();
+                        currentState.setPlaylistName(text);
+                        deletePlaylistViewModel.setState(currentState);
+                    }
+
+                    @Override
+                    public void keyPressed(KeyEvent e) {
+
+                    }
+
+                    @Override
+                    public void keyReleased(KeyEvent e) {
+
+                    }
+                }
+        );
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.add(title);
+        this.add(playlistNameInfo);
+        this.add(buttons);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        System.out.println("Click " + e.getActionCommand());
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-
+        DeletePlaylistState state = (DeletePlaylistState) evt.getNewValue();
+        JOptionPane.showMessageDialog(this, state.getPlaylistName());
     }
 }
