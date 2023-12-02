@@ -8,6 +8,7 @@ import entity.CommonSongFactory;
 import entity.SongFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
+import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchController;
 import interface_adapter.search.SearchPresenter;
@@ -26,11 +27,12 @@ public class HomepageUseCaseFactory {
     public static HomepageView create(ViewManagerModel viewManagerModel,
                                       HomepageViewModel homepageViewModel,
                                       CreatePlaylistViewModel createPlaylistViewModel,
+                                      DeletePlaylistViewModel deletePlaylistViewModel,
                                       SearchViewModel searchViewModel,
                                       APIDataAccessObject apiDataAccessObject){
         try{
         SearchController searchController = createSearchUseCase(viewManagerModel, homepageViewModel, searchViewModel, apiDataAccessObject);
-        return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel);
+        return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel, deletePlaylistViewModel);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

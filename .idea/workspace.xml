@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: A version without DAO, but this is old view.">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit to merge">
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/delete_playlist/DeletePlaylistPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/DeletePlaylistUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/DeletePlaylistUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DeletePlaylistView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/DeletePlaylistUseCaseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/DeletePlaylistUseCaseFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonPlaylistFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_playlist/CreatePlaylistPresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/delete_playlist/DeletePlaylistPresenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +78,7 @@
         <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="app.Main" />
-      <module name="SpotifyProject" />
+      <module name="Spotify" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="app.*" />
@@ -100,10 +109,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestAPI" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestAPI" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -168,13 +176,13 @@
       <option name="project" value="LOCAL" />
       <updated>1701134344992</updated>
     </task>
-    <task id="LOCAL-00007" summary="Commit: A version without DAO, but this is old view.">
+    <task id="LOCAL-00007" summary="Commit to merge">
       <option name="closed" value="true" />
-      <created>1701489557623</created>
+      <created>1701490459164</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1701489557623</updated>
+      <updated>1701490459164</updated>
     </task>
     <option name="localTasksCounter" value="8" />
     <servers />
@@ -195,11 +203,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
+    <MESSAGE value="Commit" />
     <MESSAGE value="Json file works." />
     <MESSAGE value="Fixed merge conflict" />
-    <MESSAGE value="Commit" />
-    <MESSAGE value="Commit: A version without DAO, but this is old view." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: A version without DAO, but this is old view." />
+    <MESSAGE value="Commit to pull" />
+    <MESSAGE value="Commit to merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit to merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
