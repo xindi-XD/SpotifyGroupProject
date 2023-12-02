@@ -40,6 +40,9 @@ public class DeletePlaylistView extends JPanel implements ActionListener, Proper
 
         JPanel buttons = new JPanel();
         backToHome = new JButton(deletePlaylistViewModel.TO_HOME_BUTTON_LABEL);
+        deletePlaylist = new JButton(deletePlaylistViewModel.DELETE_PLAYLIST_BUTTON_LABEL);
+        buttons.add(backToHome);
+        buttons.add(deletePlaylist);
     }
     @Override
     public void actionPerformed(ActionEvent e) {

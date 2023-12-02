@@ -5,6 +5,7 @@ import data_access.FilePlaylistDataAccessObject;
 import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
+import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchViewModel;
 import view.CreatePlaylistView;
@@ -42,6 +43,7 @@ public class Main {
         // TODO: more VMs to be added.
         HomepageViewModel homepageViewModel = new HomepageViewModel();
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
+        DeletePlaylistViewModel deletePlaylistViewModel = new DeletePlaylistViewModel();
         SearchViewModel searchViewModel = new SearchViewModel();
         FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
         APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
@@ -49,7 +51,7 @@ public class Main {
 //            fileDataAccessObject = new FileDataAccessObject("./users.csv", new CommonUserFactory());
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
-        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, searchViewModel, apiDataAccessObject);
+        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, deletePlaylistViewModel, searchViewModel, apiDataAccessObject);
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
         views.add(createPlaylistView, createPlaylistView.viewName);
