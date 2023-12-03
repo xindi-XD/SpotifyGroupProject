@@ -10,7 +10,11 @@ public class SearchState {
     private String noInputError;
     private ArrayList<CommonSong> songs;
     private ArrayList<CommonArtist> artists;
-
+    // songWriterNames is an arraylist of an arraylist of strings. For each of the songs.
+    private ArrayList<String> songNames;
+    private ArrayList<String[]> songWriterNames;
+    // artistNames is for artist.
+    private ArrayList<String> artistNames;
     public SearchState(){}
     public void setSongResult(ArrayList<CommonSong> input) {
         this.songs = input;
@@ -25,6 +29,7 @@ public class SearchState {
         }
         return songNames;
     }
+
     public ArrayList<String> getSongIDs() {
         ArrayList<String> songIDs = new ArrayList<>();
         for (CommonSong song : songs) {
@@ -32,12 +37,25 @@ public class SearchState {
         }
         return songIDs;
     }
+    public ArrayList<String[]> getSongWriterNames(){
+        this.songWriterNames = new ArrayList<>();
+        for (int i = 0; i < songs.size(); i++){
+            songWriterNames.add(songs.get(i).getArtist());
+        }
+        return songWriterNames;
+    }
     public ArrayList<String> getArtistNames(){
         ArrayList<String> artistNames = new ArrayList<>();
         for (CommonArtist artist : artists) {
             artistNames.add(artist.getName());
         }
         return artistNames;
+    }
+    public ArrayList<CommonSong> getFullSongs(){
+        return songs;
+    }
+    public ArrayList<CommonArtist> getFullArtists(){
+        return artists;
     }
 
     public void setNoResultError(String error) {

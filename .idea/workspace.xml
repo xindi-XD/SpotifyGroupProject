@@ -59,22 +59,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "get-song-info",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;get-song-info&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="use_case.search" />
@@ -267,15 +267,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701569325128</updated>
     </task>
-    <task id="LOCAL-00017" summary="JSONObject error fix">
+    <task id="LOCAL-00017" summary="Commit: getter methods for array list of artists and songs">
       <option name="closed" value="true" />
-      <created>1701574626712</created>
+      <created>1701576273801</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1701574626712</updated>
+      <updated>1701576273801</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches.">
+      <option name="closed" value="true" />
+      <created>1701581712359</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701581712359</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,8 +308,9 @@
     <MESSAGE value="Commit to merge" />
     <MESSAGE value="DeletePlaylist use case starts to work now." />
     <MESSAGE value="CreatePlaylist perfectly works." />
-    <MESSAGE value="JSONObject error fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="JSONObject error fix" />
+    <MESSAGE value="Commit: getter methods for array list of artists and songs" />
+    <MESSAGE value="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
