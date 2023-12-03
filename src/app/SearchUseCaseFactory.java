@@ -16,6 +16,8 @@ import java.io.IOException;
 public class SearchUseCaseFactory {
     private SearchUseCaseFactory(){}
     // addsong usecase controller gets put in here
+    //and getStats use case!
+    /*
     public static SearchView create(ViewManagerModel viewManagerModel,
                                     HomepageViewModel homepageViewModel,
                                     SearchViewModel searchViewModel,
@@ -27,5 +29,5 @@ public class SearchUseCaseFactory {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 }

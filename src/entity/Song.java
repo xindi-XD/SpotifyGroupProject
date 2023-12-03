@@ -7,6 +7,8 @@ public interface Song {
 
     String[] getArtist();
 
+    String getReleaseDate();
+
     String getID();
 
 }

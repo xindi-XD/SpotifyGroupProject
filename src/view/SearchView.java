@@ -1,5 +1,6 @@
 package view;
 
+import interface_adapter.get_song_stats.GetStatsController;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchState;
 import interface_adapter.search.SearchViewModel;
@@ -14,15 +15,12 @@ import java.util.ArrayList;
 
 public class SearchView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "search results";
-    private final JButton add1;
 //    private final JButton addSong2;
 //    private final JButton addSong3;
 //    private final JButton addSong4;
 //    private final JButton addSong5;
-    private final JButton stats1;
-    //there's a stats button for every song displayed
     private final SearchViewModel searchViewModel;
-    public SearchView(SearchViewModel searchViewModel, GetStatsController getStatsController){
+    public SearchView(SearchViewModel searchViewModel){
         this.searchViewModel = searchViewModel;
         searchViewModel.addPropertyChangeListener(this);
 
@@ -34,8 +32,6 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
 //        JLabel song4 = new JLabel(SearchViewModel.SONG4_LABEL);
 //        JLabel song5 = new JLabel(SearchViewModel.SONG5_LABEL);
 //        JLabel song1 = new JLabel(SearchViewModel.SONG1_LABEL);
-        add1 = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
-        stats1 = new JButton(SearchViewModel.GET_INFO_LABEL);
 //
 //        JPanel resultLine1 = new JPanel();
 //        resultLine1.add(song1);
@@ -44,8 +40,6 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         this.setPreferredSize(new Dimension( 500, 300 ));
         this.add(title);
     }
-
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -60,12 +54,6 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     //this is where the user can choose to add a song resulting from a search to a
     //playlist or see information about it
     private void setResults() {
-        JLabel song1 = new JLabel(SearchViewModel.SONG1_LABEL);
-        JPanel resultLine1 = new JPanel();
-        resultLine1.add(song1);
-        resultLine1.add(add1);
-        resultLine1.add(stats1);
-        this.add(resultLine1);
         ArrayList<String> songLabels = SearchViewModel.SONG_LABELS;
         ArrayList<String> artistLabels = SearchViewModel.ARTIST_LABELS;
         if (!songLabels.isEmpty()){
@@ -83,9 +71,11 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     private void oneSongResult(String songName){
         JLabel songLabel = new JLabel(songName);
         JButton add = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
+        JButton stats = new JButton(SearchViewModel.GET_INFO_LABEL);
         JPanel resultLine = new JPanel();
         resultLine.add(songLabel);
         resultLine.add(add);
+        resultLine.add(stats);
         this.add(resultLine);
     }
     private void oneArtistResult(String artistName){

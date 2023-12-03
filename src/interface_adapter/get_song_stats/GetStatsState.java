@@ -5,21 +5,35 @@ import entity.Song;
 import java.util.HashMap;
 
 public class GetStatsState {
-    private Object song;
+    private String songName;
+    private String artistName;
+    private String releaseDate;
     private HashMap<String, Float> features;
     private String infoError;
 
     public GetStatsState(GetStatsState copy) {
-        this.song = copy.song;
+        this.songName = copy.songName;
+        this.artistName = copy.artistName;
+        this.releaseDate = copy.releaseDate;
         this.features = copy.features;
         this.infoError = copy.infoError;
     }
 
     public GetStatsState() {}
 
-    public Object getSong() {return song;}
+    public String getSongName() {return songName;}
 
-    public void setSong(Object song) {this.song = song;}
+    public void setSongName(String song) {this.songName = song;}
+
+    public String getArtistName() {return artistName;}
+
+    public void setArtistName(String artist) {this.artistName = artist;}
+
+    public String getReleaseDate() {return releaseDate;}
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
 
     public HashMap<String, Float> getFeatures() {return this.features;}
 

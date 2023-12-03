@@ -3,11 +3,13 @@ package entity;
 public class CommonSong implements Song {
     final private String name;
     final private String[] artist;
+    final private String releaseDate;
     final private String id;
 
-    public CommonSong(String name, String[] artist, String id) {
+    public CommonSong(String name, String[] artist, String releaseDate, String id) {
         this.name = name;
         this.id = id;
+        this.releaseDate = releaseDate;
         this.artist = artist;
     }
 
@@ -31,6 +33,8 @@ public class CommonSong implements Song {
     public String[] getArtist() {
         return artist;
     }
+
+    public String getReleaseDate() {return releaseDate;}
 
     @Override
     public String getID() {return id;}
