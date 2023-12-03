@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search no result fail view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +111,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
@@ -241,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701565617799</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Commit: search no result fail view">
+      <option name="closed" value="true" />
+      <created>1701568479520</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701568479520</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +278,8 @@
     <MESSAGE value="Commit: adding CommonArtist. 5 results implemented." />
     <MESSAGE value="Commit: added CommonArtist. 5 results for both implemented." />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Commit: search no result fail view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: search no result fail view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,7 +290,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java</url>
-          <line>35</line>
+          <line>42</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

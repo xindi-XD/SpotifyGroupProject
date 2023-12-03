@@ -25,23 +25,20 @@ public class SearchInteractor implements SearchInputBoundary {
     @Override
     public void execute(SearchInputData searchInputData) {
         if (Objects.equals(searchInputData.getQuery(), "")){
-            // TODO: PrepareFailView incomplete.
-            searchPresenter.prepareFailView("Please input search item.");
+            // TODO: If write gibberish, returns nothing, error screen.
+            searchPresenter.prepareFailInputView("Please input search item.");
         } else {
             LocalDateTime now = LocalDateTime.now();
-            //Input: query name.
             String query = searchInputData.getQuery();
             String queryType = searchInputData.getQueryType();
             JSONArray results = searchAPIDataAccessObject.search(query, queryType);
-            // Output: a JSONObject.
-            // TODO: If write gibberish, returns nothing, error screen.
             // TODO: When result < 5.
             if (queryType.equals("track")) {
                 SongCompiler compiler = new SongCompiler();
                 ArrayList<CommonSong> songs = compiler.compileResult(results);
                 // If there is nothing, prepare fail view, no search results!
                 if (songs.isEmpty()){
-                    searchPresenter.prepareFailView("No search results were found ┐(ﾟ～ﾟ)┌");
+                    searchPresenter.prepareFailResultView("No search results were found ┐(ﾟ～ﾟ)┌");
                 }
                 SearchOutputData searchOutputData = new SearchOutputData(songs, now.toString(), false);
                 searchPresenter.prepareSuccessSongView(searchOutputData);
@@ -50,7 +47,7 @@ public class SearchInteractor implements SearchInputBoundary {
                 ArtistCompiler compiler = new ArtistCompiler();
                 ArrayList<CommonArtist> artists = compiler.compileResult(results);
                 if (artists.isEmpty()){
-                    searchPresenter.prepareFailView("No search results were found ┐(ﾟ～ﾟ)┌");
+                    searchPresenter.prepareFailResultView("No search results were found ┐(ﾟ～ﾟ)┌");
                 }
                 SearchOutputData searchOutputData = new SearchOutputData(artists, now.toString(), false);
                 searchPresenter.prepareSuccessArtistView(searchOutputData);

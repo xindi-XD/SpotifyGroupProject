@@ -44,7 +44,15 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         SearchState state = (SearchState) evt.getNewValue();
-        setResults();
+        if (state.getNoResultError() != null) {
+            JOptionPane.showMessageDialog(this, state.getNoResultError());
+        }
+        else if (state.getNoInputError() != null){
+            JOptionPane.showMessageDialog(this, state.getNoInputError());
+        }
+        else {
+            setResults();
+        }
     }
     //this is where the user can choose to add a song resulting from a search to a
     //playlist or see information about it
