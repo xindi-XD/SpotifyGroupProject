@@ -1,6 +1,6 @@
 package view;
 
-import interface_adapter.homepage.HomepageViewModel;
+import interface_adapter.get_song_stats.GetStatsController;
 import interface_adapter.search.SearchState;
 import interface_adapter.search.SearchViewModel;
 
@@ -19,8 +19,10 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
 //    private final JButton addSong3;
 //    private final JButton addSong4;
 //    private final JButton addSong5;
+    private final JButton stats1;
+    //there's a stats button for every song displayed
     private final SearchViewModel searchViewModel;
-    public SearchView(SearchViewModel searchViewModel){
+    public SearchView(SearchViewModel searchViewModel, GetStatsController getStatsController){
         this.searchViewModel = searchViewModel;
         searchViewModel.addPropertyChangeListener(this);
 
@@ -33,6 +35,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
 //        JLabel song5 = new JLabel(SearchViewModel.SONG5_LABEL);
 //        JLabel song1 = new JLabel(SearchViewModel.SONG1_LABEL);
         add1 = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
+        stats1 = new JButton(SearchViewModel.GET_INFO_LABEL);
 //
 //        JPanel resultLine1 = new JPanel();
 //        resultLine1.add(song1);
@@ -40,6 +43,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(title);
     }
+
 
 
     @Override
@@ -59,6 +63,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         JPanel resultLine1 = new JPanel();
         resultLine1.add(song1);
         resultLine1.add(add1);
+        resultLine1.add(stats1);
         this.add(resultLine1);
     }
 

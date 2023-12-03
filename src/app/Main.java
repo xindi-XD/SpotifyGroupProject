@@ -6,6 +6,7 @@ import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.delete_playlist.DeletePlaylistViewModel;
+import interface_adapter.get_song_stats.GetStatsViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchViewModel;
 import view.*;
@@ -42,6 +43,7 @@ public class Main {
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
         DeletePlaylistViewModel deletePlaylistViewModel = new DeletePlaylistViewModel();
         SearchViewModel searchViewModel = new SearchViewModel();
+        GetStatsViewModel getStatsViewModel = new GetStatsViewModel();
         FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
         APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
 //        try {
@@ -54,7 +56,7 @@ public class Main {
         views.add(createPlaylistView, createPlaylistView.viewName);
         DeletePlaylistView deletePlaylistView = DeletePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, deletePlaylistViewModel, playlistDataAccessObject);
         views.add(deletePlaylistView, deletePlaylistView.viewName);
-        SearchView searchView = new SearchView(searchViewModel);
+        SearchView searchView = SearchUseCaseFactory.create(viewManagerModel, homepageViewModel, searchViewModel, getStatsViewModel, apiDataAccessObject);
         views.add(searchView, searchView.viewName);
 
         viewManagerModel.setActiveView(homepageView.viewName);

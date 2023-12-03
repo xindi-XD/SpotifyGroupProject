@@ -15,6 +15,7 @@ public class SearchViewModel extends ViewModel {
     public static String SONG4_LABEL;
     public static String SONG5_LABEL;
     public static String ADD_BUTTON_LABEL = "Add";
+    public static String GET_INFO_LABEL = "Show Stats";
     private SearchState state = new SearchState();
 
     public SearchViewModel() {

@@ -5,6 +5,8 @@ import interface_adapter.ViewModel;
 import java.beans.PropertyChangeListener;
 
 public class GetStatsViewModel extends ViewModel {
+    public static final String TITLE_LABEL = "Song statistics";
+
     private GetStatsState state = new GetStatsState();
 
     public GetStatsViewModel(){super("Song statistics");}

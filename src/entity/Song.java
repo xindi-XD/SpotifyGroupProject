@@ -9,6 +9,4 @@ public interface Song {
 
     String getID();
 
-    String[] getGenres();
-
 }

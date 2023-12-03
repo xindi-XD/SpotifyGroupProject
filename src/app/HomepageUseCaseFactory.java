@@ -8,6 +8,7 @@ import entity.CommonSongFactory;
 import entity.SongFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
+import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchController;
 import interface_adapter.search.SearchPresenter;
