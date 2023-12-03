@@ -25,7 +25,7 @@ public class SearchInteractor implements SearchInputBoundary {
     @Override
     public void execute(SearchInputData searchInputData) {
         if (Objects.equals(searchInputData.getQuery(), "")){
-            // TODO: If write gibberish, returns nothing, error screen.
+            // If write gibberish, returns nothing, error screen.
             searchPresenter.prepareFailInputView("Please input search item.");
         } else {
             LocalDateTime now = LocalDateTime.now();
@@ -40,8 +40,9 @@ public class SearchInteractor implements SearchInputBoundary {
                 if (songs.isEmpty()){
                     searchPresenter.prepareFailResultView("No search results were found ┐(ﾟ～ﾟ)┌");
                 }
+                else {
                 SearchOutputData searchOutputData = new SearchOutputData(songs, now.toString(), false);
-                searchPresenter.prepareSuccessSongView(searchOutputData);
+                searchPresenter.prepareSuccessSongView(searchOutputData);}
             }
             else if (queryType.equals("artist")){
                 ArtistCompiler compiler = new ArtistCompiler();

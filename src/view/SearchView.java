@@ -1,5 +1,6 @@
 package view;
 
+import interface_adapter.ViewManagerModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchState;
 import interface_adapter.search.SearchViewModel;
@@ -15,24 +16,38 @@ import java.util.ArrayList;
 public class SearchView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "search results";
     private final SearchViewModel searchViewModel;
-    public SearchView(SearchViewModel searchViewModel){
+    private final ViewManagerModel viewManagerModel;
+    private final HomepageViewModel homepageViewModel;
+    private final JButton backToHome;
+    public SearchView(SearchViewModel searchViewModel, HomepageViewModel homepageViewModel, ViewManagerModel viewManagerModel){
         this.searchViewModel = searchViewModel;
+        this.viewManagerModel = viewManagerModel;
+        this.homepageViewModel = homepageViewModel;
         searchViewModel.addPropertyChangeListener(this);
-
         JLabel title = new JLabel(SearchViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JPanel buttons = new JPanel();
+        backToHome = new JButton(searchViewModel.TO_HOME_BUTTON_LABEL);
+        buttons.add(backToHome);
 
-//        JLabel song2 = new JLabel(SearchViewModel.SONG2_LABEL);
-//        JLabel song3 = new JLabel(SearchViewModel.SONG3_LABEL);
-//        JLabel song4 = new JLabel(SearchViewModel.SONG4_LABEL);
-//        JLabel song5 = new JLabel(SearchViewModel.SONG5_LABEL);
-//        JLabel song1 = new JLabel(SearchViewModel.SONG1_LABEL);
-//        JPanel resultLine1 = new JPanel();
-//        resultLine1.add(song1);
-//        resultLine1.add(add1);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setPreferredSize(new Dimension( 500, 300 ));
         this.add(title);
+        this.add(buttons);
+
+
+        backToHome.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(backToHome)){
+                            // Doesn't pass in any parameter. Switch view to HomepageView.
+                            SearchView.this.viewManagerModel.setActiveView(SearchView.this.homepageViewModel.getViewName());
+                            SearchView.this.viewManagerModel.firePropertyChanged();
+                        }
+                    }
+                }
+        );
     }
 
 
@@ -46,9 +61,11 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         SearchState state = (SearchState) evt.getNewValue();
         if (state.getNoResultError() != null) {
             JOptionPane.showMessageDialog(this, state.getNoResultError());
+            state.setNoResultError(null);
         }
         else if (state.getNoInputError() != null){
             JOptionPane.showMessageDialog(this, state.getNoInputError());
+            state.setNoInputError(null);
         }
         else {
             setResults();
