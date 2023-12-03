@@ -6,6 +6,7 @@ import entity.CommonSong;
 import java.util.ArrayList;
 
 public class SearchState {
+    private String noResultError;
     private ArrayList<CommonSong> songs;
     private ArrayList<CommonArtist> artists;
     private ArrayList<String> songNames;
@@ -30,5 +31,9 @@ public class SearchState {
             artistNames.add(artists.get(i).getName());
         }
         return artistNames;
+    }
+
+    public void setNoResultError(String error) {
+        this.noResultError = error;
     }
 }

@@ -39,12 +39,19 @@ public class SearchInteractor implements SearchInputBoundary {
             if (queryType.equals("track")) {
                 SongCompiler compiler = new SongCompiler();
                 ArrayList<CommonSong> songs = compiler.compileResult(results);
+                // If there is nothing, prepare fail view, no search results!
+                if (songs.isEmpty()){
+                    searchPresenter.prepareFailView("No search results were found ┐(ﾟ～ﾟ)┌");
+                }
                 SearchOutputData searchOutputData = new SearchOutputData(songs, now.toString(), false);
                 searchPresenter.prepareSuccessSongView(searchOutputData);
             }
             else if (queryType.equals("artist")){
                 ArtistCompiler compiler = new ArtistCompiler();
                 ArrayList<CommonArtist> artists = compiler.compileResult(results);
+                if (artists.isEmpty()){
+                    searchPresenter.prepareFailView("No search results were found ┐(ﾟ～ﾟ)┌");
+                }
                 SearchOutputData searchOutputData = new SearchOutputData(artists, now.toString(), false);
                 searchPresenter.prepareSuccessArtistView(searchOutputData);
 
