@@ -20,6 +20,9 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     private final ViewManagerModel viewManagerModel;
     private final HomepageViewModel homepageViewModel;
     private final JButton backToHome;
+    private final ArrayList<JButton> addButtons = new ArrayList<JButton>();
+    private final ArrayList<JButton> likeButtons = new ArrayList<JButton>();
+
     public SearchView(SearchViewModel searchViewModel, HomepageViewModel homepageViewModel, ViewManagerModel viewManagerModel){
         this.searchViewModel = searchViewModel;
         this.viewManagerModel = viewManagerModel;
@@ -32,7 +35,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         buttons.add(backToHome);
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        this.setPreferredSize(new Dimension( 500, 300 ));
+        this.setPreferredSize(new Dimension( 580, 400 ));
         this.add(title);
         this.add(buttons);
 
@@ -86,9 +89,16 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         ArrayList<String> songLabels = SearchViewModel.SONG_LABELS;
         ArrayList<String> songWriterLabels = SearchViewModel.SONG_WRITER_LABELS;
         ArrayList<String> artistLabels = SearchViewModel.ARTIST_LABELS;
+        if (!addButtons.isEmpty()|!likeButtons.isEmpty()){
+            addButtons.clear();
+            likeButtons.clear();
+            this.removeAll();
+            this.repaint();
+            reconstruct();
+        }
         if (!songLabels.isEmpty()){
             for (int i = 0; i < SearchViewModel.SONG_LABELS.size(); i++){
-                oneSongResult(SearchViewModel.SONG_LABELS.get(i), SearchViewModel.SONG_WRITER_LABELS.get(i));
+                oneSongResult(songLabels.get(i), songWriterLabels.get(i));
             }
         }
         else if (!artistLabels.isEmpty()){
@@ -109,6 +119,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         resultLine.add(add);
         resultLine.add(stats);
         this.add(resultLine);
+        addButtons.add(add);
     }
     private void oneArtistResult(String artistName){
         JLabel artistLabel = new JLabel(artistName);
@@ -117,6 +128,21 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         resultLine.add(artistLabel);
         resultLine.add(like);
         this.add(resultLine);
+        likeButtons.add(like);
+    }
+    private void resetButtons(ArrayList<JButton> buttons){
+        buttons.clear();
+    }
+    private void reconstruct(){
+        JLabel title = new JLabel(SearchViewModel.TITLE_LABEL);
+        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JPanel buttons = new JPanel();
+        buttons.add(backToHome);
+
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setPreferredSize(new Dimension( 580, 400 ));
+        this.add(title);
+        this.add(buttons);
     }
 
 }
