@@ -28,6 +28,16 @@ public class GetStatsViewModel extends ViewModel {
         }
     }
 
+    public static void resetLabels() {
+        SONG_NAME_LABEL = "Name: ";
+        ARTIST_NAME_LABEL = "Artist: ";
+        RELEASE_DATE_LABEL = "Released: ";
+        FEATURE_LABELS = new ArrayList<>();
+        for (String feature : featureNames) {
+            FEATURE_LABELS.add(feature.substring(0, 1).toUpperCase() + feature.substring(1) + ": ");
+        }
+    }
+
     @Override
     public void firePropertyChanged() {
         support.firePropertyChange("state", null, this.state);

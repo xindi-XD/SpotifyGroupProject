@@ -159,6 +159,19 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         this.setPreferredSize(new Dimension( 580, 400 ));
         this.add(title);
         this.add(buttons);
+        backToHome.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(backToHome)){
+                            // Doesn't pass in any parameter. Switch view to HomepageView.
+                            SearchView.this.viewManagerModel.setActiveView(SearchView.this.homepageViewModel.getViewName());
+                            SearchView.this.viewManagerModel.firePropertyChanged();
+
+                        }
+                    }
+                }
+        );
     }
 
 }

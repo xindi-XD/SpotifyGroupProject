@@ -48,13 +48,43 @@ public class GetStatsView extends JPanel implements ActionListener, PropertyChan
         );
     }
 
-    public void setResults() {
+    private void setResults() {
+        this.removeAll();
+        this.repaint();
+        this.reconstruct();
         this.add(new JLabel(GetStatsViewModel.SONG_NAME_LABEL));
         this.add(new JLabel(GetStatsViewModel.ARTIST_NAME_LABEL));
         this.add(new JLabel(GetStatsViewModel.RELEASE_DATE_LABEL));
         for (String feature : GetStatsViewModel.FEATURE_LABELS) {
             this.add(new JLabel(feature));
         }
+    }
+
+    private void reset() {
+        GetStatsViewModel.resetLabels();
+    }
+
+    private void reconstruct() {
+        JLabel title = new JLabel(GetStatsViewModel.TITLE_LABEL);
+        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setPreferredSize(new Dimension(300, 300));
+        this.add(title);
+        JButton back = new JButton(GetStatsViewModel.BACK_LABEL);
+        this.add(back);
+        back.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource() == back) {
+                            GetStatsView.this.manager.setActiveView(GetStatsView.this.searchViewModel.getViewName());
+                            GetStatsView.this.manager.firePropertyChanged();
+                            GetStatsView.this.getStatsViewModel.setState(new GetStatsState());
+                        }
+                    }
+                }
+        );
     }
 
     @Override
@@ -71,6 +101,7 @@ public class GetStatsView extends JPanel implements ActionListener, PropertyChan
         }
         else {
             setResults();
+            reset();
         }
     }
 }
