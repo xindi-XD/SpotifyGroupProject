@@ -1,14 +1,11 @@
 package interface_adapter.create_playlist;
 
 import interface_adapter.ViewManagerModel;
-import interface_adapter.homepage.HomepageState;
 import interface_adapter.homepage.HomepageViewModel;
 import use_case.create_playlist.CreatePlaylistOutputBoundary;
 import use_case.create_playlist.CreatePlaylistOutputData;
 
 import javax.swing.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class CreatePlaylistPresenter implements CreatePlaylistOutputBoundary {
     private final CreatePlaylistViewModel createPlaylistViewModel;
@@ -32,9 +29,12 @@ public class CreatePlaylistPresenter implements CreatePlaylistOutputBoundary {
 
         viewManagerModel.setActiveView(homepageViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
+    }
 
-        JOptionPane.showMessageDialog(null,
-                "Playlist " + name.getPlaylistName() + " has been successfully created!\n" +
-                "Description: " + name.getPlaylistDescription() + ".\n");
+    @Override
+    public void prepareFailView(String error) {
+        CreatePlaylistState createPlaylistState = createPlaylistViewModel.getCreatePlaylistState();
+        createPlaylistState.setNameError(error);
+        createPlaylistViewModel.firePropertyChanged();
     }
 }
