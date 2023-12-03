@@ -44,6 +44,11 @@ SearchResults view
 - [] Displays top eight results from Spotify database. Each search result has `songName`, `artistName` and `albumName`.
 - `<button> addSong`
   -  For each search result. The search should limit to **songs**.
+- <button> stats
+  - For each search result. 
+
+GetStats view
+- [] Returns the name of the song and artist, release date, and audio features stored by Spotify
 
 ## Deadlines
 https://q.utoronto.ca/courses/314288/pages/project-timeline?module_item_id=5112222 for project timeline.
