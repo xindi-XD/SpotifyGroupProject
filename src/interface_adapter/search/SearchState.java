@@ -19,14 +19,14 @@ public class SearchState {
     }
     public ArrayList<String> getSongNames(){
         this.songNames = new ArrayList<>();
-        for (int i = 0; i < 20; i++){
+        for (int i = 0; i < songs.size(); i++){
             songNames.add(songs.get(i).getName());
         }
         return songNames;
     }
     public ArrayList<String> getArtistNames(){
-        this.artistNames = new ArrayList<>();
-        for (int i = 0; i < 20; i++){
+        this.artistNames = new ArrayList<>();;
+        for (int i = 0; i < artists.size(); i++){
             artistNames.add(artists.get(i).getName());
         }
         return artistNames;

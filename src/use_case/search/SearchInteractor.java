@@ -34,7 +34,8 @@ public class SearchInteractor implements SearchInputBoundary {
             String queryType = searchInputData.getQueryType();
             JSONArray results = searchAPIDataAccessObject.search(query, queryType);
             // Output: a JSONObject.
-            // TODO: Parse the JSONObject into an arraylist of songs or artists.
+            // TODO: If write gibberish, returns nothing, error screen.
+            // TODO: When result < 5.
             if (queryType.equals("track")) {
                 SongCompiler compiler = new SongCompiler();
                 ArrayList<CommonSong> songs = compiler.compileResult(results);

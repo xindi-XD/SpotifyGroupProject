@@ -9,8 +9,8 @@ import java.util.ArrayList;
 //eva writing this one
 public class SearchViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Search Results View";
-    public static ArrayList<String> SONG_LABELS;
-    public static ArrayList<String> ARTIST_LABELS;
+    public static ArrayList<String> SONG_LABELS = new ArrayList<String>();
+    public static ArrayList<String> ARTIST_LABELS = new ArrayList<String>();
     public static String ADD_BUTTON_LABEL = "Add";
     public static String LIKE_ARTIST_BUTTON_LABEL = "Like artist";
     private SearchState state = new SearchState();
