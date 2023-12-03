@@ -4,13 +4,14 @@ import okhttp3.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import use_case.get_song_stats.GetStatsAPIDataAccessInterface;
 import use_case.search.SearchAPIDataAccessInterface;
 
 import java.io.IOException;
 import java.util.Base64;
 import java.util.HashMap;
 
-public class APIDataAccessObject implements SearchAPIDataAccessInterface {
+public class APIDataAccessObject implements SearchAPIDataAccessInterface, GetStatsAPIDataAccessInterface {
     private static final String CLIENT_ID = System.getenv("CLIENT_ID");
     private static final String CLIENT_SECRET = System.getenv("CLIENT_SECRET");
 

@@ -29,8 +29,8 @@ public class HomepageUseCaseFactory {
                                       SearchViewModel searchViewModel,
                                       APIDataAccessObject apiDataAccessObject){
         try{
-        SearchController searchController = createSearchUseCase(viewManagerModel, homepageViewModel, searchViewModel, apiDataAccessObject);
-        return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel);
+            SearchController searchController = createSearchUseCase(viewManagerModel, homepageViewModel, searchViewModel, apiDataAccessObject);
+            return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

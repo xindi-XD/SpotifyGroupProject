@@ -4,23 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Json file works.">
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsAPIDataAccessInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInteractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/GetStatsView.java" afterDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Added genre parameter to song class and added files for get stats use case">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_5_46 p_m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/APIDataAccessObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/CreatePlaylistDataAccessInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/CreatePlaylistInteractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/HomepageView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/HomepageView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/HomepageViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/Playlist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/PlaylistFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/Song.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24,_6_17 p_m__[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24__5_46p_m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-24__6_17p_m___Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/CommonSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSong.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/SongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/SongFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsAPIDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsAPIDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GetStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GetStatsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,22 +76,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "get-song-info",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;get-song-info&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
@@ -116,6 +130,8 @@
       <workItem from="1700774242076" duration="2286000" />
       <workItem from="1701030006636" duration="338000" />
       <workItem from="1701130954919" duration="4106000" />
+      <workItem from="1701404742292" duration="743000" />
+      <workItem from="1701562493922" duration="2273000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -165,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701134344992</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added genre parameter to song class and added files for get stats use case">
+      <option name="closed" value="true" />
+      <created>1701380339529</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701380339529</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,17 +211,7 @@
     <MESSAGE value="Fixed merge conflict" />
     <MESSAGE value="Commit" />
     <MESSAGE value="Json file works." />
-    <option name="LAST_COMMIT_MESSAGE" value="Json file works." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added genre parameter to song class and added files for get stats use case" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added genre parameter to song class and added files for get stats use case" />
   </component>
 </project>

@@ -8,8 +8,8 @@ import java.util.HashMap;
 
 public class CommonSongFactory implements SongFactory {
 
-    public CommonSong create(String name, String[] artist, String[] genres, String id) {
-        return new CommonSong(name, artist, genres, id);
+    public CommonSong create(String name, String[] artist, String[] genre, String id) {
+        return new CommonSong(name, artist, genre, id);
     }
 
     public CommonSong create(JSONObject object) {

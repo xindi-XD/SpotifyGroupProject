@@ -1,7 +1,5 @@
 package entity;
 
-import java.util.ArrayList;
-
 public interface Song {
     boolean likeSong(CommonSong song);
     boolean unlikeSong(CommonSong song);
@@ -10,4 +8,7 @@ public interface Song {
     String[] getArtist();
 
     String getID();
+
+    String[] getGenres();
+
 }

@@ -1,13 +1,10 @@
 package entity;
 
-import java.util.ArrayList;
-
 public class CommonSong implements Song {
     final private String name;
     final private String[] artist;
     final private String[] genres;
     final private String id;
-
 
     public CommonSong(String name, String[] artist, String[] genres, String id) {
         this.name = name;
