@@ -39,11 +39,13 @@ public class SearchPresenter implements SearchOutputBoundary {
         // On success, switch to the search view.
         LocalDateTime responseTime = LocalDateTime.parse(songs.getCreationTime());
         songs.setCreationTime(responseTime.format(DateTimeFormatter.ofPattern("hh:mm:ss")));
+
         SearchState searchState = searchViewModel.getState();
         searchState.setSongResult(songs.getSongs());
         this.searchViewModel.setState(searchState);
         // searchState has a list of song objects. It also has a method getSongNames() return an ArrayList<String> of song names.
         this.searchViewModel.setFiveSongLabels(searchState.getSongNames());
+        this.searchViewModel.setFiveSongWriterLabels(searchState.getSongWriterNames());
         searchViewModel.firePropertyChanged();
 
         viewManagerModel.setActiveView(searchViewModel.getViewName());

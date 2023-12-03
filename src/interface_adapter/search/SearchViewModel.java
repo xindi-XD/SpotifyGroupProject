@@ -11,6 +11,7 @@ import java.util.Collections;
 public class SearchViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Search Results View";
     public static ArrayList<String> SONG_LABELS = new ArrayList<String>();
+    public static ArrayList<String> SONG_WRITER_LABELS = new ArrayList<>();
     public static ArrayList<String> ARTIST_LABELS = new ArrayList<String>();
     public static String ADD_BUTTON_LABEL = "Add";
     public static String GET_INFO_LABEL = "Show Stats";
@@ -21,6 +22,19 @@ public class SearchViewModel extends ViewModel {
     public SearchViewModel() {
         super("search results");
     }
+
+    public static void resetSongLabels() {
+        SONG_LABELS = new ArrayList<String>();
+    }
+
+    public static void resetSongWriterLabels() {
+        SONG_WRITER_LABELS = new ArrayList<String>();
+    }
+
+    public static void resetArtistLabels() {
+        ARTIST_LABELS = new ArrayList<String>();
+    }
+
     public void setFiveSongLabels(ArrayList<String> songLabels){
         if (!songLabels.isEmpty()){
             ArrayList<Integer> length = new ArrayList<>();
@@ -31,6 +45,27 @@ public class SearchViewModel extends ViewModel {
                 this.SONG_LABELS.add(i, songLabels.get(i));
             }
         }
+    }
+    public void setFiveSongWriterLabels(ArrayList<String[]> songWriterLabels) {
+        if (!songWriterLabels.isEmpty()){
+            ArrayList<Integer> length = new ArrayList<>();
+            length.add(5);
+            length.add(songWriterLabels.size());
+            Integer min = Collections.min(length);
+            for (int i = 0; i < min; i++){
+                String[] writers = songWriterLabels.get(i);
+                String s = toString(writers);
+                this.SONG_WRITER_LABELS.add(i, s);
+            }
+        }
+    }
+    private String toString(String[] s){
+        String string = "by ";
+        for (int i = 0; i < s.length - 1; i++){
+            string = string + s[i] + ", ";
+        }
+        string = string + s[s.length - 1];
+        return string;
     }
     public void setFiveArtistLabels(ArrayList<String> artistLabels) {
         if (!artistLabels.isEmpty()){
@@ -65,4 +100,5 @@ public class SearchViewModel extends ViewModel {
     public void setState(SearchState searchState) {
         this.state = searchState;
     }
+
 }
