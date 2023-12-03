@@ -5,6 +5,8 @@ import entity.CommonPlaylist;
 import entity.Playlist;
 import entity.PlaylistFactory;
 
+import java.util.Objects;
+
 public class CreatePlaylistInteractor implements CreatePlaylistInputBoundary{
     final CreatePlaylistDataAccessInterface createPlaylistDataAccessObject;
     final CreatePlaylistOutputBoundary createPlaylistPresenter;
@@ -19,8 +21,11 @@ public class CreatePlaylistInteractor implements CreatePlaylistInputBoundary{
     }
     @Override
     public void execute(CreatePlaylistInputData createPlaylistInputData) {
-        if (createPlaylistDataAccessObject.existsPlaylistName(createPlaylistInputData.getName())) {
-            createPlaylistPresenter.prepareFailView("The playlist has already been created.");
+        if (createPlaylistInputData.getName() == null) {
+            createPlaylistPresenter.prepareFailView("The playlist name can't be empty");
+        }
+        else if (createPlaylistDataAccessObject.existsPlaylistName(createPlaylistInputData.getName())) {
+            createPlaylistPresenter.prepareFailView("The playlist has already been created");
         }
         else {
             String playlistName = createPlaylistInputData.getName();

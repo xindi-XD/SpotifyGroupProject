@@ -14,6 +14,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.Objects;
 
 public class DeletePlaylistView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "delete playlist";
@@ -64,18 +65,16 @@ public class DeletePlaylistView extends JPanel implements ActionListener, Proper
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if (e.getSource().equals(deletePlaylist)){
-                            DeletePlaylistState currentState = deletePlaylistViewModel.getDeletePlaylistState();
-                            deletePlaylistController.execute(currentState.getPlaylistName());
                             DeletePlaylistState state = deletePlaylistViewModel.getDeletePlaylistState();
-                            if (state.getNullError() != null){
-                                JOptionPane.showMessageDialog(DeletePlaylistView.this, state.getNullError());
-                            }
-                            else if (state.getRepeatError() != null) {
-                                JOptionPane.showMessageDialog(DeletePlaylistView.this, state.getRepeatError());
+                            deletePlaylistController.execute(state.getPlaylistName());
+                            if (Objects.equals(state.getNameError(), "a")) {state.setNameError(null);}
+                            else if (state.getNameError() != null) {
+                                JOptionPane.showMessageDialog(DeletePlaylistView.this, state.getNameError());
+                                state.setNameError(null);
                             }
                             else {
                                 JOptionPane.showMessageDialog(null,
-                                        currentState.getPlaylistName() + " says good bye~");
+                                        state.getPlaylistName() + " says good bye~");
                             }
                         }
                     }
@@ -116,6 +115,5 @@ public class DeletePlaylistView extends JPanel implements ActionListener, Proper
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         DeletePlaylistState state = (DeletePlaylistState) evt.getNewValue();
-        JOptionPane.showMessageDialog(this, state.getPlaylistName());
     }
 }
