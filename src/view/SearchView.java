@@ -19,16 +19,19 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     private final SearchViewModel searchViewModel;
     private final ViewManagerModel viewManagerModel;
     private final HomepageViewModel homepageViewModel;
+    private final GetStatsController getStatsController;
     private final JButton backToHome;
-    public SearchView(SearchViewModel searchViewModel, HomepageViewModel homepageViewModel, ViewManagerModel viewManagerModel){
+    public SearchView(SearchViewModel searchViewModel, HomepageViewModel homepageViewModel,
+                      ViewManagerModel viewManagerModel, GetStatsController getStatsController){
         this.searchViewModel = searchViewModel;
         this.viewManagerModel = viewManagerModel;
         this.homepageViewModel = homepageViewModel;
+        this.getStatsController = getStatsController;
         searchViewModel.addPropertyChangeListener(this);
         JLabel title = new JLabel(SearchViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         JPanel buttons = new JPanel();
-        backToHome = new JButton(searchViewModel.TO_HOME_BUTTON_LABEL);
+        backToHome = new JButton(SearchViewModel.TO_HOME_BUTTON_LABEL);
         buttons.add(backToHome);
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -45,6 +48,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
                             // Doesn't pass in any parameter. Switch view to HomepageView.
                             SearchView.this.viewManagerModel.setActiveView(SearchView.this.homepageViewModel.getViewName());
                             SearchView.this.viewManagerModel.firePropertyChanged();
+
                         }
                     }
                 }
@@ -79,7 +83,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         ArrayList<String> artistLabels = SearchViewModel.ARTIST_LABELS;
         if (!songLabels.isEmpty()){
             for (int i = 0; i < SearchViewModel.SONG_LABELS.size(); i++){
-                oneSongResult(SearchViewModel.SONG_LABELS.get(i));
+                oneSongResult(SearchViewModel.SONG_LABELS.get(i), i);
             }
         }
         else if (!artistLabels.isEmpty()){
@@ -89,7 +93,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         }
     }
 
-    private void oneSongResult(String songName){
+    private void oneSongResult(String songName, int index){
         JLabel songLabel = new JLabel(songName);
         JButton add = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
         JButton stats = new JButton(SearchViewModel.GET_INFO_LABEL);
@@ -97,6 +101,17 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         resultLine.add(songLabel);
         resultLine.add(add);
         resultLine.add(stats);
+        stats.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(stats)) {
+                            SearchState currentState = searchViewModel.getState();
+                            getStatsController.execute(currentState.getSongIDs().get(index));
+                        }
+                    }
+                }
+        );
         this.add(resultLine);
     }
     private void oneArtistResult(String artistName){

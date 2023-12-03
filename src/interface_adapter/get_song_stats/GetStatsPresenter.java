@@ -1,7 +1,11 @@
 package interface_adapter.get_song_stats;
 
+import entity.CommonSongFactory;
 import entity.Song;
+import entity.SongFactory;
 import interface_adapter.ViewManagerModel;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import use_case.get_song_stats.GetStatsOutputBoundary;
 import use_case.get_song_stats.GetStatsOutputData;
 
@@ -21,26 +25,33 @@ public class GetStatsPresenter implements GetStatsOutputBoundary {
     public void prepareFailView(String e) {
         GetStatsState state = viewModel.getState();
         state.setInfoError(e);
-        JOptionPane.showMessageDialog(null, e);
         viewModel.firePropertyChanged();
     }
 
     @Override
     public void prepareSuccessView(GetStatsOutputData response) {
         GetStatsState state = viewModel.getState();
-        Song result = (Song) response.getSong();
+        JSONObject responseSong = response.getSong();
+        Song result = CommonSongFactory.create(responseSong);
         HashMap<String, Float> features = response.getFeatures();
         state.setFeatures(features);
         state.setSongName(result.getName());
         String all_artists = "";
-        for (String artist : result.getArtist()) {
+        int index = 0;
+        String[] artistsList = result.getArtist();
+        for (String artist : artistsList) {
+            if (index == artistsList.length - 1) {
+                all_artists += artist;
+                break;
+            }
             all_artists += artist + " | ";
+            index++;
         }
         state.setArtistName(all_artists);
         state.setReleaseDate(result.getReleaseDate());
-        this.viewModel.setState(state);
         this.viewModel.setSongInformation(state.getSongName(), state.getArtistName(), state.getReleaseDate(),
                 state.getFeatures());
+        viewModel.setState(state);
         viewModel.firePropertyChanged();
 
         viewManager.setActiveView(viewModel.getViewName());
