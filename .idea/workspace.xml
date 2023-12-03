@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
-    </list>
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: display problem fixed." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701581712359</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Commit: display problem fixed.">
+      <option name="closed" value="true" />
+      <created>1701586833694</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701586833694</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +304,8 @@
     <MESSAGE value="CreatePlaylist perfectly works." />
     <MESSAGE value="Commit: getter methods for array list of artists and songs" />
     <MESSAGE value="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches." />
+    <MESSAGE value="Commit: display problem fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: display problem fixed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
