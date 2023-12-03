@@ -19,7 +19,7 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
     private final Map<String, Playlist> playlists = new HashMap<>();
     private final PlaylistFactory playlistFactory;
 
-    public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) throws IOException {
+    public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) {
         this.playlistFactory = playlistFactory;
         this.jsonPath = jsonPath;
     }
