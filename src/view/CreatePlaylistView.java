@@ -77,12 +77,20 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
                         if (evt.getSource().equals(makePlaylist)){
                             CreatePlaylistState currentState = createPlaylistViewModel.getCreatePlaylistState();
                             createPlaylistController.execute(currentState.getPlaylistName(), currentState.getDescription());
-                            CreatePlaylistState state = createPlaylistViewModel.getCreatePlaylistState();
-                            if (state.getNullError() != null){
-                                JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getNullError());
-                            }
-                            else if (state.getRepeatError() != null){
-                                JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getRepeatError());
+                            if (currentState.getNameError() != null){
+                                JOptionPane.showMessageDialog(CreatePlaylistView.this, currentState.getNameError());
+                                currentState.setNameError(null);
+                            } else {
+                                if (currentState.getDescription() == null) {
+                                    JOptionPane.showMessageDialog(null,
+                                            "Playlist " + currentState.getPlaylistName() + " has been successfully created!\n" +
+                                                    "Description:\n");
+                                }
+                                else {
+                                    JOptionPane.showMessageDialog(null,
+                                            "Playlist " + currentState.getPlaylistName() + " has been successfully created!\n" +
+                                                    "Description: " + currentState.getDescription() + "\n");
+                                }
                             }
 
                         }
@@ -146,7 +154,6 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         CreatePlaylistState state = (CreatePlaylistState) evt.getNewValue();
-        JOptionPane.showMessageDialog(this, state.getPlaylistName());
         // There's a method in LoginView that allows automatic fill-in-the-blank.
     }
 }

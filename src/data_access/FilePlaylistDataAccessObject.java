@@ -25,6 +25,11 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
     }
 
     @Override
+    public boolean existsPlaylistName(String name) {
+        return playlists.containsKey(name);
+    }
+
+    @Override
     public void save(Playlist playlist) {
         playlists.put(playlist.getName(), playlist);
         this.save();
@@ -47,11 +52,7 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
 
     public void delete(String playlistName) {
         try {
-            int dialogResult = JOptionPane.showConfirmDialog(null,
-                    "Are you sure you want to say good by to " + playlistName + "?");
-            if (dialogResult == JOptionPane.YES_OPTION) {
-                playlists.remove(playlistName);
-            }
+            playlists.remove(playlistName);
         } catch (NoSuchElementException e) {
             throw new NoSuchElementException(e);
         }

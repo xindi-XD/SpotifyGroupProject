@@ -27,8 +27,12 @@ public class DeletePlaylistPresenter implements DeletePlaylistOutputBoundary {
 
         viewManagerModel.setActiveView(homepageViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
+    }
 
-        JOptionPane.showMessageDialog(null,
-                deletePlaylistState.getPlaylistName() + " says good bye~");
+    @Override
+    public void prepareFailView(String error) {
+        DeletePlaylistState deletePlaylistState = deletePlaylistViewModel.getDeletePlaylistState();
+        deletePlaylistState.setNameError(error);
+        deletePlaylistViewModel.firePropertyChanged();
     }
 }
