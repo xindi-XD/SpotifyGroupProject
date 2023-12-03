@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="CreatePlaylist perfectly works.">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonSong.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonSong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonSongFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonSongFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,8 +111,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
@@ -255,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701569325128</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701574558635</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701574558635</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +293,8 @@
     <MESSAGE value="Commit to merge" />
     <MESSAGE value="DeletePlaylist use case starts to work now." />
     <MESSAGE value="CreatePlaylist perfectly works." />
-    <option name="LAST_COMMIT_MESSAGE" value="CreatePlaylist perfectly works." />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -288,6 +302,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="6" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.json.JSONException" package="org.json" />
+          <option name="timeStamp" value="13" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
