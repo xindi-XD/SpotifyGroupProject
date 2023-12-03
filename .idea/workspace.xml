@@ -218,7 +218,63 @@
       <option name="project" value="LOCAL" />
       <updated>1701567777902</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701548596426</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701548596426</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Commit: adding CommonArtist. 5 results implemented.">
+      <option name="closed" value="true" />
+      <created>1701553259645</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701553259645</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Commit: added CommonArtist. 5 results for both implemented.">
+      <option name="closed" value="true" />
+      <created>1701561527674</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701561527674</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701564588696</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701564588696</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701565617799</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701565617799</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Commit: search no result fail view">
+      <option name="closed" value="true" />
+      <created>1701568479520</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701568479520</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Commit: fail view displayed, but cannot reboot.">
+      <option name="closed" value="true" />
+      <created>1701569325128</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701569325128</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,13 +310,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java</url>
-          <line>33</line>
+          <line>42</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/data_access/APIDataAccessObject.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

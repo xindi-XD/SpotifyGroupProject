@@ -5,6 +5,7 @@ import interface_adapter.ViewModel;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
+import java.util.Collections;
 
 //eva writing this one
 public class SearchViewModel extends ViewModel {
@@ -13,6 +14,7 @@ public class SearchViewModel extends ViewModel {
     public static ArrayList<String> ARTIST_LABELS = new ArrayList<String>();
     public static String ADD_BUTTON_LABEL = "Add";
     public static String LIKE_ARTIST_BUTTON_LABEL = "Like artist";
+    public static final String TO_HOME_BUTTON_LABEL = "Back to homepage";
     private SearchState state = new SearchState();
 
     public SearchViewModel() {
@@ -20,14 +22,22 @@ public class SearchViewModel extends ViewModel {
     }
     public void setFiveSongLabels(ArrayList<String> songLabels){
         if (!songLabels.isEmpty()){
-            for (int i = 0; i < 5; i++){
+            ArrayList<Integer> length = new ArrayList<>();
+            length.add(5);
+            length.add(songLabels.size());
+            Integer min = Collections.min(length);
+            for (int i = 0; i < min; i++){
                 this.SONG_LABELS.add(i, songLabels.get(i));
             }
         }
     }
     public void setFiveArtistLabels(ArrayList<String> artistLabels) {
         if (!artistLabels.isEmpty()){
-            for (int i = 0; i < 5; i++){
+            ArrayList<Integer> length = new ArrayList<>();
+            length.add(5);
+            length.add(artistLabels.size());
+            Integer min = Collections.min(length);
+            for (int i = 0; i < min; i++){
                 this.ARTIST_LABELS.add(i, artistLabels.get(i));
             }
         }
