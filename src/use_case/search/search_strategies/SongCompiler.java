@@ -1,13 +1,14 @@
-package use_case.search;
+package use_case.search.search_strategies;
 
 import entity.CommonSong;
 import entity.CommonSongFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.search.search_strategies.Compiler;
 
 import java.util.ArrayList;
 
-public class SongCompiler implements ResultCompiler {
+public class SongCompiler implements Compiler {
     @Override
     public ArrayList<CommonSong> compileResult(JSONArray results) {
         ArrayList<CommonSong> songs = new ArrayList<>();

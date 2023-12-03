@@ -1,13 +1,14 @@
-package use_case.search;
+package use_case.search.search_strategies;
 
 import entity.CommonArtist;
 import entity.CommonArtistFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.search.search_strategies.Compiler;
 
 import java.util.ArrayList;
 
-public class ArtistCompiler implements ResultCompiler{
+public class ArtistCompiler implements Compiler {
 
     @Override
     public ArrayList<CommonArtist> compileResult(JSONArray results) {

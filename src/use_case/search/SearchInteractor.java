@@ -1,12 +1,11 @@
 package use_case.search;
 
 import entity.CommonArtist;
-import entity.CommonArtistFactory;
-import entity.CommonPlaylistFactory;
 import entity.CommonSong;
-import entity.CommonSongFactory;
 import org.json.JSONArray;
-import org.json.JSONObject;
+import use_case.search.search_strategies.ArtistCompiler;
+import use_case.search.search_strategies.Compiler;
+import use_case.search.search_strategies.SongCompiler;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,7 +15,6 @@ public class SearchInteractor implements SearchInputBoundary {
     final SearchAPIDataAccessInterface searchAPIDataAccessObject;
     //TODO: song and artist are not distinguished.
     final SearchOutputBoundary searchPresenter;
-    private ResultCompiler resultCompiler;
 
     public SearchInteractor(SearchAPIDataAccessInterface searchAPIDataAccessInterface,
                             SearchOutputBoundary searchOutputBoundary) {
@@ -38,12 +36,14 @@ public class SearchInteractor implements SearchInputBoundary {
             // Output: a JSONObject.
             // TODO: Parse the JSONObject into an arraylist of songs or artists.
             if (queryType.equals("track")) {
-                ArrayList<CommonSong> songs = resultCompiler.compileResult(results);
+                SongCompiler compiler = new SongCompiler();
+                ArrayList<CommonSong> songs = compiler.compileResult(results);
                 SearchOutputData searchOutputData = new SearchOutputData(songs, now.toString(), false);
                 searchPresenter.prepareSuccessSongView(searchOutputData);
             }
             else if (queryType.equals("artist")){
-                ArrayList<CommonArtist> artists = resultCompiler.compileResult(results);
+                ArtistCompiler compiler = new ArtistCompiler();
+                ArrayList<CommonArtist> artists = compiler.compileResult(results);
                 SearchOutputData searchOutputData = new SearchOutputData(artists, now.toString(), false);
                 searchPresenter.prepareSuccessArtistView(searchOutputData);
 

@@ -21,7 +21,6 @@ public class SearchState {
         this.songNames = new ArrayList<>();
         for (int i = 0; i < 20; i++){
             songNames.add(songs.get(i).getName());
-
         }
         return songNames;
     }

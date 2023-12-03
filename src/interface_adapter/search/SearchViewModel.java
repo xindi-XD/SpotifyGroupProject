@@ -19,13 +19,17 @@ public class SearchViewModel extends ViewModel {
         super("search results");
     }
     public void setFiveSongLabels(ArrayList<String> songLabels){
-        for (int i = 0; i < 5; i++){
-            this.SONG_LABELS.add(i, songLabels.get(i));
+        if (!songLabels.isEmpty()){
+            for (int i = 0; i < 5; i++){
+                this.SONG_LABELS.add(i, songLabels.get(i));
+            }
         }
     }
     public void setFiveArtistLabels(ArrayList<String> artistLabels) {
-        for (int i = 0; i < 5; i++){
-            this.ARTIST_LABELS.add(i, artistLabels.get(i));
+        if (!artistLabels.isEmpty()){
+            for (int i = 0; i < 5; i++){
+                this.ARTIST_LABELS.add(i, artistLabels.get(i));
+            }
         }
     }
 

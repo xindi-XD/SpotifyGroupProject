@@ -1,10 +1,9 @@
-package use_case.search;
+package use_case.search.search_strategies;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public interface ResultCompiler {
+public interface Compiler {
     ArrayList compileResult(JSONArray results);
 }
