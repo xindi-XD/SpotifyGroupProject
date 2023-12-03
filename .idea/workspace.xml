@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="JSONObject error fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/SongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/SongFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GetStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GetStatsView.java" afterDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: display problem fixed.">
       <change beforePath="$PROJECT_DIR$/src/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +271,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701581712359</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Commit: display problem fixed.">
+      <option name="closed" value="true" />
+      <created>1701586833694</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701586833694</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Commit: display problem fixed.">
+      <option name="closed" value="true" />
+      <created>1701587355472</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1701587355472</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +314,8 @@
     <MESSAGE value="CreatePlaylist perfectly works." />
     <MESSAGE value="Commit: getter methods for array list of artists and songs" />
     <MESSAGE value="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches." />
+    <MESSAGE value="Commit: display problem fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: display problem fixed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -319,6 +324,15 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchState.java</url>
+          <line>24</line>
+          <properties class="interface_adapter.search.SearchState" method="getSongNames">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

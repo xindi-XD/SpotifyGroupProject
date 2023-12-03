@@ -103,7 +103,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         }
         if (!songLabels.isEmpty()){
             for (int i = 0; i < SearchViewModel.SONG_LABELS.size(); i++){
-                oneSongResult(songLabels.get(i), songWriterLabels.get(i));
+                oneSongResult(songLabels.get(i), songWriterLabels.get(i), i);
             }
         }
         else if (!artistLabels.isEmpty()){
