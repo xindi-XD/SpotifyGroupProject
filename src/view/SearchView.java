@@ -1,6 +1,6 @@
 package view;
 
-import interface_adapter.get_song_stats.GetStatsController;
+import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchState;
 import interface_adapter.search.SearchViewModel;
 
@@ -41,6 +41,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
 //        resultLine1.add(song1);
 //        resultLine1.add(add1);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setPreferredSize(new Dimension( 500, 300 ));
         this.add(title);
     }
 
@@ -65,6 +66,35 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         resultLine1.add(add1);
         resultLine1.add(stats1);
         this.add(resultLine1);
+        ArrayList<String> songLabels = SearchViewModel.SONG_LABELS;
+        ArrayList<String> artistLabels = SearchViewModel.ARTIST_LABELS;
+        if (!songLabels.isEmpty()){
+            for (int i = 0; i < SearchViewModel.SONG_LABELS.size(); i++){
+                oneSongResult(SearchViewModel.SONG_LABELS.get(i));
+            }
+        }
+        else if (!artistLabels.isEmpty()){
+            for (int i = 0; i < SearchViewModel.ARTIST_LABELS.size(); i++){
+                oneArtistResult(SearchViewModel.ARTIST_LABELS.get(i));
+            }
+        }
+    }
+
+    private void oneSongResult(String songName){
+        JLabel songLabel = new JLabel(songName);
+        JButton add = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
+        JPanel resultLine = new JPanel();
+        resultLine.add(songLabel);
+        resultLine.add(add);
+        this.add(resultLine);
+    }
+    private void oneArtistResult(String artistName){
+        JLabel artistLabel = new JLabel(artistName);
+        JButton like = new JButton(SearchViewModel.LIKE_ARTIST_BUTTON_LABEL);
+        JPanel resultLine = new JPanel();
+        resultLine.add(artistLabel);
+        resultLine.add(like);
+        this.add(resultLine);
     }
 
 }
