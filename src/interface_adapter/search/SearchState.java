@@ -33,6 +33,12 @@ public class SearchState {
         }
         return artistNames;
     }
+    public ArrayList<CommonSong> getFullSongs(){
+        return songs;
+    }
+    public ArrayList<CommonArtist> getFullArtists(){
+        return artists;
+    }
 
     public void setNoResultError(String error) {
         this.noResultError = error;

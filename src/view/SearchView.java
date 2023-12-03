@@ -70,8 +70,15 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
         }
         else {
             setResults();
+            resetResults();
         }
     }
+
+    private void resetResults() {
+        SearchViewModel.SONG_LABELS = new ArrayList<String>();
+        SearchViewModel.ARTIST_LABELS = new ArrayList<String>();
+    }
+
     //this is where the user can choose to add a song resulting from a search to a
     //playlist or see information about it
     private void setResults() {
