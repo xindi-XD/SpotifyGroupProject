@@ -19,7 +19,7 @@ public class CommonSongFactory implements SongFactory {
             artists.add(artistJSON.getJSONObject(j).getString("name"));
         }
         return new CommonSong(object.getString("name"),
-                artists.toArray(new String[0]), object.getString("release_date"),
+                artists.toArray(new String[0]), object.getJSONObject("album").getString("release_date"),
                 object.getString("id"));
     }
 }
