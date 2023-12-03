@@ -25,6 +25,11 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
     }
 
     @Override
+    public boolean existsPlaylistName(String name) {
+        return playlists.containsKey(name);
+    }
+
+    @Override
     public void save(Playlist playlist) {
         playlists.put(playlist.getName(), playlist);
         this.save();

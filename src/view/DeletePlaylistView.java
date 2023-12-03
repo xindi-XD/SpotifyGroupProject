@@ -73,6 +73,10 @@ public class DeletePlaylistView extends JPanel implements ActionListener, Proper
                             else if (state.getRepeatError() != null) {
                                 JOptionPane.showMessageDialog(DeletePlaylistView.this, state.getRepeatError());
                             }
+                            else {
+                                JOptionPane.showMessageDialog(null,
+                                        currentState.getPlaylistName() + " says good bye~");
+                            }
                         }
                     }
                 }

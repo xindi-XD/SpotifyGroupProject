@@ -19,14 +19,19 @@ public class CreatePlaylistInteractor implements CreatePlaylistInputBoundary{
     }
     @Override
     public void execute(CreatePlaylistInputData createPlaylistInputData) {
-        String playlistName = createPlaylistInputData.getName();
-        String playlistDes = createPlaylistInputData.getDescription();
-        Playlist newPlaylist = playlistFactory.create(playlistName, playlistDes);
-        createPlaylistDataAccessObject.save(newPlaylist);
+        if (createPlaylistDataAccessObject.existsPlaylistName(createPlaylistInputData.getName())) {
+            createPlaylistPresenter.prepareFailView("The playlist has already been created.");
+        }
+        else {
+            String playlistName = createPlaylistInputData.getName();
+            String playlistDes = createPlaylistInputData.getDescription();
+            Playlist newPlaylist = playlistFactory.create(playlistName, playlistDes);
+            createPlaylistDataAccessObject.save(newPlaylist);
 
-        String newPlaylistName = newPlaylist.getName();
-        String newPlaylistDes = newPlaylist.getDescription();
-        CreatePlaylistOutputData createPlaylistOutputData = new CreatePlaylistOutputData(newPlaylistName, newPlaylistDes);
-        createPlaylistPresenter.prepareSuccessView(createPlaylistOutputData);
+            String newPlaylistName = newPlaylist.getName();
+            String newPlaylistDes = newPlaylist.getDescription();
+            CreatePlaylistOutputData createPlaylistOutputData = new CreatePlaylistOutputData(newPlaylistName, newPlaylistDes);
+            createPlaylistPresenter.prepareSuccessView(createPlaylistOutputData);
+        }
     }
 }
