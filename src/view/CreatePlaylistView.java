@@ -76,7 +76,7 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
                     public void actionPerformed(ActionEvent evt){
                         if (evt.getSource().equals(makePlaylist)){
                             CreatePlaylistState currentState = createPlaylistViewModel.getCreatePlaylistState();
-                            createPlaylistController.execute(currentState.getPlaylistName());
+                            createPlaylistController.execute(currentState.getPlaylistName(), currentState.getDescription());
                             CreatePlaylistState state = createPlaylistViewModel.getCreatePlaylistState();
                             if (state.getNullError() != null){
                                 JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getNullError());
@@ -146,6 +146,7 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         CreatePlaylistState state = (CreatePlaylistState) evt.getNewValue();
+        JOptionPane.showMessageDialog(this, state.getPlaylistName());
         // There's a method in LoginView that allows automatic fill-in-the-blank.
     }
 }

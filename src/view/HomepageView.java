@@ -26,11 +26,12 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
     private final HomepageViewModel homepageViewModel;
     // Homepage does not have a controller. It doesn't have any other use case apart from switching views.
     private final CreatePlaylistViewModel createPlaylistViewModel;
-//    private final CreatePlaylistController createPlaylistController;
+    private final DeletePlaylistViewModel deletePlaylistViewModel;
     private final SearchController searchController;
     final JTextField searchInputField = new JTextField(15);
     private final JButton createPlaylist;
     private final JButton showPlaylists;
+    private final JButton deletePlaylist;
     private final JButton search;
     private final ViewManagerModel viewManagerModel;
     String[] types = {"Track", "Artist"};
@@ -41,10 +42,12 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
 //    private final JTextField searchInputField = new JTextField(15);
 
     public HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel,
-                        SearchController searchController, ViewManagerModel viewManagerModel){
+                        SearchController searchController, ViewManagerModel viewManagerModel,
+                        DeletePlaylistViewModel deletePlaylistViewModel){
 //        this.createPlaylistController = createPlaylistController;
         // Initialize view models.
         this.createPlaylistViewModel = createPlaylistViewModel;
+        this.deletePlaylistViewModel = deletePlaylistViewModel;
         this.homepageViewModel = homepageViewModel;
         this.viewManagerModel = viewManagerModel;
         this.searchController = searchController;
@@ -69,6 +72,8 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
         buttons.add(createPlaylist);
         showPlaylists = new JButton(HomepageViewModel.SHOWPLAYLISTS_BUTTON_LABEL);
         buttons.add(showPlaylists);
+        deletePlaylist = new JButton(HomepageViewModel.DELETEPLAYLIST_BUTTON_LABEL);
+        buttons.add(deletePlaylist);
 
 
         // TODO: delete and search, to be implemented
@@ -89,6 +94,18 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
                             // TODO: the state should be similar to an existing playlist. They should be able to add
                             //  or delete songs, set and change names. The only difference is that the new playlist
                             //  should be stored in the permenant database. Might call state methods here.
+                        }
+                    }
+                }
+        );
+
+        deletePlaylist.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(deletePlaylist)){
+                            viewManagerModel.setActiveView(deletePlaylistViewModel.getViewName());
+                            viewManagerModel.firePropertyChanged();
                         }
                     }
                 }

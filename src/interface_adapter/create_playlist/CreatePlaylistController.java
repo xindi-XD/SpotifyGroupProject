@@ -10,8 +10,8 @@ public class CreatePlaylistController {
     }
 
 
-    public void execute(String name){
-        CreatePlaylistInputData createPlaylistInputData = new CreatePlaylistInputData(name);
+    public void execute(String name, String description){
+        CreatePlaylistInputData createPlaylistInputData = new CreatePlaylistInputData(name, description);
         createPlaylistInteractor.execute(createPlaylistInputData);
     }
 }

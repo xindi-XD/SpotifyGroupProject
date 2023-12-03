@@ -1,13 +1,18 @@
 package use_case.search;
 
+import entity.CommonPlaylistFactory;
+import entity.CommonSong;
+import entity.CommonSongFactory;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class SearchInteractor implements SearchInputBoundary {
     final SearchAPIDataAccessInterface searchAPIDataAccessObject;
-    //TODO: song and playlist are not distinguished.
+    //TODO: song and artist are not distinguished.
     final SearchOutputBoundary searchPresenter;
 
     public SearchInteractor(SearchAPIDataAccessInterface searchAPIDataAccessInterface,
@@ -25,11 +30,17 @@ public class SearchInteractor implements SearchInputBoundary {
             LocalDateTime now = LocalDateTime.now();
             if (Objects.equals(searchInputData.getQueryType(), "Track")){
                 //Input: query name.
-                //Output: an array of 10 song objects, or a JSONarray.
                 String query = searchInputData.getQuery();
-                JSONArray result = searchAPIDataAccessObject.search(query, "track");
+                JSONArray results = searchAPIDataAccessObject.search(query, "track");
                 // TODO: Output data incomplete.
-                SearchOutputData searchOutputData = new SearchOutputData(result.get(1), now.toString(), false);
+                ArrayList<CommonSong> songs = new ArrayList<>();
+                // Output: passes an array of Song objects to output data.
+                for (int i = 0; i< results.length(); i++){
+                    JSONObject result = (JSONObject) results.get(i);
+                    CommonSong song = CommonSongFactory.create(result);
+                    songs.add(song);
+                }
+                SearchOutputData searchOutputData = new SearchOutputData(songs, now.toString(), false);
                 searchPresenter.prepareSuccessView(searchOutputData);
             }
         }

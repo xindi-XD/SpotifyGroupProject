@@ -26,11 +26,12 @@ public class HomepageUseCaseFactory {
     public static HomepageView create(ViewManagerModel viewManagerModel,
                                       HomepageViewModel homepageViewModel,
                                       CreatePlaylistViewModel createPlaylistViewModel,
+                                      DeletePlaylistViewModel deletePlaylistViewModel,
                                       SearchViewModel searchViewModel,
                                       APIDataAccessObject apiDataAccessObject){
         try{
-            SearchController searchController = createSearchUseCase(viewManagerModel, homepageViewModel, searchViewModel, apiDataAccessObject);
-            return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel);
+        SearchController searchController = createSearchUseCase(viewManagerModel, homepageViewModel, searchViewModel, apiDataAccessObject);
+        return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel, deletePlaylistViewModel);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
