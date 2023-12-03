@@ -14,11 +14,6 @@ import java.util.ArrayList;
 
 public class SearchView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "search results";
-    private final JButton add1;
-//    private final JButton addSong2;
-//    private final JButton addSong3;
-//    private final JButton addSong4;
-//    private final JButton addSong5;
     private final SearchViewModel searchViewModel;
     public SearchView(SearchViewModel searchViewModel){
         this.searchViewModel = searchViewModel;
@@ -32,12 +27,11 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
 //        JLabel song4 = new JLabel(SearchViewModel.SONG4_LABEL);
 //        JLabel song5 = new JLabel(SearchViewModel.SONG5_LABEL);
 //        JLabel song1 = new JLabel(SearchViewModel.SONG1_LABEL);
-        add1 = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
-//
 //        JPanel resultLine1 = new JPanel();
 //        resultLine1.add(song1);
 //        resultLine1.add(add1);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setPreferredSize(new Dimension( 500, 300 ));
         this.add(title);
     }
 
@@ -55,11 +49,35 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     //this is where the user can choose to add a song resulting from a search to a
     //playlist or see information about it
     private void setResults() {
-        JLabel song1 = new JLabel(SearchViewModel.SONG1_LABEL);
-        JPanel resultLine1 = new JPanel();
-        resultLine1.add(song1);
-        resultLine1.add(add1);
-        this.add(resultLine1);
+        ArrayList<String> songLabels = SearchViewModel.SONG_LABELS;
+        ArrayList<String> artistLabels = SearchViewModel.ARTIST_LABELS;
+        if (!songLabels.isEmpty()){
+            for (int i = 0; i < SearchViewModel.SONG_LABELS.size(); i++){
+                oneSongResult(SearchViewModel.SONG_LABELS.get(i));
+            }
+        }
+        else if (!artistLabels.isEmpty()){
+            for (int i = 0; i < SearchViewModel.ARTIST_LABELS.size(); i++){
+                oneArtistResult(SearchViewModel.ARTIST_LABELS.get(i));
+            }
+        }
+    }
+
+    private void oneSongResult(String songName){
+        JLabel songLabel = new JLabel(songName);
+        JButton add = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
+        JPanel resultLine = new JPanel();
+        resultLine.add(songLabel);
+        resultLine.add(add);
+        this.add(resultLine);
+    }
+    private void oneArtistResult(String artistName){
+        JLabel artistLabel = new JLabel(artistName);
+        JButton like = new JButton(SearchViewModel.LIKE_ARTIST_BUTTON_LABEL);
+        JPanel resultLine = new JPanel();
+        resultLine.add(artistLabel);
+        resultLine.add(like);
+        this.add(resultLine);
     }
 
 }
