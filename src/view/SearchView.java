@@ -1,5 +1,6 @@
 package view;
 
+import interface_adapter.get_song_stats.GetStatsController;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchState;
@@ -91,9 +92,11 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
     private void oneSongResult(String songName){
         JLabel songLabel = new JLabel(songName);
         JButton add = new JButton(SearchViewModel.ADD_BUTTON_LABEL);
+        JButton stats = new JButton(SearchViewModel.GET_INFO_LABEL);
         JPanel resultLine = new JPanel();
         resultLine.add(songLabel);
         resultLine.add(add);
+        resultLine.add(stats);
         this.add(resultLine);
     }
     private void oneArtistResult(String artistName){

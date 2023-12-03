@@ -6,6 +6,7 @@ import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.delete_playlist.DeletePlaylistViewModel;
+import interface_adapter.get_song_stats.GetStatsViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchViewModel;
 import view.*;
@@ -38,6 +39,7 @@ public class Main {
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
         DeletePlaylistViewModel deletePlaylistViewModel = new DeletePlaylistViewModel();
         SearchViewModel searchViewModel = new SearchViewModel();
+        GetStatsViewModel getStatsViewModel = new GetStatsViewModel();
         FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
         APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
 //        try {

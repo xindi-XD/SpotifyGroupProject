@@ -13,6 +13,7 @@ public class SearchViewModel extends ViewModel {
     public static ArrayList<String> SONG_LABELS = new ArrayList<String>();
     public static ArrayList<String> ARTIST_LABELS = new ArrayList<String>();
     public static String ADD_BUTTON_LABEL = "Add";
+    public static String GET_INFO_LABEL = "Show Stats";
     public static String LIKE_ARTIST_BUTTON_LABEL = "Like artist";
     public static final String TO_HOME_BUTTON_LABEL = "Back to homepage";
     private SearchState state = new SearchState();
