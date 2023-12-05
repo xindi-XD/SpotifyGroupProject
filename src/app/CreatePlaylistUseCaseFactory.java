@@ -40,7 +40,7 @@ public class CreatePlaylistUseCaseFactory {
 
         // Notice how we pass this method's parameters to the Presenter.
         CreatePlaylistOutputBoundary createPlaylistOutputBoundary = new CreatePlaylistPresenter(createPlaylistViewModel, homepageViewModel, viewManagerModel);
-        // TODO: Incomplete method. Missing factory and DAO.
+        // TODO: Incomplete method. Missing DAO.
         PlaylistFactory playlistFactory = new CommonPlaylistFactory();
         CreatePlaylistInputBoundary createPlaylistInteractor = new CreatePlaylistInteractor(createPlaylistDataAccessObject, createPlaylistOutputBoundary, playlistFactory);
         return new CreatePlaylistController(createPlaylistInteractor);

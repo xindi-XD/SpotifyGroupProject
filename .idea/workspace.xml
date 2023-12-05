@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Get stats use case implemented (with one bug)">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GetStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GetStatsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/CreatePlaylistUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/CreatePlaylistUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +31,24 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="1203-delete-prev-results-xindi" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;xindi-XD&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d236bd65-be3c-4920-a008-2d0dfe5074f5" />
+        <option name="url" value="https://github.com/xindi-XD/SpotifyGroupProject.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,7 +75,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -111,9 +124,9 @@
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestAPI" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestAPI" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestAPI" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +142,7 @@
       <workItem from="1701030006636" duration="338000" />
       <workItem from="1701130954919" duration="4106000" />
       <workItem from="1701494193784" duration="8195000" />
+      <workItem from="1701733601758" duration="10192000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -339,5 +353,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
