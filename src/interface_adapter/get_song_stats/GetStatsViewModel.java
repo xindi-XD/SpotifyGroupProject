@@ -12,16 +12,27 @@ public class GetStatsViewModel extends ViewModel {
     public static String SONG_NAME_LABEL = "Name: ";
     public static String ARTIST_NAME_LABEL = "Artist: ";
     public static String RELEASE_DATE_LABEL = "Released: ";
-    public static ArrayList<String> FEATURE_LABELS = new ArrayList<>();
+    public static ArrayList<String> FEATURE_LABELS;
     public static String[] featureNames = {"acousticness", "danceability", "energy", "instrumentalness", "liveness",
             "loudness", "speechiness", "valence"};
     public static final String BACK_LABEL = "Back";
 
     private GetStatsState state = new GetStatsState();
-    private PropertyChangeSupport support = new PropertyChangeSupport(this);
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
 
     public GetStatsViewModel(){
         super("Song statistics");
+        FEATURE_LABELS = new ArrayList<>();
+        for (String feature : featureNames) {
+            FEATURE_LABELS.add(feature.substring(0, 1).toUpperCase() + feature.substring(1) + ": ");
+        }
+    }
+
+    public static void resetLabels() {
+        SONG_NAME_LABEL = "Name: ";
+        ARTIST_NAME_LABEL = "Artist: ";
+        RELEASE_DATE_LABEL = "Released: ";
+        FEATURE_LABELS = new ArrayList<>();
         for (String feature : featureNames) {
             FEATURE_LABELS.add(feature.substring(0, 1).toUpperCase() + feature.substring(1) + ": ");
         }
@@ -29,7 +40,7 @@ public class GetStatsViewModel extends ViewModel {
 
     @Override
     public void firePropertyChanged() {
-
+        support.firePropertyChange("state", null, this.state);
     }
 
     @Override
