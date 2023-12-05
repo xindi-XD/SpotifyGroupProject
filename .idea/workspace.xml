@@ -4,9 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="CreatePlaylist/DeletePlaylist work fine.">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="CreatePlaylist perfectly works.">
+      <change afterPath="$PROJECT_DIR$/src/entity/Artist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/ArtistFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/CommonArtist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/CommonArtistFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsAPIDataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/search/search_strategies/ArtistCompiler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/search/search_strategies/Compiler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/search/search_strategies/SongCompiler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/GetStatsView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ShowSongsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/SongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/SongFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomepageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PlaylistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShowPlaylistsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonSong.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonSong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonSongFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonSongFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/SongFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PlaylistView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestAPI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +62,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -53,7 +100,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;local&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;get-song-info&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -63,6 +110,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="use_case.search" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
@@ -95,6 +147,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SpotifyProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SpotifyProject" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.TestAPI" />
@@ -102,6 +167,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -119,7 +185,7 @@
       <workItem from="1700774242076" duration="2286000" />
       <workItem from="1701030006636" duration="338000" />
       <workItem from="1701130954919" duration="4106000" />
-      <workItem from="1701494193784" duration="9695000" />
+      <workItem from="1701494193784" duration="8195000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -193,23 +259,63 @@
       <option name="project" value="LOCAL" />
       <updated>1701567777902</updated>
     </task>
-    <task id="LOCAL-00010" summary="CreatePlaylist/DeletePlaylist work fine.">
+    <task id="LOCAL-00010" summary="Commit">
       <option name="closed" value="true" />
-      <created>1701571015123</created>
+      <created>1701548596426</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1701571015123</updated>
+      <updated>1701548596426</updated>
     </task>
-    <task id="LOCAL-00011" summary="CreatePlaylist/DeletePlaylist work fine.">
+    <task id="LOCAL-00011" summary="Commit: adding CommonArtist. 5 results implemented.">
       <option name="closed" value="true" />
-      <created>1701571029440</created>
+      <created>1701553259645</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1701571029440</updated>
+      <updated>1701553259645</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Commit: added CommonArtist. 5 results for both implemented.">
+      <option name="closed" value="true" />
+      <created>1701561527674</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701561527674</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701564588696</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701564588696</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701565617799</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701565617799</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Commit: search no result fail view">
+      <option name="closed" value="true" />
+      <created>1701568479520</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701568479520</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Commit: fail view displayed, but cannot reboot.">
+      <option name="closed" value="true" />
+      <created>1701569325128</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701569325128</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,15 +334,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug." />
-    <MESSAGE value="Commit" />
     <MESSAGE value="Json file works." />
     <MESSAGE value="Fixed merge conflict" />
     <MESSAGE value="Commit to pull" />
     <MESSAGE value="Commit to merge" />
     <MESSAGE value="DeletePlaylist use case starts to work now." />
     <MESSAGE value="CreatePlaylist perfectly works." />
-    <MESSAGE value="CreatePlaylist/DeletePlaylist work fine." />
-    <option name="LAST_COMMIT_MESSAGE" value="CreatePlaylist/DeletePlaylist work fine." />
+    <MESSAGE value="Created test files for create/delete playlist use cases." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created test files for create/delete playlist use cases." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -246,14 +351,9 @@
           <option name="timeStamp" value="6" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/app/Main.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

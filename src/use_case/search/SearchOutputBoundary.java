@@ -1,7 +1,9 @@
 package use_case.search;
 
 public interface SearchOutputBoundary {
-    void prepareFailView(String s);
+    void prepareFailResultView(String s);
+    void prepareFailInputView(String s);
 
-    void prepareSuccessView(SearchOutputData searchOutputData);
+    void prepareSuccessSongView(SearchOutputData searchOutputData);
+    void prepareSuccessArtistView(SearchOutputData searchOutputData);
 }

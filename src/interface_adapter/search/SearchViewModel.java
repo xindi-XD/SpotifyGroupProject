@@ -5,28 +5,45 @@ import interface_adapter.ViewModel;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
+import java.util.Collections;
 
 //eva writing this one
 public class SearchViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Search Results View";
-    public static String SONG1_LABEL;
-    public static String SONG2_LABEL;
-    public static String SONG3_LABEL;
-    public static String SONG4_LABEL;
-    public static String SONG5_LABEL;
+    public static ArrayList<String> SONG_LABELS = new ArrayList<String>();
+    public static ArrayList<String> ARTIST_LABELS = new ArrayList<String>();
     public static String ADD_BUTTON_LABEL = "Add";
+    public static String GET_INFO_LABEL = "Show Stats";
+    public static String LIKE_ARTIST_BUTTON_LABEL = "Like artist";
+    public static final String TO_HOME_BUTTON_LABEL = "Back to homepage";
     private SearchState state = new SearchState();
 
     public SearchViewModel() {
         super("search results");
     }
-    public void setSongLabels(ArrayList<String> songLabels){
-        this.SONG1_LABEL = songLabels.get(0);
-        this.SONG2_LABEL = songLabels.get(1);
-        this.SONG3_LABEL = songLabels.get(2);
-        this.SONG4_LABEL = songLabels.get(3);
-        this.SONG5_LABEL = songLabels.get(4);
+    public void setFiveSongLabels(ArrayList<String> songLabels){
+        if (!songLabels.isEmpty()){
+            ArrayList<Integer> length = new ArrayList<>();
+            length.add(5);
+            length.add(songLabels.size());
+            Integer min = Collections.min(length);
+            for (int i = 0; i < min; i++){
+                this.SONG_LABELS.add(i, songLabels.get(i));
+            }
+        }
     }
+    public void setFiveArtistLabels(ArrayList<String> artistLabels) {
+        if (!artistLabels.isEmpty()){
+            ArrayList<Integer> length = new ArrayList<>();
+            length.add(5);
+            length.add(artistLabels.size());
+            Integer min = Collections.min(length);
+            for (int i = 0; i < min; i++){
+                this.ARTIST_LABELS.add(i, artistLabels.get(i));
+            }
+        }
+    }
+
 
     @Override
     public void firePropertyChanged() {

@@ -1,10 +1,11 @@
 package use_case.search;
 
-import entity.CommonPlaylistFactory;
+import entity.CommonArtist;
 import entity.CommonSong;
-import entity.CommonSongFactory;
 import org.json.JSONArray;
-import org.json.JSONObject;
+import use_case.search.search_strategies.ArtistCompiler;
+import use_case.search.search_strategies.Compiler;
+import use_case.search.search_strategies.SongCompiler;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -24,24 +25,34 @@ public class SearchInteractor implements SearchInputBoundary {
     @Override
     public void execute(SearchInputData searchInputData) {
         if (Objects.equals(searchInputData.getQuery(), "")){
-            // TODO: PrepareFailView incomplete.
-            searchPresenter.prepareFailView("Please input search item.");
+            // If write gibberish, returns nothing, error screen.
+            searchPresenter.prepareFailInputView("Please input search item.");
         } else {
             LocalDateTime now = LocalDateTime.now();
-            if (Objects.equals(searchInputData.getQueryType(), "Track")){
-                //Input: query name.
-                String query = searchInputData.getQuery();
-                JSONArray results = searchAPIDataAccessObject.search(query, "track");
-                // TODO: Output data incomplete.
-                ArrayList<CommonSong> songs = new ArrayList<>();
-                // Output: passes an array of Song objects to output data.
-                for (int i = 0; i< results.length(); i++){
-                    JSONObject result = (JSONObject) results.get(i);
-                    CommonSong song = CommonSongFactory.create(result);
-                    songs.add(song);
+            String query = searchInputData.getQuery();
+            String queryType = searchInputData.getQueryType();
+            JSONArray results = searchAPIDataAccessObject.search(query, queryType);
+            // TODO: When result < 5.
+            if (queryType.equals("track")) {
+                SongCompiler compiler = new SongCompiler();
+                ArrayList<CommonSong> songs = compiler.compileResult(results);
+                // If there is nothing, prepare fail view, no search results!
+                if (songs.isEmpty()){
+                    searchPresenter.prepareFailResultView("No search results were found ┐(ﾟ～ﾟ)┌");
                 }
+                else {
                 SearchOutputData searchOutputData = new SearchOutputData(songs, now.toString(), false);
-                searchPresenter.prepareSuccessView(searchOutputData);
+                searchPresenter.prepareSuccessSongView(searchOutputData);}
+            }
+            else if (queryType.equals("artist")){
+                ArtistCompiler compiler = new ArtistCompiler();
+                ArrayList<CommonArtist> artists = compiler.compileResult(results);
+                if (artists.isEmpty()){
+                    searchPresenter.prepareFailResultView("No search results were found ┐(ﾟ～ﾟ)┌");
+                }
+                SearchOutputData searchOutputData = new SearchOutputData(artists, now.toString(), false);
+                searchPresenter.prepareSuccessArtistView(searchOutputData);
+
             }
         }
     }
