@@ -13,12 +13,20 @@ import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchController;
 import interface_adapter.search.SearchPresenter;
 import interface_adapter.search.SearchViewModel;
+import interface_adapter.show_playlists.ShowPlaylistsController;
+import interface_adapter.show_playlists.ShowPlaylistsPresenter;
+import interface_adapter.show_playlists.ShowPlaylistsViewModel;
 import use_case.search.SearchInputBoundary;
 import use_case.search.SearchInteractor;
 import use_case.search.SearchOutputBoundary;
 import use_case.search.SearchAPIDataAccessInterface;
+import use_case.show_playlists.ShowPlaylistsInputBoundary;
+import use_case.show_playlists.ShowPlaylistsInteractor;
+import use_case.show_playlists.ShowPlaylistsOutputBoundary;
 import view.HomepageView;
 
+import javax.swing.text.View;
+import java.io.File;
 import java.io.IOException;
 
 public class HomepageUseCaseFactory {
@@ -28,11 +36,15 @@ public class HomepageUseCaseFactory {
                                       HomepageViewModel homepageViewModel,
                                       CreatePlaylistViewModel createPlaylistViewModel,
                                       DeletePlaylistViewModel deletePlaylistViewModel,
+                                      ShowPlaylistsViewModel showPlaylistsViewModel,
                                       SearchViewModel searchViewModel,
-                                      APIDataAccessObject apiDataAccessObject){
+                                      APIDataAccessObject apiDataAccessObject,
+                                      FilePlaylistDataAccessObject filePlaylistDataAccessObject){
         try{
         SearchController searchController = createSearchUseCase(viewManagerModel, homepageViewModel, searchViewModel, apiDataAccessObject);
-        return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel, deletePlaylistViewModel);
+        ShowPlaylistsController showPlaylistsController = createShowPlaylistsUseCase(viewManagerModel, homepageViewModel, showPlaylistsViewModel, filePlaylistDataAccessObject);
+        return new HomepageView(homepageViewModel, createPlaylistViewModel, searchController, viewManagerModel, deletePlaylistViewModel,
+                showPlaylistsViewModel, showPlaylistsController);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -52,5 +64,16 @@ public class HomepageUseCaseFactory {
 
         SearchInputBoundary searchInteractor = new SearchInteractor(apiDataAccessObject, searchOutPutBoundary);
         return new SearchController(searchInteractor);
+    }
+
+    private static ShowPlaylistsController createShowPlaylistsUseCase(
+            ViewManagerModel viewManagerModel,
+            HomepageViewModel homepageViewModel,
+            ShowPlaylistsViewModel showPlaylistsViewModel,
+            FilePlaylistDataAccessObject filePlaylistDataAccessObject) throws IOException {
+        ShowPlaylistsOutputBoundary showPlaylistsPresenter = new ShowPlaylistsPresenter(viewManagerModel, homepageViewModel, showPlaylistsViewModel);
+
+        ShowPlaylistsInputBoundary showPlaylistsInteractor = new ShowPlaylistsInteractor(filePlaylistDataAccessObject, showPlaylistsPresenter);
+        return new ShowPlaylistsController(showPlaylistsInteractor);
     }
 }

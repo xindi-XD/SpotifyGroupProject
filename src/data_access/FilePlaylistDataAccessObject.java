@@ -5,6 +5,7 @@ import entity.PlaylistFactory;
 import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 import use_case.delete_playlist.DeletePlaylistDataAccessInterface;
+import use_case.show_playlists.ShowPlaylistsDataAccessInterface;
 
 import javax.swing.*;
 import java.io.FileWriter;
@@ -13,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface, DeletePlaylistDataAccessInterface {
+public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface, DeletePlaylistDataAccessInterface, ShowPlaylistsDataAccessInterface {
 
     private final String jsonPath;
     private final Map<String, Playlist> playlists = new HashMap<>();
@@ -22,6 +23,10 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
     public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) {
         this.playlistFactory = playlistFactory;
         this.jsonPath = jsonPath;
+    }
+
+    public Map<String, Playlist> getPlaylists() {
+        return playlists;
     }
 
     @Override
