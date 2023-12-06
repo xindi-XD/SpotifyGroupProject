@@ -5,6 +5,7 @@ import entity.CommonPlaylistFactory;
 import entity.PlaylistFactory;
 import org.junit.Test;
 import view.HomepageView;
+import view.LabelTextPanel;
 import view.SearchView;
 
 import javax.swing.*;
@@ -21,8 +22,29 @@ public class SearchTrackTest {
     static String message = "";
     static boolean popUpDiscovered = false;
     @Test
-    public void testFile(){
+    public void getSearchBar(){
+        JFrame app = null;
+        Window[] windows = Window.getWindows();
+        for (Window window : windows) {
+            if (window instanceof JFrame) {
+                app = (JFrame) window;
+            }
+        }
+        assertNotNull(app); // found the window?
 
+        Component root = app.getComponent(0);
+
+        Component cp = ((JRootPane) root).getContentPane();
+
+        JPanel jp = (JPanel) cp;
+
+        JPanel jp2 = (JPanel) jp.getComponent(0);
+
+        HomepageView hv = (HomepageView) jp2.getComponent(0);
+
+        LabelTextPanel searchInfo = (LabelTextPanel) hv.getComponent(1);
+//        JButton search = (JButton) searchInfo.getComponent(2);
+//        return search; // this should be the clear button
     }
     public JButton getButton() {
         JFrame app = null;
