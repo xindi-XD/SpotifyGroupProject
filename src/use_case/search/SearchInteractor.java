@@ -7,6 +7,7 @@ import use_case.search.search_strategies.ArtistCompiler;
 import use_case.search.search_strategies.Compiler;
 import use_case.search.search_strategies.SongCompiler;
 
+import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -35,7 +36,7 @@ public class SearchInteractor implements SearchInputBoundary {
             // TODO: When result < 5.
             if (queryType.equals("track")) {
                 SongCompiler compiler = new SongCompiler();
-                ArrayList<CommonSong> songs = compiler.compileResult(results);
+                ArrayList<CommonSong> songs = (ArrayList<CommonSong>) getCompiledResult(compiler, results);
                 // If there is nothing, prepare fail view, no search results!
                 if (songs.isEmpty()){
                     searchPresenter.prepareFailResultView("No search results were found ┐(ﾟ～ﾟ)┌");
@@ -46,7 +47,7 @@ public class SearchInteractor implements SearchInputBoundary {
             }
             else if (queryType.equals("artist")){
                 ArtistCompiler compiler = new ArtistCompiler();
-                ArrayList<CommonArtist> artists = compiler.compileResult(results);
+                ArrayList<CommonArtist> artists = (ArrayList<CommonArtist>) getCompiledResult(compiler, results);
                 if (artists.isEmpty()){
                     searchPresenter.prepareFailResultView("No search results were found ┐(ﾟ～ﾟ)┌");
                 }
@@ -55,5 +56,8 @@ public class SearchInteractor implements SearchInputBoundary {
 
             }
         }
+    }
+    public ArrayList getCompiledResult(Compiler compiler, JSONArray results){
+        return compiler.compileResult(results);
     }
 }

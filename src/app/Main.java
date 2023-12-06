@@ -9,6 +9,8 @@ import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.get_song_stats.GetStatsViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchViewModel;
+import interface_adapter.show_playlists.ShowPlaylistsViewModel;
+import interface_adapter.show_songs.ShowSongsViewModel;
 import view.*;
 
 import javax.swing.*;
@@ -16,7 +18,7 @@ import java.awt.*;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,6 +41,8 @@ public class Main {
         CreatePlaylistViewModel createPlaylistViewModel = new CreatePlaylistViewModel();
         DeletePlaylistViewModel deletePlaylistViewModel = new DeletePlaylistViewModel();
         SearchViewModel searchViewModel = new SearchViewModel();
+        ShowPlaylistsViewModel showPlaylistsViewModel = new ShowPlaylistsViewModel();
+        ShowSongsViewModel showSongsViewModel = new ShowSongsViewModel();
         GetStatsViewModel getStatsViewModel = new GetStatsViewModel();
         FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
         APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
@@ -46,12 +50,14 @@ public class Main {
 //            fileDataAccessObject = new FileDataAccessObject("./users.csv", new CommonUserFactory());
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
-        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, deletePlaylistViewModel, searchViewModel, apiDataAccessObject);
+        HomepageView homepageView = HomepageUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, deletePlaylistViewModel, showPlaylistsViewModel, searchViewModel, apiDataAccessObject, playlistDataAccessObject);
         views.add(homepageView, homepageView.viewName);
         CreatePlaylistView createPlaylistView = CreatePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, createPlaylistViewModel, playlistDataAccessObject);
         views.add(createPlaylistView, createPlaylistView.viewName);
         DeletePlaylistView deletePlaylistView = DeletePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, deletePlaylistViewModel, playlistDataAccessObject);
         views.add(deletePlaylistView, deletePlaylistView.viewName);
+        ShowPlaylistsView showPlaylistsView = ShowPlaylistsUseCaseFactory.create(viewManagerModel, homepageViewModel, showPlaylistsViewModel, playlistDataAccessObject, showSongsViewModel);
+        views.add(showPlaylistsView, showPlaylistsView.viewName);
         SearchView searchView = SearchUseCaseFactory.create(viewManagerModel, homepageViewModel, searchViewModel,
                 getStatsViewModel, apiDataAccessObject);
         views.add(searchView, searchView.viewName);

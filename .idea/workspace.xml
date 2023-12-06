@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: display problem fixed.">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/test/app/SearchTrackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/APIDataAccessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +34,24 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="display-fix" />
+        <entry key="$PROJECT_DIR$" value="1203-delete-prev-results-xindi" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;xindi-XD&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d236bd65-be3c-4920-a008-2d0dfe5074f5" />
+        <option name="url" value="https://github.com/xindi-XD/SpotifyGroupProject.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,25 +66,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="use_case.search" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="app" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -102,14 +125,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="app in SpotifyProject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpotifyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.app in SpotifyProject" />
       <item itemvalue="JUnit.TestAPI" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TestAPI" />
+        <item itemvalue="JUnit.app in SpotifyProject" />
         <item itemvalue="JUnit.TestAPI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestAPI" />
@@ -128,8 +166,8 @@
       <workItem from="1701030006636" duration="338000" />
       <workItem from="1701130954919" duration="4106000" />
       <workItem from="1701494193784" duration="8195000" />
-      <workItem from="1701641615324" duration="753000" />
-      <workItem from="1701672092227" duration="2191000" />
+      <workItem from="1701733601758" duration="11272000" />
+      <workItem from="1701823378639" duration="4583000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -291,7 +329,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701587355472</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701749876608</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701749876608</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701750330595</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1701750330595</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +374,8 @@
     <MESSAGE value="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches." />
     <MESSAGE value="Commit: display problem fixed." />
     <MESSAGE value="Get stats use case implemented (with one bug)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get stats use case implemented (with one bug)" />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -329,16 +384,26 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchState.java</url>
-          <line>24</line>
-          <properties class="interface_adapter.search.SearchState" method="getSongNames">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="15" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/HomepageView.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/app/SearchTrackTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
