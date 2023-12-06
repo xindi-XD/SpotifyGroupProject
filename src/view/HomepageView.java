@@ -36,11 +36,6 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
     private final ViewManagerModel viewManagerModel;
     String[] types = {"track", "artist"};
 
-    // TODO: delete and search, to be implemented
-//    private final JButton showPlaylists;
-//    private final JButton deletePlaylist;
-//    private final JTextField searchInputField = new JTextField(15);
-
     public HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel,
                         SearchController searchController, ViewManagerModel viewManagerModel,
                         DeletePlaylistViewModel deletePlaylistViewModel,
