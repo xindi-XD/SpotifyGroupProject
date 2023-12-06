@@ -2,16 +2,14 @@ package view;
 
 // imports from CACoding
 import interface_adapter.ViewManagerModel;
-import interface_adapter.create_playlist.CreatePlaylistController;
-import interface_adapter.create_playlist.CreatePlaylistState;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.delete_playlist.DeletePlaylistViewModel;
-import interface_adapter.homepage.HomepageController;
 import interface_adapter.homepage.HomepageState;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchController;
-import interface_adapter.search.SearchState;
-import interface_adapter.search.SearchViewModel;
+import interface_adapter.show_playlists.ShowPlaylistsState;
+import interface_adapter.show_playlists.ShowPlaylistsViewModel;
+import interface_adapter.show_playlists.ShowPlaylistsController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,7 +25,9 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
     // Homepage does not have a controller. It doesn't have any other use case apart from switching views.
     private final CreatePlaylistViewModel createPlaylistViewModel;
     private final DeletePlaylistViewModel deletePlaylistViewModel;
+    private final ShowPlaylistsViewModel showPlaylistsViewModel;
     private final SearchController searchController;
+    private final ShowPlaylistsController showPlaylistsController;
     final JTextField searchInputField = new JTextField(15);
     private final JButton createPlaylist;
     private final JButton showPlaylists;
@@ -38,14 +38,17 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
 
     public HomepageView(HomepageViewModel homepageViewModel, CreatePlaylistViewModel createPlaylistViewModel,
                         SearchController searchController, ViewManagerModel viewManagerModel,
-                        DeletePlaylistViewModel deletePlaylistViewModel){
+                        DeletePlaylistViewModel deletePlaylistViewModel,
+                        ShowPlaylistsViewModel showPlaylistsViewModel, ShowPlaylistsController showPlaylistsController){
 //        this.createPlaylistController = createPlaylistController;
         // Initialize view models.
         this.createPlaylistViewModel = createPlaylistViewModel;
         this.deletePlaylistViewModel = deletePlaylistViewModel;
+        this.showPlaylistsViewModel = showPlaylistsViewModel;
         this.homepageViewModel = homepageViewModel;
         this.viewManagerModel = viewManagerModel;
         this.searchController = searchController;
+        this.showPlaylistsController = showPlaylistsController;
         // Initialize controllers (if any).
         // Make this view listen to changes made in view models.
         homepageViewModel.addPropertyChangeListener(this);
@@ -101,6 +104,17 @@ public class HomepageView extends JPanel implements ActionListener, PropertyChan
                         if (evt.getSource().equals(deletePlaylist)){
                             viewManagerModel.setActiveView(deletePlaylistViewModel.getViewName());
                             viewManagerModel.firePropertyChanged();
+                        }
+                    }
+                }
+        );
+
+        showPlaylists.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(showPlaylists)){
+                            showPlaylistsController.execute();
                         }
                     }
                 }
