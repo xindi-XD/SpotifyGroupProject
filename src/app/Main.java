@@ -18,7 +18,7 @@ import java.awt.*;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
