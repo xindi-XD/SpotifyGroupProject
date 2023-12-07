@@ -9,6 +9,9 @@ import java.util.HashMap;
 
 public class GetStatsViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Song statistics";
+    public static final String PLAYLIST_OPTIONS_LABEL = "Add to: ";
+    public static final String PLAYLIST_SELECTION = "Playlists: ";
+    public static final String ADD_LABEL = "Add";
     public static String SONG_NAME_LABEL = "Name: ";
     public static String ARTIST_NAME_LABEL = "Artist: ";
     public static String RELEASE_DATE_LABEL = "Released: ";

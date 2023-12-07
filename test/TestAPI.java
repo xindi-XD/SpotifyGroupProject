@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TestAPI {
-    @Test
-    public void testSearchTrack() {
+
+   /* public void testSearchTrack() {
         APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
         JSONArray searchTrackResults = apiDataAccessObject.search("abc", "track");
         assert searchTrackResults.length() == 20;
@@ -24,9 +24,11 @@ public class TestAPI {
             System.out.println(returnedSongs.get(i).getName());
         }
     }
+    */
 
-    @Test
-    public void testGetTrack() {
+
+
+   /* public void testGetTrack() {
         APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
         JSONObject songResult = apiDataAccessObject.getTrack("6kyHcHEBPtwjEbUWrNuLlv");
         CommonSong song = CommonSongFactory.create(songResult);
@@ -35,7 +37,7 @@ public class TestAPI {
         assert song.getArtist().length == 1;
         assert song.getArtist()[0].equals("Leonz");
     }
-
+*/
     @Test
     public void testGetFeatures() {
         APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();

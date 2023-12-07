@@ -18,7 +18,7 @@ public class ShowSongsInteractor implements ShowSongsInputBoundary{
             showSongsPresenter.prepareFailView("Try to add one or more songs to this playlist! ^v^");
         }
         else {
-            Map<String, String[]> songs = showSongsDataAccessObject.getSongs(showSongsInputData.getPlaylist());
+            Map<String, String> songs = showSongsDataAccessObject.getSongs(showSongsInputData.getPlaylist());
             ShowSongsOutputData showSongsOutputData = new ShowSongsOutputData(songs);
             showSongsPresenter.prepareSuccessView(showSongsOutputData);
         }

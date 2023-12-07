@@ -1,43 +1,40 @@
 package entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CommonSong implements Song {
+    final private String songId;
+
     final private String name;
-    final private String[] artist;
+
+    final private String artists;
+
     final private String releaseDate;
-    final private String id;
 
-    public CommonSong(String name, String[] artist, String releaseDate, String id) {
+
+    public CommonSong(String id, String name, String artist, String releaseDate) {
+        this.songId = id;
         this.name = name;
-        this.id = id;
+        this.artists = artist;
         this.releaseDate = releaseDate;
-        this.artist = artist;
+
     }
 
-    @Override
-    // TODO: method body is not implemented.
-    public boolean likeSong(CommonSong song) {
-        return false;
-    }
+    public String getId() {return this.songId;}
 
-    @Override
-    // TODO: method body is not implemented.
-    public boolean unlikeSong(CommonSong song) {
-        return false;
-    }
 
     public String getName() {
         return name;
     }
 
 
-    public String[] getArtist() {
-        return artist;
+    public String getArtistName() {
+        return artists;
     }
 
     public String getReleaseDate() {return releaseDate;}
 
-    @Override
-    public String getID() {return id;}
 
 
 }
