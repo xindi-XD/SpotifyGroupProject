@@ -46,16 +46,15 @@ public class SearchViewModel extends ViewModel {
             }
         }
     }
-    public void setFiveSongWriterLabels(ArrayList<String[]> songWriterLabels) {
+    public void setFiveSongWriterLabels(ArrayList<String> songWriterLabels) {
         if (!songWriterLabels.isEmpty()){
             ArrayList<Integer> length = new ArrayList<>();
             length.add(5);
             length.add(songWriterLabels.size());
             Integer min = Collections.min(length);
             for (int i = 0; i < min; i++){
-                String[] writers = songWriterLabels.get(i);
-                String s = toString(writers);
-                this.SONG_WRITER_LABELS.add(i, s);
+                String writers = songWriterLabels.get(i);
+                this.SONG_WRITER_LABELS.add(i, writers);
             }
         }
     }

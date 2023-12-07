@@ -5,18 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit to merge">
-      <change afterPath="$PROJECT_DIR$/test/app/GetStatsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/use_case/show_stats/GetStatsUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/AddSongUseCaseFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/GetStatsUseCaseFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/add_song/AddSongDataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/add_song/AddSongInputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/add_song/AddSongInputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/add_song/AddSongInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/add_song/AddSongOutputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/add_song/AddSongOutputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsFilePlaylistDataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AddSongView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CreatePlaylistTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/DeletePlaylistTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/GetTrackStatsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/SearchTrackTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/SearchTrackTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestAPI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestSearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/GetTrackStatsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonSongFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/add_song/AddSongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/add_song/AddSongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/add_song/AddSongPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/add_song/AddSongPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/add_song/AddSongState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/add_song/AddSongState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/add_song/AddSongViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/add_song/AddSongViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/get_song_stats/GetStatsViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/search/SearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/search/SearchViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/unadd_song/UnaddSongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/unadd_song/UnaddSongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/get_song_stats/GetStatsOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GetStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GetStatsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/SearchUseCaseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/SearchUseCaseFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonPlaylist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonPlaylist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonSong.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonSong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonSongFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonSongFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Playlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Playlist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GetStatsView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GetStatsView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GetStatsView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GetStatsView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GetStatsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GetStatsView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/SearchView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SearchView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/use_case/create_playlist/CreatePlaylistUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/use_case/delete_playlist/DeletePlaylistUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/use_case/show_playlists/ShowPlaylistsUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/use_case/show_songs/ShowSongsUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CreatePlaylistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DeletePlaylistTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +114,38 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2YaqrVqq0Lf8NgFrhieWzRqOI3q" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "elocal",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -95,7 +167,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="use_case.search" />
@@ -112,7 +184,7 @@
       <recent name="use_case.search" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CreatePlaylistUseCaseTest">
+  <component name="RunManager" selected="JUnit.ShowSongsUseCaseTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <envs>
         <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
@@ -228,7 +300,6 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.SearchUseCaseTest" />
       <item itemvalue="JUnit.CreatePlaylistUseCaseTest" />
       <item itemvalue="JUnit.DeletePlaylistUseCaseTest" />
       <item itemvalue="JUnit.DeletePlaylistUseCaseTest.failurePlaylistExistsTest" />
@@ -237,9 +308,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CreatePlaylistUseCaseTest" />
         <item itemvalue="JUnit.ShowSongsUseCaseTest" />
         <item itemvalue="JUnit.ShowPlaylistsUseCaseTest" />
+        <item itemvalue="JUnit.CreatePlaylistUseCaseTest" />
         <item itemvalue="JUnit.DeletePlaylistUseCaseTest" />
         <item itemvalue="JUnit.DeletePlaylistUseCaseTest.failurePlaylistExistsTest" />
       </list>
@@ -258,6 +329,8 @@
       <workItem from="1701130954919" duration="4106000" />
       <workItem from="1701494193784" duration="8195000" />
       <workItem from="1701733601758" duration="11272000" />
+      <workItem from="1701823378639" duration="4583000" />
+      <workItem from="1701945365555" duration="34576000" />
       <workItem from="1701823378639" duration="5268000" />
       <workItem from="1701878321861" duration="3115000" />
       <workItem from="1701900162687" duration="9198000" />
@@ -522,15 +595,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701976381343</updated>
     </task>
-    <task id="LOCAL-00033" summary="Commit to merge">
-      <option name="closed" value="true" />
-      <created>1701984666837</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1701984666837</updated>
-    </task>
-    <option name="localTasksCounter" value="34" />
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,6 +636,16 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/GetStatsView.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -579,26 +654,23 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchTrackTest.ic" NAME="SearchTrackTest Coverage Results" MODIFIED="1701966951012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>use_case.*</FILTER>
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject$CreatePlaylistUseCaseTest.ic" NAME="CreatePlaylistUseCaseTest Coverage Results" MODIFIED="1701979686244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.create_playlist.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SpotifyGroupProject$DeletePlaylistUseCaseTest.ic" NAME="DeletePlaylistUseCaseTest Coverage Results" MODIFIED="1701979551555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>use_case.delete_playlist.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SpotifyGroupProject$CreatePlaylistUseCaseTest.ic" NAME="CreatePlaylistUseCaseTest Coverage Results" MODIFIED="1701985134950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>use_case.create_playlist.*</FILTER>
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchTrackTest.ic" NAME="SearchTrackTest Coverage Results" MODIFIED="1701966951012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest2.ic" NAME="SearchInteractorTest2 Coverage Results" MODIFIED="1701971349947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>use_case.search.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SpotifyGroupProject$ShowPlaylistsUseCaseTest.ic" NAME="ShowPlaylistsUseCaseTest Coverage Results" MODIFIED="1701980600629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>use_case.show_playlists.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SpotifyGroupProject$ShowSongsUseCaseTest.ic" NAME="ShowSongsUseCaseTest Coverage Results" MODIFIED="1701984923226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>use_case.show_songs.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest.ic" NAME="SearchInteractorTest Coverage Results" MODIFIED="1701973933722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>use_case.search.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject$ShowPlaylistsUseCaseTest.ic" NAME="ShowPlaylistsUseCaseTest Coverage Results" MODIFIED="1701980600629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.show_playlists.*</FILTER>
     </SUITE>
   </component>
 </project>

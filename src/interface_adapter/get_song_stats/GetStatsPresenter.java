@@ -31,24 +31,13 @@ public class GetStatsPresenter implements GetStatsOutputBoundary {
     @Override
     public void prepareSuccessView(GetStatsOutputData response) {
         GetStatsState state = viewModel.getState();
-        JSONObject responseSong = response.getSong();
-        Song result = CommonSongFactory.create(responseSong);
-        HashMap<String, Float> features = response.getFeatures();
-        state.setFeatures(features);
-        state.setSongName(result.getName());
-        String all_artists = "";
-        int index = 0;
-        String[] artistsList = result.getArtist();
-        for (String artist : artistsList) {
-            if (index == artistsList.length - 1) {
-                all_artists += artist;
-                break;
-            }
-            all_artists += artist + " | ";
-            index++;
-        }
-        state.setArtistName(all_artists);
-        state.setReleaseDate(result.getReleaseDate());
+        state.setSongId(response.getId());
+        state.setSongName(response.getName());
+        state.setArtistName(response.getArtists());
+        state.setReleaseDate(response.getReleaseDate());
+        state.setFeatures(response.getFeatures());
+        state.setPlaylistNames(response.getPlaylistnames());
+
         this.viewModel.setSongInformation(state.getSongName(), state.getArtistName(), state.getReleaseDate(),
                 state.getFeatures());
         viewModel.setState(state);
