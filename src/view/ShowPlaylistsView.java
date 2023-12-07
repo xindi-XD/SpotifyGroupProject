@@ -104,10 +104,14 @@ public class ShowPlaylistsView extends JPanel implements ActionListener, Propert
         JPanel playlistLine = new JPanel();
         JPanel descriptionLine = new JPanel();
         playlistLine.add(playlistLabel);
+        JLabel playlistDescription;
         if (description != null) {
-            JLabel playlistDescription = new JLabel("Description: " + description);
-            descriptionLine.add(playlistDescription);
+            playlistDescription = new JLabel("Description: " + description);
         }
+        else {
+            playlistDescription = new JLabel("Description:");
+        }
+        descriptionLine.add(playlistDescription);
         playlistLine.add(showSongs);
         this.add(playlistLine);
         this.add(descriptionLine);
