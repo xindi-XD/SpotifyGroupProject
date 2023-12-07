@@ -12,6 +12,10 @@ import use_case.add_song.AddSongInteractor;
 import use_case.add_song.AddSongOutputBoundary;
 import view.GetStatsView;
 
+/**
+ * Use case factory for the get stats use case.
+ * @author EEK
+ */
 public class GetStatsUseCaseFactory {
     private GetStatsUseCaseFactory(){}
 
