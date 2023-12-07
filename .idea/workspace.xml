@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit to merge">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/create_playlist/CreatePlaylistInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/show_playlists/ShowPlaylistsOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/show_playlists/ShowPlaylistsOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ShowPlaylistsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShowPlaylistsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/authexpress" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1203-delete-prev-results-xindi" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;xindi-XD&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d236bd65-be3c-4920-a008-2d0dfe5074f5" />
+        <option name="url" value="https://github.com/xindi-XD/SpotifyGroupProject.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2YaqrVqq0Lf8NgFrhieWzRqOI3q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="use_case.search" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
+        <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="app.Main" />
+      <module name="SpotifyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAPI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpotifyProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestAPI" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <envs>
+        <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
+        <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SpotifyProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SpotifyProject" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.TestAPI" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestAPI" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestAPI" />
+        <item itemvalue="JUnit.TestAPI" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="" />
+      <created>1700774240108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700774240108</updated>
+      <workItem from="1700774242076" duration="2286000" />
+      <workItem from="1701030006636" duration="338000" />
+      <workItem from="1701130954919" duration="4106000" />
+      <workItem from="1701494193784" duration="8195000" />
+      <workItem from="1701733601758" duration="10717000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed bug.">
+      <option name="closed" value="true" />
+      <created>1700864357187</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700864357187</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed merge conflict">
+      <option name="closed" value="true" />
+      <created>1700995290680</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700995290680</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701030013821</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701030013821</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701030079933</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701030079933</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701030134448</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701030134448</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Json file works.">
+      <option name="closed" value="true" />
+      <created>1701134344992</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701134344992</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Commit to merge">
+      <option name="closed" value="true" />
+      <created>1701490459164</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701490459164</updated>
+    </task>
+    <task id="LOCAL-00008" summary="DeletePlaylist use case starts to work now.">
+      <option name="closed" value="true" />
+      <created>1701492973732</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701492973732</updated>
+    </task>
+    <task id="LOCAL-00009" summary="CreatePlaylist perfectly works.">
+      <option name="closed" value="true" />
+      <created>1701567777901</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701567777902</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701548596426</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701548596426</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Commit: adding CommonArtist. 5 results implemented.">
+      <option name="closed" value="true" />
+      <created>1701553259645</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701553259645</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Commit: added CommonArtist. 5 results for both implemented.">
+      <option name="closed" value="true" />
+      <created>1701561527674</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701561527674</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701564588696</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701564588696</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701565617799</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701565617799</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Commit: search no result fail view">
+      <option name="closed" value="true" />
+      <created>1701568479520</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701568479520</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Commit: fail view displayed, but cannot reboot.">
+      <option name="closed" value="true" />
+      <created>1701569325128</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701569325128</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Commit: getter methods for array list of artists and songs">
+      <option name="closed" value="true" />
+      <created>1701576273801</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701576273801</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches.">
+      <option name="closed" value="true" />
+      <created>1701581712359</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701581712359</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Commit: display problem fixed.">
+      <option name="closed" value="true" />
+      <created>1701586833694</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701586833694</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Commit: display problem fixed.">
+      <option name="closed" value="true" />
+      <created>1701587355472</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1701587355472</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1701749876608</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701749876608</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Commit to merge">
+      <option name="closed" value="true" />
+      <created>1701825222713</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1701825222713</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed bug." />
+    <MESSAGE value="Json file works." />
+    <MESSAGE value="Fixed merge conflict" />
+    <MESSAGE value="Commit to pull" />
+    <MESSAGE value="DeletePlaylist use case starts to work now." />
+    <MESSAGE value="CreatePlaylist perfectly works." />
+    <MESSAGE value="Commit: getter methods for array list of artists and songs" />
+    <MESSAGE value="Commit: search results have song writers displayed.&#10;Problem: not deleting displaying first six searches." />
+    <MESSAGE value="Commit: display problem fixed." />
+    <MESSAGE value="Get stats use case implemented (with one bug)" />
+    <MESSAGE value="Commit" />
+    <MESSAGE value="ShowPlaylists use case." />
+    <MESSAGE value="Commit to merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit to merge" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.AssertionError" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
