@@ -135,7 +135,7 @@ public class SearchView extends JPanel implements ActionListener, PropertyChange
                 }
         );
         this.add(resultLine);
-        addButtons.add(add);
+
     }
     private void oneArtistResult(String artistName){
         JLabel artistLabel = new JLabel(artistName);

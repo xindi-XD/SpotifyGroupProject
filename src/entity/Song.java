@@ -1,14 +1,12 @@
 package entity;
 
+import java.util.Map;
+
 public interface Song {
-    boolean likeSong(CommonSong song);
-    boolean unlikeSong(CommonSong song);
     String getName();
-
-    String[] getArtist();
-
+    String getArtistName();
     String getReleaseDate();
 
-    String getID();
+
 
 }

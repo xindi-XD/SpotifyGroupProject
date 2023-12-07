@@ -12,7 +12,7 @@ public class SearchState {
     private ArrayList<CommonArtist> artists;
     // songWriterNames is an arraylist of an arraylist of strings. For each of the songs.
     private ArrayList<String> songNames;
-    private ArrayList<String[]> songWriterNames;
+    private ArrayList<String> songWriterNames;
     // artistNames is for artist.
     private ArrayList<String> artistNames;
     public SearchState(){}
@@ -33,14 +33,14 @@ public class SearchState {
     public ArrayList<String> getSongIDs() {
         ArrayList<String> songIDs = new ArrayList<>();
         for (CommonSong song : songs) {
-            songIDs.add(song.getID());
+            songIDs.add(song.getId());
         }
         return songIDs;
     }
-    public ArrayList<String[]> getSongWriterNames(){
+    public ArrayList<String> getSongWriterNames(){
         this.songWriterNames = new ArrayList<>();
         for (int i = 0; i < songs.size(); i++){
-            songWriterNames.add(songs.get(i).getArtist());
+            songWriterNames.add(songs.get(i).getArtistName());
         }
         return songWriterNames;
     }

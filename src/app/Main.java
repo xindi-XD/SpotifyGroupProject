@@ -4,6 +4,7 @@ import data_access.APIDataAccessObject;
 import data_access.FilePlaylistDataAccessObject;
 import entity.CommonPlaylistFactory;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.add_song.AddSongViewModel;
 import interface_adapter.create_playlist.CreatePlaylistViewModel;
 import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.get_song_stats.GetStatsViewModel;
@@ -44,6 +45,7 @@ public class Main {
         ShowPlaylistsViewModel showPlaylistsViewModel = new ShowPlaylistsViewModel();
         ShowSongsViewModel showSongsViewModel = new ShowSongsViewModel();
         GetStatsViewModel getStatsViewModel = new GetStatsViewModel();
+        AddSongViewModel addSongViewModel = new AddSongViewModel();
         FilePlaylistDataAccessObject playlistDataAccessObject = new FilePlaylistDataAccessObject("./playlists.json", new CommonPlaylistFactory());
         APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
 //        try {
@@ -61,10 +63,12 @@ public class Main {
         ShowSongsView showSongsView = ShowSongsUseCaseFactory.create(viewManagerModel, homepageViewModel, showSongsViewModel, showPlaylistsViewModel);
         views.add(showSongsView, showSongsView.viewName);
         SearchView searchView = SearchUseCaseFactory.create(viewManagerModel, homepageViewModel, searchViewModel,
-                getStatsViewModel, apiDataAccessObject);
+                getStatsViewModel, apiDataAccessObject, playlistDataAccessObject);
         views.add(searchView, searchView.viewName);
-        GetStatsView getStatsView = new GetStatsView(getStatsViewModel, viewManagerModel, searchViewModel);
+        GetStatsView getStatsView = GetStatsUseCaseFactory.create(viewManagerModel, addSongViewModel, searchViewModel, getStatsViewModel, playlistDataAccessObject);
         views.add(getStatsView, getStatsView.viewName);
+        //AddSongView addSongView = AddSongUseCaseFactory.create(viewManagerModel, getStatsViewModel, addSongViewModel);
+        //views.add(addSongView, addSongView.viewName);
 
         viewManagerModel.setActiveView(homepageView.viewName);
         viewManagerModel.firePropertyChanged();

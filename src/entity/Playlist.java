@@ -5,7 +5,7 @@ import java.util.Map;
 public interface Playlist {
     boolean addSong(CommonSong song);
     boolean removeSong(CommonSong song);
-    Map<String, String[]> getSong();
+    Map<String, String> getSong();
     String getName();
     boolean setName(String name);
     String getDescription();

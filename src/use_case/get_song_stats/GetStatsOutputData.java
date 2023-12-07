@@ -1,23 +1,38 @@
 package use_case.get_song_stats;
 
-import entity.Song;
+import entity.CommonSong;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GetStatsOutputData {
-    private final JSONObject song;
+    private ArrayList<String> playlistnames;
+    private final CommonSong result;
+
     private final HashMap<String, Float> features;
     private boolean useCaseFailed;
 
-    public GetStatsOutputData(JSONObject song, HashMap<String, Float> features,
+    public GetStatsOutputData(ArrayList<String> playlistnames, CommonSong result, HashMap<String, Float> resultFeatures,
                               boolean failed) {
-        this.song = song;
-        this.features = features;
+        this.playlistnames = playlistnames;
+        this.result = result;
+        this.features = resultFeatures;
         this.useCaseFailed = failed;
+
     }
 
-    public JSONObject getSong() {return song;}
 
-    public HashMap<String, Float> getFeatures() {return features;}
+    public HashMap<String, Float> getFeatures() {return this.features;}
+    public String getId() {return result.getId();}
+
+    public String getName() {return result.getName();}
+
+    public String getArtists() {return result.getArtistName();}
+
+    public String getReleaseDate() {return result.getReleaseDate();}
+
+
+    public ArrayList<String> getPlaylistnames() {return this.playlistnames;}
+
 }

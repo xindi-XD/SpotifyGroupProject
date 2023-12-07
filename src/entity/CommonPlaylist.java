@@ -28,14 +28,14 @@ public class CommonPlaylist implements Playlist{
         return true;
     }
 
-    public Map<String, String[]> getSong() {  // get all the songs with the same name when user searches for a song.
-        Map<String,String[]> songList = new HashMap<>();
+    public Map<String, String> getSong() {  // get all the songs with the same name when user searches for a song.
+        Map<String,String> songList = new HashMap<>();
         for (CommonSong song: songs) {
             if (song.getName().equals(name)) {
-                songList.put(song.getName(), song.getArtist());
+                songList.put(song.getName(), song.getArtistName());
             }
         }
-        return songList;
+        return (Map<String, String>) songList;
     }
 
     public String getName() {
