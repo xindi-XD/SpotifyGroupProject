@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class ShowPlaylistsView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "Your Playlists";
@@ -78,10 +79,12 @@ public class ShowPlaylistsView extends JPanel implements ActionListener, Propert
 
     private void resetResults() {
         ShowPlaylistsViewModel.resetPlaylistNameLabels();
+        ShowPlaylistsViewModel.resetPlaylistDescriptionLabels();
     }
 
     private void setResults() {
         ArrayList<String> playlists = showPlaylistsViewModel.getState().getPlaylistsNames();
+        Map<String, String> descriptions = showPlaylistsViewModel.getState().getDescriptions();
         if (!showSongButtons.isEmpty()) {
             showSongButtons.clear();
             this.removeAll();
@@ -90,18 +93,24 @@ public class ShowPlaylistsView extends JPanel implements ActionListener, Propert
         }
         if (!playlists.isEmpty()) {
             for (int i = 0; i < ShowPlaylistsViewModel.PLAYLIST_NAME_LABELS.size(); i++) {
-                onePlaylistResult(playlists.get(i), i);
+                onePlaylistResult(playlists.get(i), descriptions.get(playlists.get(i)), i);
             }
         }
     }
 
-    private void onePlaylistResult(String playlistName, int index) {
-        JLabel playlistLabel = new JLabel(playlistName);
+    private void onePlaylistResult(String playlistName, String description, int index) {
+        JLabel playlistLabel = new JLabel("Playlist Name: " + playlistName);
         JButton showSongs = new JButton(ShowPlaylistsViewModel.SHOW_SONGS_LABEL);
-        JPanel resultLine = new JPanel();
-        resultLine.add(playlistLabel);
-        resultLine.add(showSongs);
-        this.add(resultLine);
+        JPanel playlistLine = new JPanel();
+        JPanel descriptionLine = new JPanel();
+        playlistLine.add(playlistLabel);
+        if (description != null) {
+            JLabel playlistDescription = new JLabel("Description: " + description);
+            descriptionLine.add(playlistDescription);
+        }
+        playlistLine.add(showSongs);
+        this.add(playlistLine);
+        this.add(descriptionLine);
         showSongButtons.add(showSongs);
         showSongs.addActionListener(
                 new ActionListener() {
