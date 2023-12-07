@@ -22,7 +22,7 @@ public class GetTrackStatsTest {
 
         assertNotNull(app);
 
-        Component root = app.getComponent(0);
+        Component root = app.getComponent(1);
 
         Component cp = ((JRootPane) root).getContentPane();
 
