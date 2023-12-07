@@ -1,12 +1,12 @@
 package view;
 
+import entity.Playlist;
 import interface_adapter.ViewManagerModel;
-import interface_adapter.ViewModel;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.show_playlists.ShowPlaylistsController;
 import interface_adapter.show_playlists.ShowPlaylistsState;
 import interface_adapter.show_playlists.ShowPlaylistsViewModel;
-import interface_adapter.show_songs.ShowSongsViewModel;
+import interface_adapter.show_songs.ShowSongsController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,18 +22,18 @@ public class ShowPlaylistsView extends JPanel implements ActionListener, Propert
     private final ShowPlaylistsViewModel showPlaylistsViewModel;
     private final ViewManagerModel viewManagerModel;
     private final HomepageViewModel homepageViewModel;
-    private final ShowSongsViewModel showSongsViewModel;
+    private final ShowSongsController showSongsController;
     private final ShowPlaylistsController showPlaylistsController;
     private final JButton backToHome;
     private final ArrayList<JButton> showSongButtons = new ArrayList<>();
 
     public ShowPlaylistsView(ShowPlaylistsViewModel showPlaylistsViewModel, ViewManagerModel viewManagerModel,
                              HomepageViewModel homepageViewModel, ShowPlaylistsController showPlaylistsController,
-                             ShowSongsViewModel showSongsViewModel) {
+                             ShowSongsController showSongsController) {
         this.showPlaylistsViewModel = showPlaylistsViewModel;
         this.viewManagerModel = viewManagerModel;
         this.homepageViewModel = homepageViewModel;
-        this.showSongsViewModel = showSongsViewModel;
+        this.showSongsController = showSongsController;
         this.showPlaylistsController = showPlaylistsController;
         showPlaylistsViewModel.addPropertyChangeListener(this);
         JLabel title = new JLabel(ShowPlaylistsViewModel.TITLE_LABEL);
@@ -84,7 +84,7 @@ public class ShowPlaylistsView extends JPanel implements ActionListener, Propert
 
     private void setResults() {
         ArrayList<String> playlists = showPlaylistsViewModel.getState().getPlaylistsNames();
-        Map<String, String> descriptions = showPlaylistsViewModel.getState().getDescriptions();
+        Map<String, Playlist> descriptions = showPlaylistsViewModel.getState().getPlaylists();
         if (!showSongButtons.isEmpty()) {
             showSongButtons.clear();
             this.removeAll();
@@ -93,12 +93,12 @@ public class ShowPlaylistsView extends JPanel implements ActionListener, Propert
         }
         if (!playlists.isEmpty()) {
             for (int i = 0; i < ShowPlaylistsViewModel.PLAYLIST_NAME_LABELS.size(); i++) {
-                onePlaylistResult(playlists.get(i), descriptions.get(playlists.get(i)), i);
+                onePlaylistResult(playlists.get(i), descriptions.get(playlists.get(i)).getDescription());
             }
         }
     }
 
-    private void onePlaylistResult(String playlistName, String description, int index) {
+    private void onePlaylistResult(String playlistName, String description) {
         JLabel playlistLabel = new JLabel("Playlist Name: " + playlistName);
         JButton showSongs = new JButton(ShowPlaylistsViewModel.SHOW_SONGS_LABEL);
         JPanel playlistLine = new JPanel();
@@ -117,8 +117,7 @@ public class ShowPlaylistsView extends JPanel implements ActionListener, Propert
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if (e.getSource().equals(showSongs)) {
-                            viewManagerModel.setActiveView(showSongsViewModel.getViewName());
-                            viewManagerModel.firePropertyChanged();
+                            showSongsController.execute(playlistName);
                         }
                     }
                 }
