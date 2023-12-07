@@ -1,0 +1,422 @@
+Index: src/data_access/APIDataAccessObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package data_access;\n\nimport okhttp3.*;\nimport org.json.JSONArray;\nimport org.json.JSONException;\nimport org.json.JSONObject;\nimport use_case.search.SearchAPIDataAccessInterface;\n\nimport java.io.IOException;\nimport java.util.Base64;\n\npublic class APIDataAccessObject implements SearchAPIDataAccessInterface {\n    private static final String CLIENT_ID = System.getenv(\"CLIENT_ID\");\n    private static final String CLIENT_SECRET = System.getenv(\"CLIENT_SECRET\");\n\n    private static String getClientCredentials() {\n        OkHttpClient client = new OkHttpClient().newBuilder().build();\n        MediaType mediaType = MediaType.parse(\"application/x-www-form-urlencoded\");\n        RequestBody body = RequestBody.create(\"grant_type=client_credentials\", mediaType);\n        Request request = new Request.Builder()\n                .url(\"https://accounts.spotify.com/api/token\")\n                .method(\"POST\", body)\n                .addHeader(\"Authorization\", \"Basic \" + Base64.getEncoder().encodeToString((CLIENT_ID + \":\" + CLIENT_SECRET).getBytes()))\n                .addHeader(\"Content-Type\", \"application/x-www-form-urlencoded\")\n                .build();\n        try {\n            Response response = client.newCall(request).execute();\n            System.out.println(response);\n            if (response.code() == 200) {\n                JSONObject responseBody = new JSONObject(response.body().string());\n                System.out.println(responseBody.getInt(\"expires_in\"));\n                return responseBody.getString(\"access_token\");\n            }\n            else {\n                System.out.println(\"Error response code: \" + response.code());\n                System.out.println(\"Error response body: \" + response.body().string());\n\n                // Throw a more informative exception\n                throw new RuntimeException(\"Response not successful. See console for details.\");\n            }\n        }\n        catch (IOException | JSONException e) {\n            throw new RuntimeException(e);\n        }\n    }\n\n    public JSONArray search(String query, String type) {\n        OkHttpClient client = new OkHttpClient().newBuilder()\n                .build();\n        Request request = new Request.Builder()\n                .url(\"https://api.spotify.com/v1/search?q=\" + query + \"&type=\" + type)\n                .method(\"GET\", null)\n                .addHeader(\"Authorization\", \"Bearer \" + getClientCredentials())\n                .build();\n        try {\n            Response response = client.newCall(request).execute();\n            System.out.println(response);\n            if (response.code() == 200) {\n                JSONObject responseBody = new JSONObject(response.body().string());\n                return responseBody.getJSONObject(type + \"s\").getJSONArray(\"items\");\n            }\n            else {\n                System.out.println(\"Error response code: \" + response.code());\n                System.out.println(\"Error response body: \" + response.body().string());\n\n                // Throw a more informative exception\n                throw new RuntimeException(\"Response not successful. See console for details.\");\n            }\n        }\n        catch (IOException | JSONException e) {\n            throw new RuntimeException(e);\n        }\n    }\n\n    public JSONObject getTrack(String id) {\n        OkHttpClient client = new OkHttpClient().newBuilder()\n                .build();\n        Request request = new Request.Builder()\n                .url(\"https://api.spotify.com/v1/tracks/\" + id)\n                .method(\"GET\", null)\n                .addHeader(\"Authorization\", \"Bearer \" + getClientCredentials())\n                .build();\n        try {\n            Response response = client.newCall(request).execute();\n            System.out.println(response);\n            if (response.code() == 200) {\n                return new JSONObject(response.body().string());\n            } else {\n                System.out.println(\"Error response code: \" + response.code());\n                System.out.println(\"Error response body: \" + response.body().string());\n\n                // Throw a more informative exception\n                throw new RuntimeException(\"Response not successful. See console for details.\");\n            }\n        }\n        catch (IOException | JSONException e) {\n            throw new RuntimeException(e);\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/data_access/APIDataAccessObject.java b/src/data_access/APIDataAccessObject.java
+--- a/src/data_access/APIDataAccessObject.java	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ b/src/data_access/APIDataAccessObject.java	(date 1701135940240)
+@@ -35,7 +35,6 @@
+                 System.out.println("Error response code: " + response.code());
+                 System.out.println("Error response body: " + response.body().string());
+ 
+-                // Throw a more informative exception
+                 throw new RuntimeException("Response not successful. See console for details.");
+             }
+         }
+@@ -52,6 +51,21 @@
+                 .method("GET", null)
+                 .addHeader("Authorization", "Bearer " + getClientCredentials())
+                 .build();
++        return getObjects(type, client, request);
++    }
++
++    public JSONArray search(String query, String type, int limit) {
++        OkHttpClient client = new OkHttpClient().newBuilder()
++                .build();
++        Request request = new Request.Builder()
++                .url("https://api.spotify.com/v1/search?q=" + query + "&type=" + type + "&limit=" + limit)
++                .method("GET", null)
++                .addHeader("Authorization", "Bearer " + getClientCredentials())
++                .build();
++        return getObjects(type, client, request);
++    }
++
++    private JSONArray getObjects(String type, OkHttpClient client, Request request) {
+         try {
+             Response response = client.newCall(request).execute();
+             System.out.println(response);
+@@ -63,7 +77,6 @@
+                 System.out.println("Error response code: " + response.code());
+                 System.out.println("Error response body: " + response.body().string());
+ 
+-                // Throw a more informative exception
+                 throw new RuntimeException("Response not successful. See console for details.");
+             }
+         }
+@@ -89,7 +102,6 @@
+                 System.out.println("Error response code: " + response.code());
+                 System.out.println("Error response body: " + response.body().string());
+ 
+-                // Throw a more informative exception
+                 throw new RuntimeException("Response not successful. See console for details.");
+             }
+         }
+@@ -97,4 +109,5 @@
+             throw new RuntimeException(e);
+         }
+     }
++
+ }
+Index: src/use_case/search/SearchInteractor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package use_case.search;\n\nimport org.json.JSONArray;\n\nimport java.time.LocalDateTime;\nimport java.util.Objects;\n\npublic class SearchInteractor implements SearchInputBoundary {\n    final SearchAPIDataAccessInterface searchAPIDataAccessObject;\n    //TODO: song and playlist are not distinguished.\n    final SearchOutputBoundary searchPresenter;\n\n    public SearchInteractor(SearchAPIDataAccessInterface searchAPIDataAccessInterface,\n                            SearchOutputBoundary searchOutputBoundary) {\n        this.searchAPIDataAccessObject = searchAPIDataAccessInterface;\n        this.searchPresenter = searchOutputBoundary;\n    }\n\n    @Override\n    public void execute(SearchInputData searchInputData) {\n        if (Objects.equals(searchInputData.getQuery(), \"\")){\n            // TODO: PrepareFailView incomplete.\n            searchPresenter.prepareFailView(\"Please input search item.\");\n        } else {\n            LocalDateTime now = LocalDateTime.now();\n            if (Objects.equals(searchInputData.getQueryType(), \"Track\")){\n                //Input: query name.\n                //Output: an array of 10 song objects, or a JSONarray.\n                String query = searchInputData.getQuery();\n                JSONArray result = searchAPIDataAccessObject.searchTrack(query);\n                // TODO: Output data incomplete.\n                SearchOutputData searchOutputData = new SearchOutputData(result.get(1), now.toString(), false);\n                searchPresenter.prepareSuccessView(searchOutputData);\n            }\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/use_case/search/SearchInteractor.java b/src/use_case/search/SearchInteractor.java
+--- a/src/use_case/search/SearchInteractor.java	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ b/src/use_case/search/SearchInteractor.java	(date 1701135940241)
+@@ -27,7 +27,7 @@
+                 //Input: query name.
+                 //Output: an array of 10 song objects, or a JSONarray.
+                 String query = searchInputData.getQuery();
+-                JSONArray result = searchAPIDataAccessObject.searchTrack(query);
++                JSONArray result = searchAPIDataAccessObject.search(query, "track");
+                 // TODO: Output data incomplete.
+                 SearchOutputData searchOutputData = new SearchOutputData(result.get(1), now.toString(), false);
+                 searchPresenter.prepareSuccessView(searchOutputData);
+Index: src/data_access/FilePlaylistDataAccessObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package data_access;\n\nimport entity.CommonPlaylist;\nimport entity.Playlist;\nimport entity.PlaylistFactory;\nimport org.json.JSONObject;\nimport use_case.create_playlist.CreatePlaylistDataAccessInterface;\n\nimport java.io.FileWriter;\nimport java.io.IOException;\nimport java.util.HashMap;\nimport java.util.Map;\n\n// Todo: needs to figure out how to store data into a json file.\npublic class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {\n\n    private final JSONObject jsonFile;\n\n    private final FileWriter file;\n    private final Map<String, CommonPlaylist> playlists = new HashMap<>();\n    private PlaylistFactory playlistFactory;\n\n    public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) throws IOException {\n        this.playlistFactory = playlistFactory;\n\n        jsonFile = new JSONObject();\n        file = new FileWriter(jsonPath);\n        if (jsonFile.isEmpty()) {\n            Playlist likedSongs = playlistFactory.create(\"Liked Songs\");\n            jsonFile.put(likedSongs.getName(), likedSongs);\n            file.write(jsonFile.toString());\n            save();\n        }\n    }\n\n    @Override\n    public void save(CommonPlaylist playlist) {\n        playlists.put(playlist.getName(), playlist);\n        this.save();\n    }\n\n    private void save() {\n        try {\n            for (CommonPlaylist commonPlaylist : playlists.values()) {\n                jsonFile.put(commonPlaylist.getName(), commonPlaylist);\n            }\n\n            file.write(jsonFile.toString());\n            file.close();\n\n        } catch (IOException e) {\n            throw new RuntimeException(e);\n        }\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/data_access/FilePlaylistDataAccessObject.java b/src/data_access/FilePlaylistDataAccessObject.java
+--- a/src/data_access/FilePlaylistDataAccessObject.java	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ b/src/data_access/FilePlaylistDataAccessObject.java	(date 1701135940241)
+@@ -1,6 +1,7 @@
+ package data_access;
+ 
+ import entity.CommonPlaylist;
++import entity.CommonPlaylistFactory;
+ import entity.Playlist;
+ import entity.PlaylistFactory;
+ import org.json.JSONObject;
+@@ -14,23 +15,15 @@
+ // Todo: needs to figure out how to store data into a json file.
+ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {
+ 
+-    private final JSONObject jsonFile;
++    private JSONObject jsonFile;
+ 
+-    private final FileWriter file;
++    private final String jsonPath;
+     private final Map<String, CommonPlaylist> playlists = new HashMap<>();
+     private PlaylistFactory playlistFactory;
+ 
+     public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) throws IOException {
+         this.playlistFactory = playlistFactory;
+-
+-        jsonFile = new JSONObject();
+-        file = new FileWriter(jsonPath);
+-        if (jsonFile.isEmpty()) {
+-            Playlist likedSongs = playlistFactory.create("Liked Songs");
+-            jsonFile.put(likedSongs.getName(), likedSongs);
+-            file.write(jsonFile.toString());
+-            save();
+-        }
++        this.jsonPath = jsonPath;
+     }
+ 
+     @Override
+@@ -41,10 +34,14 @@
+ 
+     private void save() {
+         try {
++            jsonFile = new JSONObject();
++            FileWriter file = new FileWriter(jsonPath);
+             for (CommonPlaylist commonPlaylist : playlists.values()) {
+                 jsonFile.put(commonPlaylist.getName(), commonPlaylist);
+             }
+ 
++//            jsonFile.put("dc", new CommonPlaylistFactory());
++//            jsonFile.put("cd", new CommonPlaylistFactory());
+             file.write(jsonFile.toString());
+             file.close();
+ 
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20,_7_20 p_m__[Changes]1/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20,_7_20 p_m__[Changes]1/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20,_7_20 p_m__[Changes]1/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20,_7_20 p_m__[Changes]1/shelved.patch	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ /dev/null	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
+@@ -1,140 +0,0 @@
+-Index: Spotify.iml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module version=\"4\">\n  <component name=\"AdditionalModuleElements\">\n    <content url=\"file://$MODULE_DIR$\" dumb=\"true\">\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\n    </content>\n  </component>\n</module>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Spotify.iml b/Spotify.iml
+---- a/Spotify.iml	
+-+++ b/Spotify.iml	
+-@@ -1,8 +1,41 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+--<module version="4">
+-+<module external.linked.project.id="$MODULE_DIR$/pom.xml" external.system.module.type="SINGLE_MODULE" external.system.module.version="223-2" org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-   <component name="AdditionalModuleElements">
+-     <content url="file://$MODULE_DIR$" dumb="true">
+-       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-     </content>
+-   </component>
+-+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_20">
+-+    <output url="file://$MODULE_DIR$/target/classes" />
+-+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+-+    <content url="file://$MODULE_DIR$">
+-+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+-+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+-+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+-+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+-+      <excludeFolder url="file://$MODULE_DIR$/target" />
+-+    </content>
+-+    <orderEntry type="inheritedJdk" />
+-+    <orderEntry type="sourceFolder" forTests="false" />
+-+    <orderEntry type="library" name="Maven: org.json:json:20230618" level="project" />
+-+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:4.10.0" level="project" />
+-+    <orderEntry type="library" name="Maven: com.squareup.okio:okio-jvm:3.0.0" level="project" />
+-+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31" level="project" />
+-+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31" level="project" />
+-+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31" level="project" />
+-+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.20" level="project" />
+-+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
+-+    <orderEntry type="module-library" scope="TEST">
+-+      <library name="JUnit4">
+-+        <CLASSES>
+-+          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/" />
+-+          <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
+-+        </CLASSES>
+-+        <JAVADOC />
+-+        <SOURCES />
+-+      </library>
+-+    </orderEntry>
+-+  </component>
+- </module>
+-\ No newline at end of file
+-Index: src/interface_adapter/search_song/SearchSongViewModel.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package interface_adapter.search_song;\n\nimport interface_adapter.homepage.HomepageViewModel;\n\n//eva writing this one\npublic class SearchSongViewModel extends ViewModel {\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/interface_adapter/search_song/SearchSongViewModel.java b/src/interface_adapter/search_song/SearchSongViewModel.java
+---- a/src/interface_adapter/search_song/SearchSongViewModel.java	
+-+++ b/src/interface_adapter/search_song/SearchSongViewModel.java	
+-@@ -1,7 +1,23 @@
+- package interface_adapter.search_song;
+- 
+-+import interface_adapter.ViewModel;
+- import interface_adapter.homepage.HomepageViewModel;
+- 
+-+import java.beans.PropertyChangeListener;
+-+
+- //eva writing this one
+- public class SearchSongViewModel extends ViewModel {
+-+    public SearchSongViewModel(String viewName) {
+-+        super(viewName);
+-+    }
+-+
+-+    @Override
+-+    public void firePropertyChanged() {
+-+
+-+    }
+-+
+-+    @Override
+-+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+-+
+-+    }
+- }
+-Index: src/interface_adapter/delete_playlist/DeletePlaylistViewModel.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package interface_adapter.delete_playlist;\n\nimport interface_adapter.ViewModel;\nimport interface_adapter.homepage.HomepageViewModel;\n\npublic class DeletePlaylistViewModel extends ViewModel {\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/interface_adapter/delete_playlist/DeletePlaylistViewModel.java b/src/interface_adapter/delete_playlist/DeletePlaylistViewModel.java
+---- a/src/interface_adapter/delete_playlist/DeletePlaylistViewModel.java	
+-+++ b/src/interface_adapter/delete_playlist/DeletePlaylistViewModel.java	
+-@@ -3,5 +3,20 @@
+- import interface_adapter.ViewModel;
+- import interface_adapter.homepage.HomepageViewModel;
+- 
+-+import java.beans.PropertyChangeListener;
+-+
+- public class DeletePlaylistViewModel extends ViewModel {
+-+    public DeletePlaylistViewModel(String viewName) {
+-+        super(viewName);
+-+    }
+-+
+-+    @Override
+-+    public void firePropertyChanged() {
+-+
+-+    }
+-+
+-+    @Override
+-+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+-+
+-+    }
+- }
+-Index: test/APITest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/test/APITest.java b/test/APITest.java
+-new file mode 100644
+---- /dev/null	
+-+++ b/test/APITest.java	
+-@@ -0,0 +1,11 @@
+-+import data_access.APIDataAccessObject;
+-+import org.junit.Test;
+-+import static org.junit.Assert.assertEquals;
+-+
+-+public class APITest {
+-+    @Test
+-+    public void testGetMe() {
+-+        APIDataAccessObject apiDataAccessObject = new APIDataAccessObject();
+-+        assertEquals(apiDataAccessObject.getMe(), "Une");
+-+    }
+-+}
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20__7_20p_m___Changes_1.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20__7_20p_m___Changes_1.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20__7_20p_m___Changes_1.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20__7_20p_m___Changes_1.xml	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ /dev/null	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_2023-11-20,_7_20 p_m__[Changes]1" date="1700526017140" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20,_7_20 p_m__[Changes]1/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2023-11-20, 7:20 p.m. [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: src/use_case/search/SearchAPIDataAccessInterface.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package use_case.search;\n\nimport org.json.JSONArray;\n\npublic interface SearchAPIDataAccessInterface {\n    JSONArray searchTrack(String query);\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/use_case/search/SearchAPIDataAccessInterface.java b/src/use_case/search/SearchAPIDataAccessInterface.java
+--- a/src/use_case/search/SearchAPIDataAccessInterface.java	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ b/src/use_case/search/SearchAPIDataAccessInterface.java	(date 1701135940241)
+@@ -3,5 +3,5 @@
+ import org.json.JSONArray;
+ 
+ public interface SearchAPIDataAccessInterface {
+-    JSONArray searchTrack(String query);
++    JSONArray search(String query, String type);
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"76d2ebcb-7bf5-4020-90ed-0f63938f0a99\" name=\"Changes\" comment=\"Fixed merge conflict\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/data_access/APIDataAccessObject.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/data_access/APIDataAccessObject.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Merge.Settings\">\n    <option name=\"BRANCH\" value=\"origin/main\" />\n  </component>\n  <component name=\"Git.Rebase.Settings\">\n    <option name=\"NEW_BASE\" value=\"origin/authexpress\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"security-issue\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;customColor&quot;: &quot;&quot;,\n  &quot;associatedIndex&quot;: 8\n}</component>\n  <component name=\"ProjectId\" id=\"2YaqrVqq0Lf8NgFrhieWzRqOI3q\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RunManager\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <envs>\n        <env name=\"CLIENT_ID\" value=\"17ae45ca9ee34ed1bfe7172f97d56022\" />\n        <env name=\"CLIENT_SECRET\" value=\"189f84e0e32a42748f18ff6ea1b43708\" />\n      </envs>\n      <option name=\"MAIN_CLASS_NAME\" value=\"app.Main\" />\n      <module name=\"SpotifyProject\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"app.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"76d2ebcb-7bf5-4020-90ed-0f63938f0a99\" name=\"Changes\" comment=\"\" />\n      <created>1700774240108</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700774240108</updated>\n      <workItem from=\"1700774242076\" duration=\"2286000\" />\n      <workItem from=\"1701030006636\" duration=\"338000\" />\n      <workItem from=\"1701129982465\" duration=\"1970000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Fixed bug.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700864357187</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700864357187</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Fixed merge conflict\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700995290680</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700995290680</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701030013821</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701030013821</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701030079933</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701030079933</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701030134448</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701030134448</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Security issue fix\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701132819183</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701132819183</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Fixed bug.\" />\n    <MESSAGE value=\"Fixed merge conflict\" />\n    <MESSAGE value=\"Commit\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Commit\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>\n          <line>31</line>\n          <option name=\"timeStamp\" value=\"5\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ b/.idea/workspace.xml	(date 1701135953029)
+@@ -5,8 +5,20 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Fixed merge conflict">
++
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20,_7_20 p_m__[Changes]1/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-20__7_20p_m___Changes_1.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/APIDataAccessObject.java" afterDir="false" />
++
++      <change beforePath="$PROJECT_DIR$/playlists.json" beforeDir="false" afterPath="$PROJECT_DIR$/playlists.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/view/CreatePlaylistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatePlaylistView.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongPresenter.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongState.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search_song/SearchSongViewModel.class" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -35,6 +47,7 @@
+   &quot;associatedIndex&quot;: 8
+ }</component>
+   <component name="ProjectId" id="2YaqrVqq0Lf8NgFrhieWzRqOI3q" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -77,7 +90,6 @@
+       <list>
+         <item itemvalue="Application.Main" />
+         <item itemvalue="Application.Main" />
+-        <item itemvalue="Application.Main" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -91,7 +103,7 @@
+       <updated>1700774240108</updated>
+       <workItem from="1700774242076" duration="2286000" />
+       <workItem from="1701030006636" duration="338000" />
+-      <workItem from="1701129982465" duration="1970000" />
++      <workItem from="1701130954919" duration="3169000" />
+     </task>
+     <task id="LOCAL-00001" summary="Fixed bug.">
+       <option name="closed" value="true" />
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_20\" default=\"true\" project-jdk-name=\"openjdk-20\" project-jdk-type=\"JavaSDK\" />\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ b/.idea/misc.xml	(date 1701135940239)
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="MavenProjectsManager">
+Index: src/view/CreatePlaylistView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package view;\n\nimport interface_adapter.ViewManagerModel;\nimport interface_adapter.create_playlist.CreatePlaylistController;\nimport interface_adapter.create_playlist.CreatePlaylistState;\nimport interface_adapter.create_playlist.CreatePlaylistViewModel;\nimport interface_adapter.homepage.HomepageController;\nimport interface_adapter.homepage.HomepageState;\nimport interface_adapter.homepage.HomepageViewModel;\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.awt.event.ActionEvent;\nimport java.awt.event.ActionListener;\nimport java.awt.event.KeyEvent;\nimport java.awt.event.KeyListener;\nimport java.beans.PropertyChangeEvent;\nimport java.beans.PropertyChangeListener;\n\npublic class CreatePlaylistView extends JPanel implements ActionListener, PropertyChangeListener {\n    public final String viewName = \"create playlist\";\n    private final CreatePlaylistViewModel createPlaylistViewModel;\n    private final HomepageViewModel homepageViewModel;\n    // JTextField(columns) determines bracket length.\n    private final CreatePlaylistController createPlaylistController;\n    final JTextField playlistNameInputField = new JTextField(15);\n    final JTextField descriptionInputField = new JTextField(15);\n    private final JLabel playlistNameError = new JLabel(); // TODO: Captures repeated playlist name created by the same account. Not implemented.\n    private final JButton backToHome;\n    private final JButton makePlaylist;\n    private final ViewManagerModel viewManagerModel;\n\n    public CreatePlaylistView(CreatePlaylistViewModel createPlaylistViewModel, CreatePlaylistController createPlaylistController,\n                              HomepageViewModel homepageViewModel, ViewManagerModel viewManagerModel){\n        // Initialize view models.\n        this.homepageViewModel = homepageViewModel;\n        this.createPlaylistViewModel = createPlaylistViewModel;\n        this.viewManagerModel = viewManagerModel;\n        this.createPlaylistController = createPlaylistController;\n        // Initialize controllers.\n        // Make this view listen to changes made in view models.\n        createPlaylistViewModel.addPropertyChangeListener(this);\n        // TODO: Should create playlist view listen to homepage view model?\n\n        JLabel title = new JLabel(CreatePlaylistViewModel.TITLE_LABEL);\n        title.setAlignmentX(Component.CENTER_ALIGNMENT);\n\n        LabelTextPanel playlistNameInfo = new LabelTextPanel(\n                new JLabel(CreatePlaylistViewModel.PLAYLIST_NAME_LABEL), playlistNameInputField);\n        LabelTextPanel descriptionInfo = new LabelTextPanel(\n                new JLabel(CreatePlaylistViewModel.DESCRIPTION_LABEL), descriptionInputField);\n\n        JPanel buttons = new JPanel();\n        backToHome = new JButton(createPlaylistViewModel.TO_HOME_BUTTON_LABEL);\n        makePlaylist = new JButton(createPlaylistViewModel.CREATE_PLAYLIST_BUTTON_LABEL);\n        buttons.add(backToHome);\n        buttons.add(makePlaylist);\n//        this.createPlaylist = createPlaylist;\n\n        backToHome.addActionListener(\n                new ActionListener() {\n                    @Override\n                    public void actionPerformed(ActionEvent evt) {\n                        if (evt.getSource().equals(backToHome)){\n                            // Doesn't pass in any parameter. Switch view to HomepageView.\n                            viewManagerModel.setActiveView(homepageViewModel.getViewName());\n                            viewManagerModel.firePropertyChanged();\n                        }\n                    }\n                }\n        );\n\n        makePlaylist.addActionListener(\n                new ActionListener(){\n                    @Override\n                    public void actionPerformed(ActionEvent evt){\n                        if (evt.getSource().equals(makePlaylist)){\n                            createPlaylistController.execute(\"Playlist name retrieved from keyboard\");\n                            CreatePlaylistState state = createPlaylistViewModel.getCreatePlaylistState();\n                            if (state.getNullError() != null){\n                                JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getNullError());\n                            }\n                            else if (state.getRepeatError() != null){\n                                JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getRepeatError());\n                            }\n\n                        }\n                    }\n                }\n        );\n\n        playlistNameInputField.addKeyListener(\n                new KeyListener() {\n                    @Override\n                    public void keyTyped(KeyEvent e) {\n                        CreatePlaylistState currentState = createPlaylistViewModel.getCreatePlaylistState();\n                        String text = playlistNameInputField.getText() + e.getKeyChar();\n                        currentState.setPlaylistName(text);\n                        createPlaylistViewModel.setState(currentState);\n                    }\n\n                    @Override\n                    public void keyPressed(KeyEvent e) {\n                    }\n\n                    @Override\n                    public void keyReleased(KeyEvent e) {\n                    }\n                });\n\n        descriptionInputField.addKeyListener(\n                new KeyListener() {\n                    @Override\n                    public void keyTyped(KeyEvent e) {\n                        CreatePlaylistState currentState = createPlaylistViewModel.getCreatePlaylistState();\n                        currentState.setDescription(descriptionInputField.getText() + e.getKeyChar());\n                        createPlaylistViewModel.setState(currentState);\n                    }\n\n                    @Override\n                    public void keyPressed(KeyEvent e) {\n\n                    }\n\n                    @Override\n                    public void keyReleased(KeyEvent e) {\n\n                    }\n                });\n        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));\n\n        this.add(title);\n        this.add(playlistNameInfo);\n        this.add(descriptionInfo);\n        this.add(buttons);\n\n    }\n\n    // TODO: actionPerformed and propertyChange unchecked.\n    @Override\n    public void actionPerformed(ActionEvent e) {\n        System.out.println(\"Click \" + e.getActionCommand());\n    }\n\n    @Override\n    public void propertyChange(PropertyChangeEvent evt) {\n        CreatePlaylistState state = (CreatePlaylistState) evt.getNewValue();\n        // There's a method in LoginView that allows automatic fill-in-the-blank.\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/view/CreatePlaylistView.java b/src/view/CreatePlaylistView.java
+--- a/src/view/CreatePlaylistView.java	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ b/src/view/CreatePlaylistView.java	(date 1701135940242)
+@@ -75,7 +75,8 @@
+                     @Override
+                     public void actionPerformed(ActionEvent evt){
+                         if (evt.getSource().equals(makePlaylist)){
+-                            createPlaylistController.execute("Playlist name retrieved from keyboard");
++                            CreatePlaylistState currentState = createPlaylistViewModel.getCreatePlaylistState();
++                            createPlaylistController.execute(currentState.getPlaylistName());
+                             CreatePlaylistState state = createPlaylistViewModel.getCreatePlaylistState();
+                             if (state.getNullError() != null){
+                                 JOptionPane.showMessageDialog(CreatePlaylistView.this, state.getNullError());
+Index: playlists.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\"Liked Songs\":\"entity.CommonPlaylist@6e8dacdf\"}{\"Liked Songs\":\"entity.CommonPlaylist@6e8dacdf\"}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/playlists.json b/playlists.json
+--- a/playlists.json	(revision c3cb0322a105b0bc576069fc0a192ab05452e211)
++++ b/playlists.json	(date 1701135940240)
+@@ -1,1 +1,0 @@
+-{"Liked Songs":"entity.CommonPlaylist@6e8dacdf"}{"Liked Songs":"entity.CommonPlaylist@6e8dacdf"}
+\ No newline at end of file
