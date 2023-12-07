@@ -22,7 +22,8 @@ public class APIDataAccessObject implements SearchAPIDataAccessInterface, GetSta
         Request request = new Request.Builder()
                 .url("https://accounts.spotify.com/api/token")
                 .method("POST", body)
-                .addHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString((CLIENT_ID + ":" + CLIENT_SECRET).getBytes()))
+                .addHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString((CLIENT_ID +
+                        ":" + CLIENT_SECRET).getBytes()))
                 .addHeader("Content-Type", "application/x-www-form-urlencoded")
                 .build();
         try {
