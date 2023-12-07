@@ -18,7 +18,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
+/**
+ * SpotifyGroupProject Main Class
+ * @author DavidChu, xindi-XD, jayuj, EEK
+ */
 public class Main {
+    /**
+     * Initializes all views necessary for startup.
+     * @param args
+     */
     public static void main(String[] args){
         JFrame application = new JFrame("Spotify Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

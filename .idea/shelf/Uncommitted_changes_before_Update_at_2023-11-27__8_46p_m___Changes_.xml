@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_2023-11-27,_8_46 p_m__[Changes]" date="1701135974161" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-27,_8_46 p_m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2023-11-27, 8:46 p.m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/data_access/APIDataAccessObject.class" />
+    <option name="AFTER_PATH" value="target/classes/data_access/APIDataAccessObject.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-27,_8_46 p_m__[Changes]/APIDataAccessObject.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/data_access/FilePlaylistDataAccessObject.class" />
+    <option name="AFTER_PATH" value="target/classes/data_access/FilePlaylistDataAccessObject.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-27,_8_46 p_m__[Changes]/FilePlaylistDataAccessObject.class" />
+  </binary>
+</changelist>

@@ -13,8 +13,21 @@ import use_case.delete_playlist.DeletePlaylistInteractor;
 import use_case.delete_playlist.DeletePlaylistOutputBoundary;
 import view.DeletePlaylistView;
 
+/**
+ * Use case factory for the delete playlist use case.
+ * @author DavidChu
+ */
 public class DeletePlaylistUseCaseFactory {
     private DeletePlaylistUseCaseFactory(){}
+
+    /**
+     * Creates a new DeletePlaylistView instance for a call to the delete playlist use case.
+     * @param viewManagerModel view manager to switch between the get homepage and delete playlist view
+     * @param homepageViewModel the homepage view model the use case was called from
+     * @param deletePlaylistViewModel the delete playlist view model that is to be opened
+     * @param deletePlaylistDataAccessObject file access object to edit stored playlists
+     * @return a DeletePlaylistView object containing all relevant classes
+     */
     public static DeletePlaylistView create(ViewManagerModel viewManagerModel,
                                             HomepageViewModel homepageViewModel,
                                             DeletePlaylistViewModel deletePlaylistViewModel, DeletePlaylistDataAccessInterface deletePlaylistDataAccessObject) {
