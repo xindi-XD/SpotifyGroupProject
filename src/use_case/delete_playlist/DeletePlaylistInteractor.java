@@ -15,7 +15,7 @@ public class DeletePlaylistInteractor implements DeletePlaylistInputBoundary {
     }
     @Override
     public void execute(DeletePlaylistInputData deletePlaylistInputData) {
-        if (deletePlaylistInputData.getName() == null) {
+        if (deletePlaylistInputData.getName() == null || deletePlaylistInputData.getName().length() <= 1) {
             deletePlaylistPresenter.prepareFailView("The playlist name can't be empty");
         }
         else if (!deletePlaylistDataAccessObject.existsPlaylistName(deletePlaylistInputData.getName())) {
