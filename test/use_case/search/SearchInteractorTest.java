@@ -67,24 +67,22 @@ class SearchInteractorTest {
             public void prepareFailResultView(String error) {
                 fail("Use case failure is unexpected.");
             }
-
             @Override
             public void prepareFailInputView(String error) {
                 fail("Use case failure is unexpected.");
             }
-
             @Override
             public void prepareSuccessSongView(SearchOutputData result) {
+                fail("Search type is unexpected.");}
+            @Override
+            public void prepareSuccessArtistView(SearchOutputData result) {
                 assertEquals(result.getSongs().getClass(), ArrayList.class);
                 assertNotNull(result.getCreationTime()); // any creation time is fine.
+                assertNotNull(result.getArtists());
             }
-
-            @Override
-            public void prepareSuccessArtistView(SearchOutputData searchOutputData) {
-                fail("Search type is unexpected.");}
         };
-        SearchInputBoundary interactor = new SearchInteractor(api, successPresenter);
-        interactor.execute(searchInputData);
+            SearchInputBoundary interactor = new SearchInteractor(api, successPresenter);
+            interactor.execute(searchInputData);
     }
     @org.junit.jupiter.api.Test
     public void failureNoInputTest() {
@@ -99,6 +97,33 @@ class SearchInteractorTest {
             @Override
             public void prepareFailInputView(String error) {
                 assertEquals(error, "Please input search item.");
+            }
+
+            @Override
+            public void prepareSuccessSongView(SearchOutputData result) {
+                fail("Use case success is unexpected.");
+            }
+
+            @Override
+            public void prepareSuccessArtistView(SearchOutputData searchOutputData) {
+                fail("Use case success is unexpected.");}
+        };
+        SearchInputBoundary interactor = new SearchInteractor(api, failurePresenter);
+        interactor.execute(searchInputData);
+    }
+    @org.junit.jupiter.api.Test
+    public void failureNoResultTest() {
+        SearchInputData searchInputData = new SearchInputData("][][-=]=;'.", "track");
+        SearchAPIDataAccessInterface api = new APIDataAccessObject();
+        SearchOutputBoundary failurePresenter = new SearchOutputBoundary() {
+            @Override
+            public void prepareFailResultView(String error) {
+                assertEquals(error, "No search results were found ┐(ﾟ～ﾟ)┌");
+            }
+
+            @Override
+            public void prepareFailInputView(String error) {
+                fail("Use case failure is unexpected.");
             }
 
             @Override

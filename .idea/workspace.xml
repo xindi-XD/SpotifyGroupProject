@@ -7,7 +7,6 @@
     <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search use case interactor test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest2.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +239,7 @@
       <workItem from="1701956705102" duration="32000" />
       <workItem from="1701966817122" duration="3220000" />
       <workItem from="1701970808559" duration="434000" />
-      <workItem from="1701971249478" duration="959000" />
+      <workItem from="1701971249478" duration="2654000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -474,7 +473,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701970043783</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Commit: search use case interactor test">
+      <option name="closed" value="true" />
+      <created>1701972216395</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1701972216395</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,11 +522,6 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -531,7 +533,7 @@
     <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest2.ic" NAME="SearchInteractorTest2 Coverage Results" MODIFIED="1701971349947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>use_case.search.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest.ic" NAME="SearchInteractorTest Coverage Results" MODIFIED="1701972110590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest.ic" NAME="SearchInteractorTest Coverage Results" MODIFIED="1701973565742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>use_case.search.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchTrackTest.ic" NAME="SearchTrackTest Coverage Results" MODIFIED="1701966951012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
