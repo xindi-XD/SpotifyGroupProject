@@ -1,6 +1,5 @@
-package use_case;
+package app;
 
-import app.Main;
 import view.HomepageView;
 import view.LabelTextPanel;
 

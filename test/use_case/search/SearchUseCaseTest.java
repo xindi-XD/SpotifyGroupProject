@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SearchInteractorTest {
+class SearchUseCaseTest {
 
     @BeforeEach
     void setUp() {
