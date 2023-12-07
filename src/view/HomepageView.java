@@ -21,7 +21,6 @@ import java.beans.PropertyChangeListener;
 public class HomepageView extends JPanel implements ActionListener, PropertyChangeListener {
     public final String viewName = "homepage";
     private final HomepageViewModel homepageViewModel;
-    // Homepage does not have a controller. It doesn't have any other use case apart from switching views.
     private final CreatePlaylistViewModel createPlaylistViewModel;
     private final DeletePlaylistViewModel deletePlaylistViewModel;
     private final ShowPlaylistsViewModel showPlaylistsViewModel;
