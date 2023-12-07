@@ -56,8 +56,10 @@ public class Main {
         views.add(createPlaylistView, createPlaylistView.viewName);
         DeletePlaylistView deletePlaylistView = DeletePlaylistUseCaseFactory.create(viewManagerModel, homepageViewModel, deletePlaylistViewModel, playlistDataAccessObject);
         views.add(deletePlaylistView, deletePlaylistView.viewName);
-        ShowPlaylistsView showPlaylistsView = ShowPlaylistsUseCaseFactory.create(viewManagerModel, homepageViewModel, showPlaylistsViewModel, playlistDataAccessObject, showSongsViewModel);
+        ShowPlaylistsView showPlaylistsView = ShowPlaylistsUseCaseFactory.create(viewManagerModel, homepageViewModel, showPlaylistsViewModel, playlistDataAccessObject, showSongsViewModel, playlistDataAccessObject);
         views.add(showPlaylistsView, showPlaylistsView.viewName);
+        ShowSongsView showSongsView = ShowSongsUseCaseFactory.create(viewManagerModel, homepageViewModel, showSongsViewModel, showPlaylistsViewModel);
+        views.add(showSongsView, showSongsView.viewName);
         SearchView searchView = SearchUseCaseFactory.create(viewManagerModel, homepageViewModel, searchViewModel,
                 getStatsViewModel, apiDataAccessObject);
         views.add(searchView, searchView.viewName);

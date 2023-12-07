@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import use_case.create_playlist.CreatePlaylistDataAccessInterface;
 import use_case.delete_playlist.DeletePlaylistDataAccessInterface;
 import use_case.show_playlists.ShowPlaylistsDataAccessInterface;
+import use_case.show_songs.ShowSongsDataAccessInterface;
 
 import javax.swing.*;
 import java.io.FileWriter;
@@ -14,7 +15,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface, DeletePlaylistDataAccessInterface, ShowPlaylistsDataAccessInterface {
+public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface, DeletePlaylistDataAccessInterface,
+        ShowPlaylistsDataAccessInterface, ShowSongsDataAccessInterface {
 
     private final String jsonPath;
     private final Map<String, Playlist> playlists = new HashMap<>();
@@ -32,6 +34,16 @@ public class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInt
     @Override
     public boolean existsPlaylistName(String name) {
         return playlists.containsKey(name);
+    }
+
+    @Override
+    public boolean noExistsSongs(String name) {
+        return playlists.get(name).getLength() == 0;
+    }
+
+    @Override
+    public Map<String, String[]> getSongs(String name) {
+        return playlists.get(name).getSong();
     }
 
     @Override
