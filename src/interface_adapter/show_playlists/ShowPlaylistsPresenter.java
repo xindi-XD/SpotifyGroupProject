@@ -25,6 +25,7 @@ public class ShowPlaylistsPresenter implements ShowPlaylistsOutputBoundary {
         state.setPlaylistsResult(playlists.getPlaylists());
         this.showPlaylistsViewModel.setState(state);
         this.showPlaylistsViewModel.setPlaylistNameLabels(state.getPlaylistsNames());
+        this.showPlaylistsViewModel.setPlaylistDescriptionLabels(state.getPlaylists());
         showPlaylistsViewModel.firePropertyChanged();
 
         viewManagerModel.setActiveView(showPlaylistsViewModel.getViewName());

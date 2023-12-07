@@ -1,11 +1,11 @@
 package entity;
 
-import java.util.ArrayList;
+import java.util.Map;
 
 public interface Playlist {
     boolean addSong(CommonSong song);
     boolean removeSong(CommonSong song);
-    ArrayList<CommonSong> getSong();
+    Map<String, String[]> getSong();
     String getName();
     boolean setName(String name);
     String getDescription();

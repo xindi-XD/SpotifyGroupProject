@@ -4,9 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/test/app/GetTrackStatsTest.java" afterDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit to merge">
+      <change afterPath="$PROJECT_DIR$/src/app/ShowSongsUseCaseFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/show_songs/ShowSongsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/show_songs/ShowSongsPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/show_songs/ShowSongsState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsDataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsInputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsInputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsOutputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/show_songs/ShowSongsOutputData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ShowPlaylistsUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ShowPlaylistsUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/CommonPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CommonPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/show_playlists/ShowPlaylistsViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/show_songs/ShowSongsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/show_songs/ShowSongsViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomepageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ShowPlaylistsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShowPlaylistsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ShowSongsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShowSongsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ShowPlaylistsUseCaseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ShowPlaylistsUseCaseFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/FilePlaylistDataAccessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/CommonPlaylist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/CommonPlaylist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Playlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Playlist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/show_playlists/ShowPlaylistsPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/show_playlists/ShowPlaylistsPresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/show_playlists/ShowPlaylistsState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/show_playlists/ShowPlaylistsState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/show_playlists/ShowPlaylistsViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/show_playlists/ShowPlaylistsViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/show_songs/ShowSongsViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/show_songs/ShowSongsViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ShowPlaylistsView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ShowPlaylistsView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ShowPlaylistsView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ShowPlaylistsView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ShowPlaylistsView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ShowPlaylistsView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ShowPlaylistsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ShowPlaylistsView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ShowSongsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ShowSongsView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +57,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -131,6 +172,19 @@
       </extension>
       <option name="PACKAGE_NAME" value="app" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SpotifyProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SpotifyProject" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -349,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701849094079</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Commit to merge">
+      <option name="closed" value="true" />
+      <created>1701922465554</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1701922465554</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,8 +432,6 @@
     <MESSAGE value="Fixed bug." />
     <MESSAGE value="Json file works." />
     <MESSAGE value="Fixed merge conflict" />
-    <MESSAGE value="Commit to pull" />
-    <MESSAGE value="Commit to merge" />
     <MESSAGE value="DeletePlaylist use case starts to work now." />
     <MESSAGE value="CreatePlaylist perfectly works." />
     <MESSAGE value="Commit: getter methods for array list of artists and songs" />
@@ -379,7 +439,9 @@
     <MESSAGE value="Get stats use case implemented (with one bug)" />
     <MESSAGE value="Commit: display problem fixed." />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Commit to pull" />
+    <MESSAGE value="Commit to merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit to merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -388,11 +450,6 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/view/HomepageView.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/interface_adapter/search/SearchPresenter.java</url>
           <line>64</line>

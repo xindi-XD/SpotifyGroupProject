@@ -9,15 +9,15 @@ public class CommonPlaylist implements Playlist{
     private String name;
 
     private String description;
-    private final Map<String, CommonSong> songs = new HashMap<>();
+    private final ArrayList<CommonSong> songs = new ArrayList<>();
 
     public CommonPlaylist(String name, String description) {
         this.name = name;
         this.description = description;
     }
     public boolean addSong(CommonSong song) {  // this method is to add a song to the playlist.
-        if (!songs.containsKey(song.getName()) && !songs.containsValue(song)) {
-            songs.put(song.getName(), song);
+        if (!songs.contains(song)) {
+            songs.add(song);
             return true;
         }
         return false;
@@ -28,20 +28,12 @@ public class CommonPlaylist implements Playlist{
         return true;
     }
 
-    public ArrayList<CommonSong> getSong() {  // get all the songs with the same name when user searches for a song.
-        ArrayList<CommonSong> songList = new ArrayList<>();
-        if (songs.isEmpty()) {
-            System.out.println("No result for an empty playlist.");
-        }
-
-        for (CommonSong song: songs.values()) {
+    public Map<String, String[]> getSong() {  // get all the songs with the same name when user searches for a song.
+        Map<String,String[]> songList = new HashMap<>();
+        for (CommonSong song: songs) {
             if (song.getName().equals(name)) {
-                songList.add(song);
+                songList.put(song.getName(), song.getArtist());
             }
-        }
-
-        if (songList.isEmpty()) {
-            System.out.println("Didn't find the song");
         }
         return songList;
     }

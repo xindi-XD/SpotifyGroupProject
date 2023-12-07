@@ -1,0 +1,90 @@
+Index: src/data_access/FilePlaylistDataAccessObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package data_access;\n\nimport entity.CommonPlaylist;\nimport entity.CommonPlaylistFactory;\nimport entity.Playlist;\nimport entity.PlaylistFactory;\nimport org.json.JSONObject;\nimport use_case.create_playlist.CreatePlaylistDataAccessInterface;\n\nimport java.io.FileWriter;\nimport java.io.IOException;\nimport java.util.HashMap;\nimport java.util.Map;\n\n// Todo: needs to figure out how to store data into a json file.\npublic class FilePlaylistDataAccessObject implements CreatePlaylistDataAccessInterface {\n\n    private JSONObject jsonFile;\n\n    private final String jsonPath;\n    private final Map<String, Playlist> playlists = new HashMap<>();\n    private PlaylistFactory playlistFactory;\n\n    public FilePlaylistDataAccessObject(String jsonPath, PlaylistFactory playlistFactory) throws IOException {\n        this.playlistFactory = playlistFactory;\n        this.jsonPath = jsonPath;\n    }\n\n    @Override\n    public void save(Playlist playlist) {\n        playlists.put(playlist.getName(), playlist);\n        this.save();\n    }\n\n    private void save() {\n        try {\n            jsonFile = new JSONObject();\n            FileWriter file = new FileWriter(jsonPath);\n            for (Playlist playlist : playlists.values()) {\n                jsonFile.put(playlist.getName(), playlist);\n            }\n            file.write(jsonFile.toString());\n            file.close();\n\n        } catch (IOException e) {\n            throw new RuntimeException(e);\n        }\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/data_access/FilePlaylistDataAccessObject.java b/src/data_access/FilePlaylistDataAccessObject.java
+--- a/src/data_access/FilePlaylistDataAccessObject.java	(revision b074d0b9da8edbb3b01e122d51ba6a87674e4908)
++++ b/src/data_access/FilePlaylistDataAccessObject.java	(date 1701466591774)
+@@ -7,6 +7,7 @@
+ import org.json.JSONObject;
+ import use_case.create_playlist.CreatePlaylistDataAccessInterface;
+ 
++import javax.swing.*;
+ import java.io.FileWriter;
+ import java.io.IOException;
+ import java.util.HashMap;
+@@ -28,8 +29,11 @@
+ 
+     @Override
+     public void save(Playlist playlist) {
+-        playlists.put(playlist.getName(), playlist);
+-        this.save();
++        int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to create song playlist?");
++        if (dialogResult == JOptionPane.YES_OPTION) {
++            playlists.put(playlist.getName(), playlist);
++            this.save();
++        }
+     }
+ 
+     private void save() {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"76d2ebcb-7bf5-4020-90ed-0f63938f0a99\" name=\"Changes\" comment=\"Commit: A version without DAO, but this is old view.\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Merge.Settings\">\n    <option name=\"BRANCH\" value=\"origin/main\" />\n  </component>\n  <component name=\"Git.Rebase.Settings\">\n    <option name=\"NEW_BASE\" value=\"origin/authexpress\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;customColor&quot;: &quot;&quot;,\n  &quot;associatedIndex&quot;: 8\n}</component>\n  <component name=\"ProjectId\" id=\"2YaqrVqq0Lf8NgFrhieWzRqOI3q\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;local&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RunManager\">\n\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <envs>\n        <env name=\"CLIENT_ID\" value=\"17ae45ca9ee34ed1bfe7172f97d56022\" />\n        <env name=\"CLIENT_SECRET\" value=\"189f84e0e32a42748f18ff6ea1b43708\" />\n      </envs>\n      <option name=\"MAIN_CLASS_NAME\" value=\"app.Main\" />\n      <module name=\"SpotifyProject\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"app.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"TestAPI\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"SpotifyProject\" />\n      <option name=\"PACKAGE_NAME\" value=\"\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"TestAPI\" />\n      <option name=\"METHOD_NAME\" value=\"\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <envs>\n        <env name=\"CLIENT_ID\" value=\"17ae45ca9ee34ed1bfe7172f97d56022\" />\n        <env name=\"CLIENT_SECRET\" value=\"189f84e0e32a42748f18ff6ea1b43708\" />\n      </envs>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\"Application.Main\" />\n      <item itemvalue=\"JUnit.TestAPI\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"JUnit.TestAPI\" />\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"76d2ebcb-7bf5-4020-90ed-0f63938f0a99\" name=\"Changes\" comment=\"\" />\n      <created>1700774240108</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700774240108</updated>\n      <workItem from=\"1700774242076\" duration=\"2286000\" />\n      <workItem from=\"1701030006636\" duration=\"338000\" />\n      <workItem from=\"1701130954919\" duration=\"4106000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Fixed bug.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700864357187</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700864357187</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Fixed merge conflict\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700995290680</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700995290680</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701030013821</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701030013821</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701030079933</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701030079933</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701030134448</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701030134448</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Json file works.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701134344992</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701134344992</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Fixed bug.\" />\n    <MESSAGE value=\"Commit\" />\n    <MESSAGE value=\"Json file works.\" />\n    <MESSAGE value=\"Fixed merge conflict\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed merge conflict\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <breakpoint enabled=\"true\" type=\"java-exception\">\n          <properties class=\"java.lang.AssertionError\" package=\"java.lang\" />\n          <option name=\"timeStamp\" value=\"6\" />\n        </breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b074d0b9da8edbb3b01e122d51ba6a87674e4908)
++++ b/.idea/workspace.xml	(date 1701466909046)
+@@ -4,7 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: A version without DAO, but this is old view." />
++    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: A version without DAO, but this is old view.">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FilePlaylistDataAccessObject.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -60,15 +63,14 @@
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+ }</component>
+-  <component name="RunManager">
+-
++  <component name="RunManager" selected="Application.Main">
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <envs>
+         <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
+         <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
+       </envs>
+       <option name="MAIN_CLASS_NAME" value="app.Main" />
+-      <module name="SpotifyProject" />
++      <module name="Spotify" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="app.*" />
+@@ -99,8 +101,8 @@
+     </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="JUnit.TestAPI" />
+         <item itemvalue="Application.Main" />
++        <item itemvalue="JUnit.TestAPI" />
+         <item itemvalue="Application.Main" />
+         <item itemvalue="Application.Main" />
+       </list>
+@@ -117,6 +119,7 @@
+       <workItem from="1700774242076" duration="2286000" />
+       <workItem from="1701030006636" duration="338000" />
+       <workItem from="1701130954919" duration="4106000" />
++      <workItem from="1701466229371" duration="655000" />
+     </task>
+     <task id="LOCAL-00001" summary="Fixed bug.">
+       <option name="closed" value="true" />
