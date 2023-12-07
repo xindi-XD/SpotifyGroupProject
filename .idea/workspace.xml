@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search use case interactor test">
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit to merge">
+      <change afterPath="$PROJECT_DIR$/test/use_case/create_playlist/CreatePlaylistUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/use_case/delete_playlist/DeletePlaylistUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/use_case/show_playlists/ShowPlaylistsUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/use_case/show_songs/ShowSongsUseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/use_case/SearchTrackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/SearchTrackTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/use_case/search/SearchUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CreatePlaylistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DeletePlaylistTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +28,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -103,7 +113,7 @@
       <recent name="use_case.search" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SearchUseCaseTest">
+  <component name="RunManager" selected="JUnit.ShowSongsUseCaseTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <envs>
         <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
@@ -121,17 +131,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchInteractorTest.successTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreatePlaylistUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpotifyProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="use_case.search.*" />
+          <option name="PATTERN" value="use_case.create_playlist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="use_case.search" />
-      <option name="MAIN_CLASS_NAME" value="use_case.search.SearchInteractorTest" />
-      <option name="METHOD_NAME" value="successTest" />
+      <option name="PACKAGE_NAME" value="use_case.create_playlist" />
+      <option name="MAIN_CLASS_NAME" value="use_case.create_playlist.CreatePlaylistUseCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeletePlaylistUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpotifyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.delete_playlist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.delete_playlist" />
+      <option name="MAIN_CLASS_NAME" value="use_case.delete_playlist.DeletePlaylistUseCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeletePlaylistUseCaseTest.failurePlaylistExistsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpotifyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.delete_playlist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.delete_playlist" />
+      <option name="MAIN_CLASS_NAME" value="use_case.delete_playlist.DeletePlaylistUseCaseTest" />
+      <option name="METHOD_NAME" value="failurePlaylistExistsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,71 +197,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShowPlaylistsUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpotifyProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="use_case.search.*" />
+          <option name="PATTERN" value="use_case.show_playlists.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="use_case.search" />
-      <option name="MAIN_CLASS_NAME" value="use_case.search.SearchUseCaseTest" />
-      <option name="METHOD_NAME" value="" />
+      <option name="PACKAGE_NAME" value="use_case.show_playlists" />
+      <option name="MAIN_CLASS_NAME" value="use_case.show_playlists.ShowPlaylistsUseCaseTest" />
       <option name="TEST_OBJECT" value="class" />
-      <envs>
-        <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
-        <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
-      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchUseCaseTest.failureNoInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShowSongsUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpotifyProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="use_case.search.*" />
+          <option name="PATTERN" value="use_case.show_songs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="use_case.search" />
-      <option name="MAIN_CLASS_NAME" value="use_case.search.SearchUseCaseTest" />
-      <option name="METHOD_NAME" value="failureNoInputTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="use_case.show_songs" />
+      <option name="MAIN_CLASS_NAME" value="use_case.show_songs.ShowSongsUseCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchUseCaseTest.successTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="true" type="JetRunConfigurationType">
       <module name="SpotifyProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="use_case.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="use_case.search" />
-      <option name="MAIN_CLASS_NAME" value="use_case.search.SearchUseCaseTest" />
-      <option name="METHOD_NAME" value="successTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SpotifyProject" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.SearchUseCaseTest" />
-      <item itemvalue="JUnit.SearchUseCaseTest.failureNoInputTest" />
-      <item itemvalue="JUnit.SearchUseCaseTest.successTest" />
+      <item itemvalue="JUnit.CreatePlaylistUseCaseTest" />
+      <item itemvalue="JUnit.DeletePlaylistUseCaseTest" />
+      <item itemvalue="JUnit.DeletePlaylistUseCaseTest.failurePlaylistExistsTest" />
+      <item itemvalue="JUnit.ShowPlaylistsUseCaseTest" />
+      <item itemvalue="JUnit.ShowSongsUseCaseTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SearchUseCaseTest" />
-        <item itemvalue="JUnit.SearchUseCaseTest" />
-        <item itemvalue="JUnit.SearchUseCaseTest.successTest" />
-        <item itemvalue="JUnit.SearchUseCaseTest.failureNoInputTest" />
-        <item itemvalue="JUnit.SearchInteractorTest.successTest" />
+        <item itemvalue="JUnit.ShowSongsUseCaseTest" />
+        <item itemvalue="JUnit.ShowPlaylistsUseCaseTest" />
+        <item itemvalue="JUnit.CreatePlaylistUseCaseTest" />
+        <item itemvalue="JUnit.DeletePlaylistUseCaseTest" />
+        <item itemvalue="JUnit.DeletePlaylistUseCaseTest.failurePlaylistExistsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -494,7 +527,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701973947340</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Commit to merge">
+      <option name="closed" value="true" />
+      <created>1701976381343</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1701976381343</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,8 +556,6 @@
     <MESSAGE value="Fixed bug." />
     <MESSAGE value="Json file works." />
     <MESSAGE value="Fixed merge conflict" />
-    <MESSAGE value="Commit to pull" />
-    <MESSAGE value="Commit to merge" />
     <MESSAGE value="DeletePlaylist use case starts to work now." />
     <MESSAGE value="CreatePlaylist perfectly works." />
     <MESSAGE value="Commit: getter methods for array list of artists and songs" />
@@ -526,7 +565,9 @@
     <MESSAGE value="Commit" />
     <MESSAGE value="Commit: search view test" />
     <MESSAGE value="Commit: search use case interactor test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: search use case interactor test" />
+    <MESSAGE value="Commit to pull" />
+    <MESSAGE value="Commit to merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit to merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -543,14 +584,23 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject$CreatePlaylistUseCaseTest.ic" NAME="CreatePlaylistUseCaseTest Coverage Results" MODIFIED="1701979686244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.create_playlist.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject$DeletePlaylistUseCaseTest.ic" NAME="DeletePlaylistUseCaseTest Coverage Results" MODIFIED="1701979551555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.delete_playlist.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchTrackTest.ic" NAME="SearchTrackTest Coverage Results" MODIFIED="1701966951012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest2.ic" NAME="SearchInteractorTest2 Coverage Results" MODIFIED="1701971349947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>use_case.search.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest.ic" NAME="SearchInteractorTest Coverage Results" MODIFIED="1701973933722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>use_case.search.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchTrackTest.ic" NAME="SearchTrackTest Coverage Results" MODIFIED="1701966951012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>use_case.*</FILTER>
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject$ShowPlaylistsUseCaseTest.ic" NAME="ShowPlaylistsUseCaseTest Coverage Results" MODIFIED="1701980600629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.show_playlists.*</FILTER>
     </SUITE>
   </component>
 </project>
