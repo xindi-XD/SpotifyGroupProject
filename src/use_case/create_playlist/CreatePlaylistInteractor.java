@@ -21,7 +21,7 @@ public class CreatePlaylistInteractor implements CreatePlaylistInputBoundary{
     }
     @Override
     public void execute(CreatePlaylistInputData createPlaylistInputData) {
-        if (createPlaylistInputData.getName() == null) {
+        if (createPlaylistInputData.getName() == null || createPlaylistInputData.getName().length() <= 1) {
             createPlaylistPresenter.prepareFailView("The playlist name can't be empty");
         }
         else if (createPlaylistDataAccessObject.existsPlaylistName(createPlaylistInputData.getName())) {

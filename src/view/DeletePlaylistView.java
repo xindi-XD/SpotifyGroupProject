@@ -75,6 +75,8 @@ public class DeletePlaylistView extends JPanel implements ActionListener, Proper
                             else {
                                 JOptionPane.showMessageDialog(null,
                                         state.getPlaylistName() + " says good bye~");
+                                playlistNameInputField.setText(null);
+                                state.setPlaylistName(null);
                             }
                         }
                     }

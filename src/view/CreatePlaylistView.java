@@ -91,8 +91,11 @@ public class CreatePlaylistView extends JPanel implements ActionListener, Proper
                                             "Playlist " + currentState.getPlaylistName() + " has been successfully created!\n" +
                                                     "Description: " + currentState.getDescription() + "\n");
                                 }
+                                playlistNameInputField.setText(null);
+                                descriptionInputField.setText(null);
+                                currentState.setPlaylistName(null);
+                                currentState.setDescription(null);
                             }
-
                         }
                     }
                 }
