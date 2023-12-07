@@ -1,23 +1,13 @@
-package app;
+package use_case;
 
-import data_access.FilePlaylistDataAccessObject;
-import entity.CommonPlaylistFactory;
-import entity.PlaylistFactory;
-import interface_adapter.search.SearchPresenter;
-import org.junit.Test;
-import use_case.search.SearchOutputData;
+import app.Main;
 import view.HomepageView;
 import view.LabelTextPanel;
-import view.SearchView;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.time.LocalDateTime;
 
 import static org.junit.Assert.*;
 
