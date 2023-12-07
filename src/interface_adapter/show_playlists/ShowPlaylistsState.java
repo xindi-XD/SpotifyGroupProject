@@ -23,6 +23,10 @@ public class ShowPlaylistsState {
         return playlistResult;
     }
 
+    public Map<String, Playlist> getPlaylists() {
+        return playlists;
+    }
+
     public void setPlaylistsError(String error) {
         this.noPlaylistsError = error;
     }

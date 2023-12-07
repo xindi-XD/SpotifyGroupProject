@@ -1,16 +1,20 @@
 package interface_adapter.show_playlists;
 
+import entity.Playlist;
 import interface_adapter.ViewModel;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ShowPlaylistsViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Your Playlists";
     public static ArrayList<String> PLAYLIST_NAME_LABELS = new ArrayList<String>();
-    public static String SHOW_SONGS_LABEL = "Songs";
+    public static Map<String, Playlist> PLAYLIST_DESCRIPTION_LABELS = new HashMap<>();
+    public static String SHOW_SONGS_LABEL = "Show Songs";
     public static final String TO_HOME_BUTTON_LABEL = "Back to homepage";
     private ShowPlaylistsState state = new ShowPlaylistsState();
     public ShowPlaylistsViewModel() {
@@ -21,15 +25,21 @@ public class ShowPlaylistsViewModel extends ViewModel {
         PLAYLIST_NAME_LABELS = new ArrayList<String>();
     }
 
+    public static void resetPlaylistDescriptionLabels() {
+        PLAYLIST_DESCRIPTION_LABELS = new HashMap<>();
+    }
+
     public void setPlaylistNameLabels(ArrayList<String> playlistsLabels){
         if (!playlistsLabels.isEmpty()) {
-            ArrayList<Integer> length = new ArrayList<>();
-            length.add(5);
-            length.add(playlistsLabels.size());
-            Integer min = Collections.min(length);
-            for (int i = 0; i < min; i++){
+            for (int i = 0; i < playlistsLabels.size(); i++){
                 this.PLAYLIST_NAME_LABELS.add(i, playlistsLabels.get(i));
             }
+        }
+    }
+
+    public void setPlaylistDescriptionLabels(Map<String, Playlist> playlistDescriptionLabels) {
+        if (!playlistDescriptionLabels.isEmpty()) {
+            PLAYLIST_DESCRIPTION_LABELS = playlistDescriptionLabels;
         }
     }
 

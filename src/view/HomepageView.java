@@ -7,7 +7,6 @@ import interface_adapter.delete_playlist.DeletePlaylistViewModel;
 import interface_adapter.homepage.HomepageState;
 import interface_adapter.homepage.HomepageViewModel;
 import interface_adapter.search.SearchController;
-import interface_adapter.show_playlists.ShowPlaylistsState;
 import interface_adapter.show_playlists.ShowPlaylistsViewModel;
 import interface_adapter.show_playlists.ShowPlaylistsController;
 
