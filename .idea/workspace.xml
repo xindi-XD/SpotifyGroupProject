@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search view test">
-      <change afterPath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest2.java" afterDir="false" />
+    <list default="true" id="76d2ebcb-7bf5-4020-90ed-0f63938f0a99" name="Changes" comment="Commit: search use case interactor test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/SearchTrackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/use_case/SearchTrackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/use_case/search/SearchInteractorTest2.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,28 +65,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="use_case.search" />
@@ -105,8 +103,8 @@
       <recent name="use_case.search" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SearchInteractorTest2">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SearchInteractorTest">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <envs>
         <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
         <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
@@ -133,12 +131,17 @@
       </extension>
       <option name="PACKAGE_NAME" value="use_case.search" />
       <option name="MAIN_CLASS_NAME" value="use_case.search.SearchInteractorTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <envs>
+        <env name="CLIENT_ID" value="17ae45ca9ee34ed1bfe7172f97d56022" />
+        <env name="CLIENT_SECRET" value="189f84e0e32a42748f18ff6ea1b43708" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchInteractorTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchInteractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpotifyProject" />
       <extension name="coverage">
         <pattern>
@@ -147,8 +150,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="use_case.search" />
-      <option name="MAIN_CLASS_NAME" value="use_case.search.SearchInteractorTest2" />
+      <option name="MAIN_CLASS_NAME" value="use_case.search.SearchInteractorTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchInteractorTest.failureNoInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpotifyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.search" />
+      <option name="MAIN_CLASS_NAME" value="use_case.search.SearchInteractorTest" />
+      <option name="METHOD_NAME" value="failureNoInputTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,35 +188,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchTrackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchInteractorTest.successTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpotifyProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="use_case.*" />
+          <option name="PATTERN" value="use_case.search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="use_case" />
-      <option name="MAIN_CLASS_NAME" value="use_case.SearchTrackTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="use_case.search" />
+      <option name="MAIN_CLASS_NAME" value="use_case.search.SearchInteractorTest" />
+      <option name="METHOD_NAME" value="successTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.SearchInteractorTest.failureNoInputTest" />
       <item itemvalue="JUnit.SearchInteractorTest" />
       <item itemvalue="JUnit.SearchInteractorTest.successTest" />
       <item itemvalue="JUnit.SearchInteractorTest2" />
-      <item itemvalue="JUnit.SearchTrackTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SearchInteractorTest" />
+        <item itemvalue="JUnit.SearchInteractorTest.successTest" />
+        <item itemvalue="JUnit.SearchInteractorTest.failureNoInputTest" />
         <item itemvalue="JUnit.SearchInteractorTest2" />
         <item itemvalue="JUnit.SearchInteractorTest.successTest" />
-        <item itemvalue="JUnit.SearchInteractorTest" />
-        <item itemvalue="JUnit.SearchTrackTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +238,9 @@
       <workItem from="1701878321861" duration="3115000" />
       <workItem from="1701900162687" duration="9198000" />
       <workItem from="1701956705102" duration="32000" />
-      <workItem from="1701966817122" duration="3197000" />
+      <workItem from="1701966817122" duration="3220000" />
+      <workItem from="1701970808559" duration="434000" />
+      <workItem from="1701971249478" duration="959000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bug.">
       <option name="closed" value="true" />
@@ -444,7 +466,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701966910346</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Commit: search use case interactor test">
+      <option name="closed" value="true" />
+      <created>1701970043783</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1701970043783</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +505,8 @@
     <MESSAGE value="Get stats use case implemented (with one bug)" />
     <MESSAGE value="Commit" />
     <MESSAGE value="Commit: search view test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: search view test" />
+    <MESSAGE value="Commit: search use case interactor test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit: search use case interactor test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -497,7 +528,10 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest.ic" NAME="SearchInteractorTest Coverage Results" MODIFIED="1701969361690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest2.ic" NAME="SearchInteractorTest2 Coverage Results" MODIFIED="1701971349947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.search.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchInteractorTest.ic" NAME="SearchInteractorTest Coverage Results" MODIFIED="1701972110590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>use_case.search.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SpotifyGroupProject3$SearchTrackTest.ic" NAME="SearchTrackTest Coverage Results" MODIFIED="1701966951012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

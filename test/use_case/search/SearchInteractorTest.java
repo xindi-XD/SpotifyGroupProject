@@ -1,33 +1,34 @@
 package use_case.search;
 
 import data_access.APIDataAccessObject;
-import entity.CommonSong;
-import junit.framework.TestCase;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import java.time.LocalDateTime;
-
-import use_case.search.search_strategies.SongCompiler;
 
 import java.util.ArrayList;
 
-public class SearchInteractorTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.*;
 
-    public void setUp() throws Exception {
-        super.setUp();
+class SearchInteractorTest {
+
+    @BeforeEach
+    void setUp() {
     }
 
-    public void tearDown() throws Exception {
+    @AfterEach
+    void tearDown() {
     }
 
-    public void testExecute() {
-        successTest();
+    @Test
+    void execute() {
+
     }
 
-    public void testGetCompiledResult() {
+    @Test
+    void getCompiledResult() {
     }
-
-    public void successTest(){
+    @org.junit.jupiter.api.Test
+    public void successTrackTest(){
         SearchInputData searchInputData = new SearchInputData("Boat", "track");
         // If no API access, line below should be FilePlaylistDataAccessObject.
         SearchAPIDataAccessInterface api = new APIDataAccessObject();
@@ -55,9 +56,39 @@ public class SearchInteractorTest extends TestCase {
         SearchInputBoundary interactor = new SearchInteractor(api, successPresenter);
         interactor.execute(searchInputData);
     }
-    @org.junit.Test
+
+    @org.junit.jupiter.api.Test
+    public void successArtistTest(){
+        SearchInputData searchInputData = new SearchInputData("Ed Sheeran", "artist");
+        // If no API access, line below should be FilePlaylistDataAccessObject.
+        SearchAPIDataAccessInterface api = new APIDataAccessObject();
+        SearchOutputBoundary successPresenter = new SearchOutputBoundary() {
+            @Override
+            public void prepareFailResultView(String error) {
+                fail("Use case failure is unexpected.");
+            }
+
+            @Override
+            public void prepareFailInputView(String error) {
+                fail("Use case failure is unexpected.");
+            }
+
+            @Override
+            public void prepareSuccessSongView(SearchOutputData result) {
+                assertEquals(result.getSongs().getClass(), ArrayList.class);
+                assertNotNull(result.getCreationTime()); // any creation time is fine.
+            }
+
+            @Override
+            public void prepareSuccessArtistView(SearchOutputData searchOutputData) {
+                fail("Search type is unexpected.");}
+        };
+        SearchInputBoundary interactor = new SearchInteractor(api, successPresenter);
+        interactor.execute(searchInputData);
+    }
+    @org.junit.jupiter.api.Test
     public void failureNoInputTest() {
-        SearchInputData searchInputData = new SearchInputData(null, "track");
+        SearchInputData searchInputData = new SearchInputData("", "track");
         SearchAPIDataAccessInterface api = new APIDataAccessObject();
         SearchOutputBoundary failurePresenter = new SearchOutputBoundary() {
             @Override
@@ -67,7 +98,7 @@ public class SearchInteractorTest extends TestCase {
 
             @Override
             public void prepareFailInputView(String error) {
-                assertEquals(error, "No search results were found ┐(ﾟ～ﾟ)┌");
+                assertEquals(error, "Please input search item.");
             }
 
             @Override
